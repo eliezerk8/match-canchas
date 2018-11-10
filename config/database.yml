@@ -23,9 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: db
-  user: eliezer
-  password: arkontexx007
+  database: sebadb
+  user: seba
+  password: ikseoql5cf
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
