@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ID_prio: 1
+  descripcion: MyText
+
+two:
+  ID_prio: 1
+  descripcion: MyText
