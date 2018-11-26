@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  estudiante_ID: 1
+  fecha: 2018-11-26
+  nota_ID: 1
+  objetivo: MyText
+  observaciones: MyText
+
+two:
+  estudiante_ID: 1
+  fecha: 2018-11-26
+  nota_ID: 1
+  objetivo: MyText
+  observaciones: MyText
