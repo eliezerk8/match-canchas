@@ -1,0 +1,2 @@
+class Constancium < ApplicationRecord
+end

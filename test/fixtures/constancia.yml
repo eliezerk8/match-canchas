@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_Profesional: 1
+  fecha: 2018-11-26
+  objetivo: MyText
+  id_nota: 1.5
+  observacion: MyText
+  prom1: 1.5
+  prom2: 1.5
+  prom3: 1.5
+
+two:
+  id_Profesional: 1
+  fecha: 2018-11-26
+  objetivo: MyText
+  id_nota: 1.5
+  observacion: MyText
+  prom1: 1.5
+  prom2: 1.5
+  prom3: 1.5
