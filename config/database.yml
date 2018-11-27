@@ -24,8 +24,11 @@ default: &default
 development:
   <<: *default
   database: paedb
+<<<<<<< HEAD
   user: pae
   password: 123456
+=======
+>>>>>>> 8edbfe7f692bd94a8c3c991e7ecc6a2609b9f347
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,8 +63,11 @@ development:
 test:
   <<: *default
   database: paedb
+<<<<<<< HEAD
   user: pae
   password: 123456 
+=======
+>>>>>>> 8edbfe7f692bd94a8c3c991e7ecc6a2609b9f347
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,6 +90,6 @@ test:
 #
 production:
   <<: *default
-  database: canchas_production
-  username: canchas
-  password: <%= ENV['CANCHAS_DATABASE_PASSWORD'] %>
+  database: paedb
+  username: pae
+  password: <%= ENV['PAEDB_DATABASE_PASSWORD']%>
