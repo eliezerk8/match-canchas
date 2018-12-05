@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ProfesionTest < ActiveSupport::TestCase
+class MenuControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
