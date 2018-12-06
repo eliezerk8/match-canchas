@@ -1,0 +1,2 @@
+class Informetutor < ApplicationRecord
+end

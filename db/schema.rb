@@ -10,9 +10,93 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_12_06_004906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alerta", force: :cascade do |t|
+    t.boolean "completado"
+    t.integer "informeid"
+    t.integer "prioridadid"
+    t.date "fecharecepcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carreras", force: :cascade do |t|
+    t.text "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "constanciaatencions", force: :cascade do |t|
+    t.integer "profesionalid"
+    t.integer "estudianteid"
+    t.date "fechacontacto"
+    t.text "intervencion"
+    t.text "objetivo"
+    t.integer "noraid"
+    t.text "observaciones"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "estudiantes", force: :cascade do |t|
+    t.integer "rut"
+    t.string "nombre"
+    t.string "apellidopat"
+    t.string "apellidomat"
+    t.string "correo"
+    t.boolean "tutor"
+    t.string "carrera"
+    t.string "facultad"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "facultads", force: :cascade do |t|
+    t.text "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "informetutors", force: :cascade do |t|
+    t.integer "estudianteid"
+    t.date "fecha"
+    t.integer "notaid"
+    t.text "objetivo"
+    t.text "observaciones"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nota", force: :cascade do |t|
+    t.text "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prioridads", force: :cascade do |t|
+    t.text "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profesionals", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellidopat"
+    t.string "apellidomat"
+    t.string "tipoprofesionid"
+    t.string "correo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profesions", force: :cascade do |t|
+    t.text "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
