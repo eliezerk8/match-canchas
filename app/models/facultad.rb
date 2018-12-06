@@ -1,2 +1,5 @@
 class Facultad < ApplicationRecord
-end
+    validates :descripcion , presence:true
+    
+  end
+  
