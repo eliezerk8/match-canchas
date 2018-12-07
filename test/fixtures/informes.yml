@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  estudianteid: 1
+  usuarioid: 1
+  nota1: 1
+  nota2: 1
+  nota3: 1
+  nota4: 1
+  nota5: 1
+  promhabitos: 9.99
+  nota6: 1
+  nota7: 1
+  nota8: 1
+  nota9: 1
+  nota10: 1
+  promvocacion: 9.99
+  nota11: 1
+  nota12: 1
+  nota13: 1
+  nota14: 1
+  nota15: 1
+  promsalud: 9.99
+  observacion: MyString
+
+two:
+  estudianteid: 1
+  usuarioid: 1
+  nota1: 1
+  nota2: 1
+  nota3: 1
+  nota4: 1
+  nota5: 1
+  promhabitos: 9.99
+  nota6: 1
+  nota7: 1
+  nota8: 1
+  nota9: 1
+  nota10: 1
+  promvocacion: 9.99
+  nota11: 1
+  nota12: 1
+  nota13: 1
+  nota14: 1
+  nota15: 1
+  promsalud: 9.99
+  observacion: MyString

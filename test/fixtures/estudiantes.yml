@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombreestudiante: MyString
+  nem: 9.99
+  situacioneconomica: MyString
+  colegio: MyString
+  ranking: 9.99
+  usuarioid: 1
+
+two:
+  nombreestudiante: MyString
+  nem: 9.99
+  situacioneconomica: MyString
+  colegio: MyString
+  ranking: 9.99
+  usuarioid: 1
