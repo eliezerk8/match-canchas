@@ -10,69 +10,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_004906) do
+ActiveRecord::Schema.define(version: 2018_12_06_194558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "alerta", force: :cascade do |t|
-    t.boolean "completado"
     t.integer "informeid"
+    t.integer "usuarioid"
     t.integer "prioridadid"
     t.date "fecharecepcion"
+    t.decimal "porcentajegeneral"
+    t.integer "observacionid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "carreras", force: :cascade do |t|
-    t.text "descripcion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "constanciaatencions", force: :cascade do |t|
-    t.integer "profesionalid"
-    t.integer "estudianteid"
-    t.date "fechacontacto"
-    t.text "intervencion"
-    t.text "objetivo"
-    t.integer "noraid"
-    t.text "observaciones"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "estudiantes", force: :cascade do |t|
-    t.integer "rut"
-    t.string "nombre"
-    t.string "apellidopat"
-    t.string "apellidomat"
-    t.string "correo"
-    t.boolean "tutor"
-    t.string "carrera"
+    t.string "nombrecarrera"
+    t.string "codigo"
     t.string "facultad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "estudiantes", force: :cascade do |t|
+    t.string "nombreestudiante"
+    t.decimal "nem"
+    t.string "situacioneconomica"
+    t.string "colegio"
+    t.decimal "ranking"
+    t.integer "usuarioid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "facultads", force: :cascade do |t|
-    t.text "descripcion"
+    t.string "nombrefacultad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "informetutors", force: :cascade do |t|
+  create_table "informes", force: :cascade do |t|
     t.integer "estudianteid"
-    t.date "fecha"
-    t.integer "notaid"
-    t.text "objetivo"
-    t.text "observaciones"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "nota", force: :cascade do |t|
-    t.text "descripcion"
+    t.integer "usuarioid"
+    t.integer "nota1"
+    t.integer "nota2"
+    t.integer "nota3"
+    t.integer "nota4"
+    t.integer "nota5"
+    t.decimal "promhabitos"
+    t.integer "nota6"
+    t.integer "nota7"
+    t.integer "nota8"
+    t.integer "nota9"
+    t.integer "nota10"
+    t.decimal "promvocacion"
+    t.integer "nota11"
+    t.integer "nota12"
+    t.integer "nota13"
+    t.integer "nota14"
+    t.integer "nota15"
+    t.decimal "promsalud"
+    t.text "observacion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -93,8 +93,21 @@ ActiveRecord::Schema.define(version: 2018_12_06_004906) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "profesions", force: :cascade do |t|
+  create_table "rols", force: :cascade do |t|
     t.text "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string "nombreusuario"
+    t.string "apellidopat"
+    t.string "apellidomat"
+    t.string "correo"
+    t.integer "rolid"
+    t.integer "telefono"
+    t.string "contrasena"
+    t.integer "facultadid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

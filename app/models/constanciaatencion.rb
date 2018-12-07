@@ -1,2 +1,0 @@
-class Constanciaatencion < ApplicationRecord
-end
