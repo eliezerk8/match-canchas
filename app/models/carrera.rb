@@ -1,2 +1,4 @@
 class Carrera < ApplicationRecord
+
+
 end
