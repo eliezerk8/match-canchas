@@ -99,17 +99,6 @@ ActiveRecord::Schema.define(version: 2018_12_06_194558) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "usuarios", force: :cascade do |t|
-    t.string "nombreusuario"
-    t.string "apellidopat"
-    t.string "apellidomat"
-    t.string "correo"
-    t.integer "rolid"
-    t.integer "telefono"
-    t.string "contrasena"
-    t.integer "facultadid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ 
 
 end
