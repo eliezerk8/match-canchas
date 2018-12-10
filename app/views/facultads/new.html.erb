@@ -1,0 +1,18 @@
+<h1> Crear Facultad</h1>
+
+
+<%=form_for(@facultad) do |f| %>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Agregar Facultad </label>
+    <%= f.text_field:nombrefacultad, placeholder:"Nombre Facultad" , class:"form-control"  %>
+    
+  </div>
+
+   <%= f.submit "Guardar" ,class:"btn btn-primary" %> 
+ 
+  <%end%>
+
+
+
+
