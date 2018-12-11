@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :facultads
+
+  resources :estudiante
+
+  resources :user
+
   
   root to: 'page#index'
   resources :carreras
