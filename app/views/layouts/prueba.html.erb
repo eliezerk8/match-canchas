@@ -1,161 +1,150 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a responsive product landing page.">
-    <title>Landing Page &ndash; Layout Examples &ndash; Pure</title>
-    
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
-    
-    <!--[if lte IE 8]>
-        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
-    <!--<![endif]-->
-    
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    
-        <!--[if lte IE 8]>
-            <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
-        <![endif]-->
-        <!--[if gt IE 8]><!-->
-            <link rel="stylesheet" href="css/layouts/marketing.css">
-        <!--<![endif]-->
-</head>
-<body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SAT UTEM</title>
+    <%= csrf_meta_tags %>
 
-<div class="header">
-    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logoutem-1.png" width="45" height="45">
-        <a class="pure-menu-heading" href="https://vrac.utem.cl/estudiantes/plan-de-apoyo-estudiantil/">PAE UTEM</a>
-          
-        <ul class="pure-menu-list">
-            <li class="pure-menu-item"><a href="localhost:3000/welcome/menu" class="pure-menu-link">Iniciar Sesión</a> </li>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" %>
 
-        </ul>
-    </div>
-</div>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<div class="splash-container">
-                <div class="pure-g">
-                <div class="pure-u-1-4">
-                    <img class="pure-img-responsive" src="https://www.enae.es/sites/default/files/styles/imagenes_landing_masters/public/imagenes_landing_master/xlndg_1.jpg,qitok=wDusXruD.pagespeed.ic.vW79BdNtqS.jpg" alt="Peyto Lake">
-                </div>
-                <div class="pure-u-1-4">
-                    <img class="pure-img-responsive" src="https://www.gmridiomas.com/img/news/picture_10470_500x500_crop.jpg" alt="Train">
-                </div>
-                <div class="pure-u-1-4">
-                    <img class="pure-img-responsive" src="http://1.bp.blogspot.com/-PW6sayCumsY/Ut2PR07sL3I/AAAAAAAAAN8/z9QdQQhXtD0/s1600/3-3.jpg" alt="T-Shirt Store">
-                </div>
-                <div class="pure-u-1-4">
-                    <img class="pure-img-responsive" src="http://farm8.staticflickr.com/7357/9086701425_fda3024927.jpg" alt="Mountain">
-                </div>
-            </div>
-                        <div class="pure-g">
-                <div class="pure-u-1-4">
-                    <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2875/9069037713_1752f5daeb.jpg" alt="Peyto Lake">
-                </div>
-                <div class="pure-u-1-4">
-                    <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" alt="Train">
-                </div>
-                <div class="pure-u-1-4">
-                    <img class="pure-img-responsive" src="http://farm6.staticflickr.com/5456/9121446012_c1640e42d0.jpg" alt="T-Shirt Store">
-                </div>
-                <div class="pure-u-1-4">
-                    <img class="pure-img-responsive" src="http://farm8.staticflickr.com/7357/9086701425_fda3024927.jpg" alt="Mountain">
-                </div>
-            </div>
-    <div class="splash">
-        <div style="background-color:#2a5cdf;">
-        <h1 class="splash-head">Sistema de alerta Temprana <br>PAE-UTEM <br/></h1>
-        <p class="splash-subhead">
+<body class="">
+  <div class="wrapper">
+      <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+          <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+          <div class="logo">
+              <a href="https://www.xvideos.com/" class="simple-text logo-normal">
+                  Alerta Temprana
+              </a>
+          </div>
+          <div class="sidebar-wrapper">
+              <ul class="nav">
+                  <li class="nav-item active ">
+                      <a class="nav-link" href="../examples/dashboard.html">
+                          <i class="material-icons">dashboard</i>
+                          <p>Dashboard</p>
+                      </a>
+                  </li>
+                  <li class="nav-item ">
+                      <a class="nav-link" href="../examples/user.html">
+                          <i class="material-icons">person</i>
+                          <p>Perfil</p>
+                      </a>
+                  </li>
+                  <li class="nav-item ">
+                      <a class="nav-link" href="../examples/table.html">
+                          <i class="material-icons">content_paste</i>
+                          <p>Table List</p>
+                      </a>
+                  </li>
+                  <li class="nav-item ">
+                      <a class="nav-link" href="../examples/typography.html">
+                          <i class="material-icons">library_books</i>
+                          <p>Alertas Generadas</p>
+                      </a>
+                  </li>
+                  <li class="nav-item ">
+                      <a class="nav-link" href="../examples/maps.html">
+                          <i class="material-icons">location_ons</i>
+                          <p>Contacto</p>
+                      </a>
+                  </li>
+                  <li class="nav-item ">
+                      <a class="nav-link" href="https://es.xhamster.com/">
+                          <i class="material-icons">notifications</i>
+                          <p>Xhamster</p>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="main-panel">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
+              <div class="container-fluid">
+                  <div class="navbar-wrapper">
+                      <a class="navbar-brand" href="#pablo">Material Dashboard</a>
+                  </div>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="navbar-toggler-icon icon-bar"></span>
+                      <span class="navbar-toggler-icon icon-bar"></span>
+                      <span class="navbar-toggler-icon icon-bar"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                      <form class="navbar-form">
+                          <div class="input-group no-border">
+                              <input type="text" value="" class="form-control" placeholder="Search...">
+                              <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                  <i class="material-icons">search</i>
+                                  <div class="ripple-container"></div>
+                              </button>
+                          </div>
+                      </form>
+                      <ul class="navbar-nav">
+                          <li class="nav-item">
+                              <a class="nav-link" href="#pablo">
+                                  <i class="material-icons">dashboard</i>
+                                  <p>
+                                      <span class="d-lg-none d-md-block">Stats</span>
+                                  </p>
+                              </a>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="material-icons">notifications</i>
+                                  <span class="notification">5</span>
+                                  <p>
+                                      <span class="d-lg-none d-md-block">Some Actions</span>
+                                  </p>
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                                  <a class="dropdown-item" href="#">Another Notification</a>
+                                  <a class="dropdown-item" href="#">Another One</a>
+                              </div>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#pablo">
+                                  <i class="material-icons">person</i>
+                                  <p>
+                                      <span class="d-lg-none d-md-block">Account</span>
+                                  </p>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+          <!-- End Navbar -->
+        <div class="content">
+            <%= yield %>
         </div>
-        </p>
-    
-            <a href="/welcome/menu.html.erb" class="pure-button pure-button-primary">Iniciar aquí</a>
-    
-    </div>
-</div>
-
-<div class="content-wrapper">
-    <div class="content">
-        <h2 class="content-head is-center">Enlaces de Interes: </h2>
-
-        <div class="pure-g">
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
-                 <a class="pure-button pure-button-primary" href="http://www.utem.cl/"> UTEM Oficial </a>
-                </h3>
-            </div>
-
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
-                <a class="pure-button pure-button-primary" href="https://academia.utem.cl/"> Academia </a>   
-                </h3>  
-            </div>
-
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
-                <a class="pure-button pure-button-primary" href="http://reko.utem.cl/aula/index.php"> Reko UTEM</a> 
-                </h3>
-            </div>
-
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
-                <a class="pure-button pure-button-primary" href="https://www.facebook.com/plandeapoyoestudiantil/"> Facebook PAE </a>         
-                </h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="ribbon l-box-lrg pure-g">
-        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-            <img width="30" alt="" class="pure-img-responsive" src="">
-        </div>
-        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
-
-            <h2 class="content-head content-head-ribbon"></h2>
-
-            <p>
-                
-            </p>
-        </div>
-    </div>
-
-    <div class="content">
-        <h2 class="content-head is-center">Contactanos</h2>
-        <h3 align="center"> Dieciocho 161 - Santiago, Chile. Metro Moneda - Fono: 2787 7500 </h3>
-
-         <div class="ribbon l-box-lrg pure-g">
-        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-            <img width="1" alt="" class="pure-img-responsive" src="">
-        </div>
-        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
-
-            <h2 class="content-head content-head-ribbon"></h2>
-
-            <p>
-                
-            </p>
-        </div>
-    </div>
-                <h4 align="center">
-                    <u>Desarrollado por:</u>
-                    <br>Alexis Burgos Oyaneder</br>
-                    Sebastian Cisternas Ocaranza.
-                    <br>Gerson Peralta Rojas.</br>
-                    Alexander Rogers Valdes.
-                </h4>
-
-        </div>
-    </div>
-    <div class="footer l-box is-center">Pagina creada por alumnos de la Universidad Tecnologica Metropolitana</div>
-</div>
-
-
-
-
+      </div>
+  </div>
 </body>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //init wizard
+
+        // demo.initMaterialWizard();
+
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+        demo.initCharts();
+
+    });
+</script>
 </html>
