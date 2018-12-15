@@ -14,7 +14,7 @@ class InformesController < ApplicationController
   end
 
   def create
-    @informe= Informe.new(nombreinforme: params[:informe][:estudianteid],
+    @informe= Informe.new(estudianteid: params[:informe][:estudianteid],
                           prompsicologico: params[:informe][:prompsicologico],
                           promsalud: params[:informe][:promsalud],
                           promhabitos: params[:informe][:promhabitos],
