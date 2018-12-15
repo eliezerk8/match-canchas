@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   
+  get 'informes/index'
+  get 'informes/new'
   devise_for :users
   resources :facultads
 
-  resources :estudiante
+  resources :estudiantes
 
-  resources :user
+  resources :users
+
+  resources :informes
 
   
   root to: 'page#index'
