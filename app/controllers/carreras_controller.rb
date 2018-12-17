@@ -1,6 +1,7 @@
 class CarrerasController < ApplicationController
     def index
         Carrera.all
+        @carreras= Carrera.new
     end
 
     def show
@@ -17,10 +18,10 @@ class CarrerasController < ApplicationController
          @carreras= Carrera.new(nombrecarrera: params[:carrera][:nombrecarrera],
                                                   codigo: params[:carrera][:codigo],
                                           facultadid: params[:carrera][:facultadid])
-         @carreras.save
+        if @carreras.save
          redirect_to @carreras
-       end
-
-
-
+         else
+         render :new
+        end
+   end
 end
