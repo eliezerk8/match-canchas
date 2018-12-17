@@ -2,6 +2,8 @@ class FacultadsController < ApplicationController
   layout "prueba"
   def index
   @facultades=Facultad.all
+  @facultad= Facultad.new
+
   end
 
   def show

@@ -1,6 +1,54 @@
-<h1>hola mundo </h1>
-<% @facultades.each do |facultad| %>
 
-<h1><%= facultad.nombrefacultad %>
 
-<%end%>
+<h1> Facultades </h1>
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Agregar Facultad
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Agregar Facultad</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      <%=form_for(@facultad) do |f| %>
+
+        <div class="form-group">
+          <label for="formGroupExampleInput"></label>
+          <%= f.text_field:nombrefacultad, placeholder:"Nombre Facultad" , class:"form-control"  %>
+          
+        </div>
+      
+         <%= f.submit "Guardar" ,class:"btn btn-primary" %> 
+       
+        <%end%>
+      
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Salir</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
