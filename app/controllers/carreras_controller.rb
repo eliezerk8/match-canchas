@@ -1,7 +1,9 @@
 class CarrerasController < ApplicationController
+    layout "prueba"
     def index
-        Carrera.all
+        @todocarrera= Carrera.all
         @carreras= Carrera.new
+        
     end
 
     def show

@@ -1,5 +1,6 @@
 <h1>Carreras </h1>
 
+
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
   Agregar Carrera
 </button>
@@ -52,3 +53,33 @@
     </div>
   </div>
 </div>
+
+
+
+
+<Table class="table table-dark table-bordered table-condensed">
+  <tr>
+    <thead>
+    <th> Nombre Carrera </th>
+    <th> Codigo Carrera </th>
+    <th> Facultad </th>
+  </thead>
+  </tr>
+
+  <% @todocarrera.each do |t| %>
+  <tr>
+  <td><%= t.nombrecarrera %></td>
+  <td><%= t.codigo %></td>
+  <td><%= t.facultad.nombrefacultad %></td>
+  <td>
+<%= link_to "Mostrar" %>
+<%= link_to "Editar" %>
+<%= link_to "Eliminar" %>
+</td>
+</tr>
+<%end%>
+</table>
+
+
+
+
