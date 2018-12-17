@@ -2,7 +2,7 @@ class FacultadsController < ApplicationController
   layout "prueba"
   def index
   @facultades=Facultad.all
-  @facultad= Facultad.new
+  @facultads= Facultad.new
 
   end
 
@@ -12,7 +12,7 @@ class FacultadsController < ApplicationController
 
   def new
 
-   @facultad= Facultad.new
+   @facultads= Facultad.new
 
   end
 

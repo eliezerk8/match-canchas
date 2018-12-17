@@ -7,21 +7,21 @@ class CarrerasController < ApplicationController
     end
 
     def show
-        @carreras= Carrera.find(params[:id])
+        @carrera= Carrera.find(params[:id])
        end 
      
        def new
      
-        @carreras= Carrera.new
+        @carrera= Carrera.new
      
        end
      
        def create
-         @carreras= Carrera.new(nombrecarrera: params[:carrera][:nombrecarrera],
+         @carrera= Carrera.new(nombrecarrera: params[:carrera][:nombrecarrera],
                                                   codigo: params[:carrera][:codigo],
                                           facultadid: params[:carrera][:facultadid])
-        if @carreras.save
-         redirect_to @carreras
+        if @carrera.save
+         redirect_to @carrera
          else
          render :new
         end

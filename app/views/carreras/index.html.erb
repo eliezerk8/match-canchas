@@ -63,6 +63,8 @@
     <th> Nombre Carrera </th>
     <th> Codigo Carrera </th>
     <th> Facultad </th>
+    <th> Fecha de Creación </th>
+    <th> Fecha de Modificación </th>
   </thead>
   </tr>
 
@@ -70,11 +72,22 @@
   <tr>
   <td><%= t.nombrecarrera %></td>
   <td><%= t.codigo %></td>
-  <td><%= t.facultad.nombrefacultad %></td>
+  <td><%= t.facultadid %></td>
+  <td><%= t.created_at %></td>
+  <td><%= t.updated_at %></td>
+  
   <td>
-<%= link_to "Mostrar" %>
-<%= link_to "Editar" %>
-<%= link_to "Eliminar" %>
+
+
+  <td><button type="button" class="btn btn btn-outline-success  btn-sm">
+  <%= link_to "Mostrar" %>
+  </button>
+  <button type="button" class="btn btn btn-outline-success  btn-sm">
+  <%= link_to "Editar" %>
+  </button>
+  <button type="button" class="btn btn-danger  btn-sm">
+  <%= link_to "Eliminar" %>
+  </button>
 </td>
 </tr>
 <%end%>

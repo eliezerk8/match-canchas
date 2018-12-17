@@ -20,7 +20,7 @@
       </div>
       <div class="modal-body">
         
-      <%=form_for(@facultad) do |f| %>
+      <%=form_for(@facultads) do |f| %>
 
         <div class="form-group">
           <label for="formGroupExampleInput"></label>
@@ -43,7 +43,34 @@
   </div>
 </div>
 
+<Table class="table table-dark table-bordered table-condensed">
+  <tr>
+    <thead>
+    <th> Nombre Facultad </th>
+    <th> Fecha de Creacion </th>
+    <th> Fecha de Modificación </th>
+  </thead>
+  </tr>
 
+  <% @facultades.each do |t| %>
+  <tr>
+  <td><%= t.nombrefacultad %></td>
+  <td><%= t.created_at %></td>
+  <td><%= t.updated_at %></td>
+
+  <td><button type="button" class="btn btn btn-outline-success  btn-sm">
+<%= link_to "Mostrar" %>
+</button>
+<button type="button" class="btn btn btn-outline-success  btn-sm">
+<%= link_to "Editar" %>
+</button>
+<button type="button" class="btn btn-danger  btn-sm">
+<%= link_to "Eliminar" %>
+</button>
+</td>
+</tr>
+<%end%>
+</table>
 
 
 
