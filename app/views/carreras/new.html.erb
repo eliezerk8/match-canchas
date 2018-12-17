@@ -14,12 +14,14 @@
   <%= f.text_field:codigo, placeholder:"Agregar Notas" , class:"form-control"  %>
    
   </div>
- 
-  
-  <%= collection_select(:facultad, :id, Facultad.all, :id, :nombrefacultad) %>
 
+  <div class="form-group">
+  <label for="formGroupExampleInput">Facultad </label>
+  <div class="dropdown">
+  <%= f.collection_select :facultadid, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-secundary btn-sm"}  %>
+  </div>
 
-
+  </div>
    <%= f.submit "Guardar" ,class:"btn btn-primary" %> 
  
   <%end%>
