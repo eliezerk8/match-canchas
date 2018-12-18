@@ -1,1 +1,99 @@
-<h1>Hola </h1>
+<h1>Carreras </h1>
+
+
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong">
+  Agregar Carrera
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Agregar Carrera</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      <%=form_for(@carreras) do |f| %>
+
+        <div class="form-group">
+          <label for="formGroupExampleInput">Nombre </label>
+          <%= f.text_field:nombrecarrera, placeholder:"Agregar Nombre" , class:"form-control"  %>
+          
+        </div>
+      
+        <div class="form-group">
+        <label for="formGroupExampleInput">Codigo </label>
+        <%= f.text_field:codigo, placeholder:"Agregar Codigo" , class:"form-control"  %>
+         
+        </div>
+      
+        <div class="form-group">
+        <label for="formGroupExampleInput">Facultad </label>
+        <div class="dropdown">
+        <%= f.collection_select :facultadid, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-outline-info "}  %>
+        </div>
+      
+        </div>
+         <%= f.submit "Guardar" ,class:"btn btn-info" %> 
+       
+        <%end%>
+      
+       
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Salir</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<Table class="table">
+  <tr>
+    <thead class="thead-dark">
+    <th> Nombre Carrera </th>
+    <th> Codigo Carrera </th>
+    <th> Facultad </th>
+    <th> Fecha de Creación </th>
+    <th> Fecha de Modificación </th>
+    <th> Opciones </th>
+  </thead>
+  </tr>
+
+  <% @todocarrera.each do |t| %>
+  <tr>
+  <td><%= t.nombrecarrera %></td>
+  <td><%= t.codigo %></td>
+  <td><%= t.facultadid %></td>
+  <td><%= t.created_at %></td>
+  <td><%= t.updated_at %></td>
+  
+  <td>
+
+
+  <td><button type="button" class="btn btn btn-outline-success  btn-sm">
+  <%= link_to "Mostrar" %>
+  </button>
+  <button type="button" class="btn btn-outline-warning  btn-sm">
+  <%= link_to "Editar" %>
+  </button>
+  <button type="button" class="btn btn-danger  btn-sm">
+  <%= link_to "Eliminar" %>
+  </button>
+</td>
+</tr>
+<%end%>
+</table>
+
+
+
+
