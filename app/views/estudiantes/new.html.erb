@@ -1,5 +1,6 @@
 <h1> Crear Estudiante</h1>
 
+render "facultads/show"
 
 <%=form_for(@estudiantes) do |f| %>
 
@@ -33,6 +34,9 @@
    <label for="formGroupExampleInput">Rankings</label>
    <%= f.text_field:ranking, placeholder:"Rankins" , class:"form-control"  %>
 
+    <div class="form-group">
+      <label for="formGroupExampleInput">Rankings</label>
+      <%= f.text_field:ranking, placeholder:"Rankins" , class:"form-control"  %>
 
 
    <%= f.submit "Guardar" ,class:"btn btn-primary" %> 
