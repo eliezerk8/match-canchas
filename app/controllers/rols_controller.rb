@@ -1,7 +1,8 @@
 class RolsController < ApplicationController
-  
+  layout "prueba"
     def index
-        @rols=Rol.all
+        @roles=Rol.all
+        @rols= Rol.new
         end
       
         def show

@@ -1,6 +1,74 @@
-<h1>hola mundo </h1>
-<% @rols.each do |rol| %>
+<h1> Roles </h1>
 
-<h1><%= rol.descripcion %>
 
+
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong">
+  Agregar Rol
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Agregar Tipo de Rol</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      <%=form_for(@rols) do |f| %>
+
+        <div class="form-group">
+          <label for="formGroupExampleInput"></label>
+          <%= f.text_field :descripcion, placeholder:"Rol" , class:"form-control"  %>
+          
+        </div>
+      
+         <%= f.submit "Guardar" ,class:"btn btn-info" %> 
+       
+        <%end%>
+      
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Salir</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<Table class="table">
+  <tr>
+    <thead class="thead-dark">
+    <th> Tipo de Rol</th>
+    <th> Fecha de Creacion </th>
+    <th> Fecha de Modificación </th>
+    <th> Opciones </th>
+  </thead>
+  </tr>
+
+  <% @roles.each do |t| %>
+  <tr>
+  <td><%= t.descripcion %></td>
+  <td><%= t.created_at %></td>
+  <td><%= t.updated_at %></td>
+
+  <td><button type="button" class="btn btn btn-outline-success  btn-sm">
+<%= link_to "Mostrar" %>
+</button>
+<button type="button" class="btn btn-outline-warning  btn-sm">
+<%= link_to "Editar" %>
+</button>
+<button type="button" class="btn btn-danger  btn-sm">
+<%= link_to "Eliminar" %>
+</button>
+</td>
+</tr>
 <%end%>
+</table>
+
+

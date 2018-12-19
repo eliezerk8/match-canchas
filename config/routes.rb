@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :informes
-
+  resources :rols
   
   root to: 'welcome#index'
   resources :carreras
