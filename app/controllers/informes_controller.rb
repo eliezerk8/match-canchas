@@ -12,17 +12,16 @@ class InformesController < ApplicationController
     @informes= Informe.new
 
   end
-end
 
-def create
+  def create
   @informe= informe.new(informe_params)
   if @informe.save
     redirect_to informes_path
+  else
+    render 'new'
+    end
   end
-else
-  render 'new'
 end
-
 
 private
 def informe_params

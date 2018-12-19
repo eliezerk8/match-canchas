@@ -20,11 +20,11 @@ class FacultadsController < ApplicationController
     @facultad= Facultad.new(facultad_params)
     if @facultad.save
       redirect_to facultads_path
-    end
   else
     render 'new'
   end
 
+  end
 end
   private
     def facultad_params

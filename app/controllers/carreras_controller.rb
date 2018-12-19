@@ -20,9 +20,9 @@ class CarrerasController < ApplicationController
     @carrera= Carrera.new(carrera_params)
     if @carrera.save
       redirect_to carreras_path
-    end
   else
     render 'new'
+      end
   end
 
 end

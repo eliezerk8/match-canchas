@@ -17,11 +17,11 @@ class EstudiantesController < ApplicationController
       @estudiante= estudiante.new(estudiante_params)
       if @estudiante.save
         redirect_to estudiantes_path
-      end
     else
       render 'new'
     end
 
+    end
 end
 private
 def estudiante_params
