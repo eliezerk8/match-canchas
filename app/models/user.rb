@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_one :rol
-  has_one :facultad
   has_one :estudiante
+  has_one :rol
+  belongs_to :facultad
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

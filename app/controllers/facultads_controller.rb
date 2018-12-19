@@ -17,8 +17,16 @@ class FacultadsController < ApplicationController
   end
 
   def create
-    @facultad= Facultad.new(nombrefacultad: params[:facultad][:nombrefacultad])
-    @facultad.save
-    redirect_to @facultad
+    @facultad= Facultad.new(facultad_params)
+    if @facultad.save
+      redirect_to facultads_path
+    end
+  else
+    render 'new'
   end
+
 end
+  private
+    def facultad_params
+      params.require(:facultad).permit(:nombrefacultad)
+    end

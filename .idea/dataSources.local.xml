@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="paedb@localhost" uuid="cd4770cd-1a3c-44b9-b199-d3905b0cfb6a">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <introspection-schemas>@:@</introspection-schemas>
+    </data-source>
+  </component>
+</project>

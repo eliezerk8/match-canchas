@@ -13,17 +13,18 @@ class EstudiantesController < ApplicationController
          @estudiantes= Estudiante.new
       
         end
-      
-        def create
-          @estudiante= Estudiante.new(nombreestudiante: params[:estudiante][:nombreestudiante],
-                                                   nem: params[:estudiante][:nem],
-                                situacioneconomica: params[:estudiante][:situacioneconomica],   
-                                           colegio: params[:estudiante][:colegio],
-                                           ranking: params[:estudiante][:ranking])
-          @estudiante.save
-          redirect_to @estudiante
-        end
-     
-
+    def create
+      @estudiante= estudiante.new(estudiante_params)
+      if @estudiante.save
+        redirect_to estudiantes_path
+      end
+    else
+      render 'new'
+    end
 
 end
+private
+def estudiante_params
+  params.require(:estudiante).permit(:nombreestudiante, :nem, :situacioneconomica, :ranking ,:colegio)
+end
+

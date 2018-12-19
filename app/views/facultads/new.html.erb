@@ -18,11 +18,11 @@
       </div>
       <div class="modal-body">
         
-      <%=form_for(@facultad) do |f| %>
+      <%=form_for(@facultads) do |f| %>
 
         <div class="form-group">
           <label for="formGroupExampleInput">Agregar Facultad </label>
-          <%= f.text_field:nombrefacultad, placeholder:"Nombre Facultad" , class:"form-control"  %>
+          <%= f.text_field :nombrefacultad, placeholder:"Nombre Facultad" , class:"form-control"  %>
           
         </div>
       

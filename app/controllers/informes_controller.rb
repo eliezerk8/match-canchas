@@ -12,28 +12,19 @@ class InformesController < ApplicationController
     @informes= Informe.new
 
   end
+end
 
-  def create
-    @informe= Informe.new(estudianteid: params[:informe][:estudianteid],
-                          prompsicologico: params[:informe][:prompsicologico],
-                          promsalud: params[:informe][:promsalud],
-                          promhabitos: params[:informe][:promhabitos],
-                          nota1: params[:informe][:nota1],
-                          nota2: params[:informe][:nota1],
-                          nota3: params[:informe][:nota1],
-                          nota4: params[:informe][:nota1],
-                          nota5: params[:informe][:nota1],
-                          nota6: params[:informe][:nota1],
-                          nota7: params[:informe][:nota1],
-                          nota8: params[:informe][:nota1],
-                          nota9: params[:informe][:nota1],
-                          nota10: params[:informe][:nota1],
-                          nota11: params[:informe][:nota1],
-                          nota12: params[:informe][:nota1],
-                          nota13: params[:informe][:nota1],
-                          nota14: params[:informe][:nota1],
-                          nota15: params[:informe][:nota1])
-    @informe.save
-    redirect_to @informe
+def create
+  @informe= informe.new(informe_params)
+  if @informe.save
+    redirect_to informes_path
   end
+else
+  render 'new'
+end
+
+
+private
+def informe_params
+  params.require(:informe).permit(:estudianteid, :prompsicologico, :promsalud, :promhabitos, :nota1,:nota2, :nota3, :nota4, :nota5, :nota6, :nota7,:nota8, :nota9, :nota10, :nota11, :nota12, :nota13, :nota14,:nota15)
 end

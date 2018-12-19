@@ -34,7 +34,7 @@
         <div class="form-group">
         <label for="formGroupExampleInput">Facultad </label>
         <div class="dropdown">
-        <%= f.collection_select :facultadid, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-outline-info "}  %>
+        <%= f.collection_select :facultad_id, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-outline-info "}  %>
         </div>
       
         </div>
@@ -73,7 +73,7 @@
   <tr>
   <td><%= t.nombrecarrera %></td>
   <td><%= t.codigo %></td>
-  <td><%= t.facultadid %></td>
+  <td><%= t.facultad.nombrefacultad %></td>
   <td><%= t.created_at %></td>
   <td><%= t.updated_at %></td>
   
