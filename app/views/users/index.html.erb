@@ -1,0 +1,21 @@
+<h1>Usuarios</h1>
+<table class="table">
+		<tr>
+			<th>Mail</th>
+      <th>Rol</th>
+			<th colspan="1"></th>
+		</tr>
+        <% @users.each do |user| %>
+
+			<tr>
+				<td><%= user.email %></td>
+        <td><%= user.role %></td>
+				<% if can? :delete, User %>
+        <td><%= link_to 'Eliminar', user_path(user), :class => "btn btn-danger" , method: :delete, data: { confirm: 'Estas seguro?'} %></td>
+				<% end %>
+			</tr>
+		<% end %>
+</table>
+<% if can? :create, User %>
+<%= link_to 'Nuevo', new_user_path, :class => "btn btn-primary" %>
+<% end %>
