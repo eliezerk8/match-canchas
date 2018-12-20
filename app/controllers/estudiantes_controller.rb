@@ -14,7 +14,7 @@ class EstudiantesController < ApplicationController
       
         end
     def create
-      @estudiante= estudiante.new(estudiante_params)
+      @estudiante= Estudiante.new(estudiante_params)
       if @estudiante.save
         redirect_to estudiantes_path
     else
@@ -22,9 +22,10 @@ class EstudiantesController < ApplicationController
     end
 
     end
-end
-private
+
+    private
 def estudiante_params
-  params.require(:estudiante).permit(:nombreestudiante, :nem, :situacioneconomica, :ranking ,:colegio)
+  params.require(:estudiante).permit(:nombre, :nem, :situacioneconomica, :ranking ,:colegio, usuarioid, :carrera_id)
 end
 
+end

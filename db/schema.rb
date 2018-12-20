@@ -10,18 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_182128) do
+ActiveRecord::Schema.define(version: 2018_12_20_140141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "alerta", force: :cascade do |t|
     t.boolean "completado"
-    t.integer "informeid"
-    t.integer "prioridadid"
     t.date "fecharecepcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "prioridad_id"
+    t.bigint "informe_id"
+    t.index ["informe_id"], name: "index_alerta_on_informe_id"
+    t.index ["prioridad_id"], name: "index_alerta_on_prioridad_id"
   end
 
   create_table "carreras", force: :cascade do |t|
@@ -39,10 +41,11 @@ ActiveRecord::Schema.define(version: 2018_12_18_182128) do
     t.string "situacioneconomica"
     t.string "colegio"
     t.decimal "ranking"
-    t.integer "usuarioid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "carrera_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_estudiantes_on_user_id"
   end
 
   create_table "facultads", force: :cascade do |t|
@@ -52,8 +55,6 @@ ActiveRecord::Schema.define(version: 2018_12_18_182128) do
   end
 
   create_table "informes", force: :cascade do |t|
-    t.integer "estudianteid"
-    t.integer "usuarioid"
     t.integer "nota1"
     t.integer "nota2"
     t.integer "nota3"
@@ -75,6 +76,10 @@ ActiveRecord::Schema.define(version: 2018_12_18_182128) do
     t.string "observacion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "estudiante_id"
+    t.bigint "user_id"
+    t.index ["estudiante_id"], name: "index_informes_on_estudiante_id"
+    t.index ["user_id"], name: "index_informes_on_user_id"
   end
 
   create_table "prioridads", force: :cascade do |t|
@@ -107,12 +112,13 @@ ActiveRecord::Schema.define(version: 2018_12_18_182128) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "alerta", "informes", column: "informeid"
-  add_foreign_key "alerta", "prioridads", column: "prioridadid"
+  add_foreign_key "alerta", "informes"
+  add_foreign_key "alerta", "prioridads"
   add_foreign_key "carreras", "facultads"
   add_foreign_key "estudiantes", "carreras"
-  add_foreign_key "estudiantes", "users", column: "usuarioid"
-  add_foreign_key "informes", "estudiantes", column: "estudianteid"
+  add_foreign_key "estudiantes", "users"
+  add_foreign_key "informes", "estudiantes"
+  add_foreign_key "informes", "users"
   add_foreign_key "users", "facultads"
   add_foreign_key "users", "rols"
 end

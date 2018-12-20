@@ -14,13 +14,19 @@ class RolsController < ApplicationController
          @rols= Rol.new
       
         end
-      
-        def create
-          @rol= Rol.new(descripcion: params[:rol][:descripcion])
-          @rol.save
-          redirect_to @rol
-        end
-     
+
+  def create
+    @rol= Rol.new(rol_params)
+    if @rol.save
+      redirect_to rols_path
+    else
+      render 'new'
+    end
+  end
+private
+def rol_params
+  params.require(:rol).permit(:descripcion)
+end
 
 
 end
