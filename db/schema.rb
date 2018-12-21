@@ -26,14 +26,6 @@ ActiveRecord::Schema.define(version: 2018_12_20_194052) do
     t.index ["prioridad_id"], name: "index_alerta_on_prioridad_id"
   end
 
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "visits_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "carreras", force: :cascade do |t|
     t.string "nombrecarrera"
     t.string "codigo"
@@ -51,7 +43,6 @@ ActiveRecord::Schema.define(version: 2018_12_20_194052) do
     t.decimal "ranking"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "facultad_id"
     t.integer "carrera_id"
     t.bigint "user_id"
     t.date "fecha_nacimiento"
@@ -122,11 +113,11 @@ ActiveRecord::Schema.define(version: 2018_12_20_194052) do
     t.string "apellidopa"
     t.string "apellidoma"
     t.integer "rol_id"
+    t.string "telefono"
     t.integer "facultad_id"
     t.date "fecha_nacimiento"
     t.boolean "estado", default: true
     t.string "rut"
-    t.string "telefono"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
