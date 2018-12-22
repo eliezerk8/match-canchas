@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_20_194052) do
+ActiveRecord::Schema.define(version: 2018_12_22_173139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_12_20_194052) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "facultad_id"
+    t.boolean "estado"
     t.index ["facultad_id"], name: "index_carreras_on_facultad_id"
   end
 
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 2018_12_20_194052) do
     t.string "nombrefacultad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "estado"
   end
 
   create_table "informes", force: :cascade do |t|
@@ -85,6 +87,7 @@ ActiveRecord::Schema.define(version: 2018_12_20_194052) do
     t.datetime "updated_at", null: false
     t.bigint "estudiante_id"
     t.bigint "user_id"
+    t.boolean "estado"
     t.index ["estudiante_id"], name: "index_informes_on_estudiante_id"
     t.index ["user_id"], name: "index_informes_on_user_id"
   end
@@ -99,6 +102,7 @@ ActiveRecord::Schema.define(version: 2018_12_20_194052) do
     t.text "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "estado"
   end
 
   create_table "users", force: :cascade do |t|

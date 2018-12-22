@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e1a47c6-8d7b-4ecf-80f6-e764b2368c42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd4770cd-1a3c-44b9-b199-d3905b0cfb6a.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20181222173139_bool_columns.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/estudiantes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/estudiantes_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/informes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/informes_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/rols_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/rols_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -95,58 +89,42 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/estudiantes_controller.rb">
+        <entry file="file://$PROJECT_DIR$/app/views/facultads/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="350">
+              <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/menu_controller.rb">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/schema.rb">
+        <entry file="file://$PROJECT_DIR$/app/controllers/carreras_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-675" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/migration por hacer">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="10" />
+            <state relative-caret-position="259">
+              <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20181220140141_remove_add_foreing_key3.rb">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20181222173139_bool_columns.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="90">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20181220135805_remove_foring_key2.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/db/migrate/20181215223055_add_column.rb">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/transactions.rb">
+        <entry file="file://$PROJECT_DIR$/app/controllers/facultads_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="211" selection-start-line="211" selection-end-line="211" />
+            <state relative-caret-position="244">
+              <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -156,9 +134,13 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>carrera</find>
+      <find>article</find>
+      <find>facultad</find>
     </findStrings>
     <replaceStrings>
       <replace>rol</replace>
+      <replace>facultad</replace>
+      <replace>carrera</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -178,7 +160,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20181215223917_add_foreign_keys.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20181215224327_add_foreign_keys.rb" />
         <option value="$PROJECT_DIR$/app/views/facultads/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/facultads/index.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20181218182128_remove_add_foreing_key.rb" />
         <option value="$PROJECT_DIR$/app/views/carreras/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/carreras/index.html.erb" />
@@ -193,8 +174,6 @@
         <option value="$PROJECT_DIR$/app/views/informes/new.html.erb" />
         <option value="$PROJECT_DIR$/app/models/carrera.rb" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/app/controllers/carreras_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/facultads_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20181219181011_modelos_foreing_correctas.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20181219194742_llaves_correspondientes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/rols_controller.rb" />
@@ -202,6 +181,10 @@
         <option value="$PROJECT_DIR$/app/controllers/informes_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20181220135805_remove_foring_key2.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20181220140141_remove_add_foreing_key3.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/facultads_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/facultads/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/carreras_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20181222173139_bool_columns.rb" />
       </list>
     </option>
   </component>
@@ -217,6 +200,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,6 +213,24 @@
               <item name="Sistema-Alerta-Temprana-UTEM" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sistema-Alerta-Temprana-UTEM" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sistema-Alerta-Temprana-UTEM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sistema-Alerta-Temprana-UTEM" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sistema-Alerta-Temprana-UTEM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sistema-Alerta-Temprana-UTEM" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sistema-Alerta-Temprana-UTEM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sistema-Alerta-Temprana-UTEM" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Sistema-Alerta-Temprana-UTEM" type="b2602c69:ProjectViewProjectNode" />
@@ -244,8 +247,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -415,6 +416,8 @@
       <workItem from="1545245334593" duration="1016000" />
       <workItem from="1545248708470" duration="1228000" />
       <workItem from="1545308763378" duration="2023000" />
+      <workItem from="1545447706578" duration="560000" />
+      <workItem from="1545492924455" duration="5550000" />
     </task>
     <task id="LOCAL-00001" summary="Controlador con params">
       <created>1545243366854</created>
@@ -455,12 +458,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6607000" />
+    <option name="totallyTimeSpent" value="12717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22310758" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2310757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -473,7 +477,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996016" visible="true" weight="0.31627908" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996016" visible="true" weight="0.28527132" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5003984" side_tool="true" weight="0.32868218" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32868218" />
@@ -526,13 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/estudiante.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/estudiantes/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -552,23 +549,8 @@
     </entry>
     <entry file="das://3f081e45-e02e-469c-86a6-b3773644514c/database/paedb/schema/public/table/carreras" />
     <entry file="file://$PROJECT_DIR$/db/migrate/20181219181011_modelos_foreing_correctas.rb" />
-    <entry file="das://df4819d1-60bc-46e3-854a-7da5ec2c9cd5/database/paedb/schema/public/table/facultads">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20181219194742_llaves_correspondientes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/page_controller.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="das://df4819d1-60bc-46e3-854a-7da5ec2c9cd5/database/paedb/schema/public/table/facultads" />
+    <entry file="file://$PROJECT_DIR$/db/migrate/20181219194742_llaves_correspondientes.rb" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/df4819d1-60bc-46e3-854a-7da5ec2c9cd5/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -582,62 +564,11 @@
     <entry file="file://$PROJECT_DIR$/app/models/facultad.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/rols_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/carreras_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-675" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/informes_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="27" column="229" selection-start-line="27" selection-start-column="229" selection-end-line="27" selection-end-column="229" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/facultads_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/estudiantes_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/menu_controller.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/transactions.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="211" selection-start-line="211" selection-end-line="211" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20181220135805_remove_foring_key2.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/migration por hacer">
       <provider selected="true" editor-type-id="text-editor">
@@ -650,6 +581,129 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/active_support.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.3/gems/bootsnap-1.3.2/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20181220135805_remove_foring_key2.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.1/lib/active_record/transactions.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="211" selection-start-line="211" selection-end-line="211" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/informes_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="229" selection-start-line="27" selection-start-column="229" selection-end-line="27" selection-end-column="229" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/rols_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/page_controller.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/estudiantes_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/facultads/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/404.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/carreras.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/destroy.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/carrera.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/estudiante.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/informe.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/facultads/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/facultads_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/facultads/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/carreras_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20181215223055_add_column.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20181222173139_bool_columns.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
         </state>
       </provider>
     </entry>
