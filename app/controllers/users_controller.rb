@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  layout"prueba"
   before_action :set_user, only: [:show,:delete,:edit,:update]
 
   def index
@@ -13,13 +13,15 @@ class UsersController < ApplicationController
   def show
   end
 
-  def delete
+  def destroy
     #@user.destroy
+    
     @user.estado = false
     @user.save
-    respond_to do |format|
-      format.html {redirect_to users_path, notice: 'Apoderado no regular'}
-    end
+      respond_to do |format|
+        format.html {redirect_to users_path, notice: 'Apoderado no regular'}
+      end
+  
   end
 
   def update
