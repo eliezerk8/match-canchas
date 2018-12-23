@@ -1,11 +1,95 @@
-<div class="row">
-  <div class="col-md-9 col-xs-8">
-    <h3 class="text-uppercase">Editar Usuario</h3>
+<%= form_for(@user, :html => {:role => 'form'}) do |f| %>
+  <% if @user.errors.any? %>
+  <div class="alert alert-info">
+    <%= pluralize(@user.errors.count, "Errores") %>
   </div>
-</div>
-<div>
-  <%= render 'form' %>
+  <div class="alert alert-danger">
+    <% @user.errors.full_messages.each do |error| %>
+      <%= error %><br>
+    <% end %>
+  </div>
+    <% end %>
+
+<div class="form">
+  <h1 class="text-center"> Registro de Usuarios</h1>
+
+  <div class="row">
+
+  <div class="col">
+  <div class="field">
+    <%= f.label :primer_nombre %><br/>
+    <%= f.text_field :nombre, autofocus: true, class: "form-control", placeholder: "Primer nombre" %>
+  </div><br>
 </div>
 
-<br><br>
-<%= link_to 'Atrás', users_path %>
+  <div class="col">
+  <div class="field">
+    <%= f.label :primer_apellido %><br/>
+    <%= f.text_field :apellidopa, autofocus: true, class: "form-control", placeholder: "Primer apellido" %>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+
+    <div class="col">
+  <div class="field">
+    <%= f.label :segundo_apellido %><br/>
+    <%= f.text_field :apellidoma, autofocus: true, class: "form-control", placeholder: "Primer apellido" %>
+  </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col">
+  <div class="field">
+    <%= f.label :rut %><br/>
+    <%= f.text_field :rut, autofocus: true, class:"form-control", placeholder: "Rut" %>
+  </div><br>
+</div>
+  <div class="col">
+  <div class="field">
+    <%= f.label :fecha_nacimiento %><br/>
+    <%= f.date_field :fecha_nacimiento, autofocus: true, class:"form-control" %>
+  </div>
+</div>
+  <div class="col">
+  <div class="field">
+    <%= f.label :email %><br/>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
+  </div>
+</div>
+</div>
+
+<div class="row">
+  
+  <div class="col">
+<div class="field">
+  <%= f.label :celular %><br/>
+  <%= f.text_field :telefono, autofocus: true, class: "form-control", placeholder:"Celular" %>
+</div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col">
+<div class="field">
+  <%= f.label :Tipo_de_usuario %>
+  <%= f.select('rol_id',
+               Rol.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
+</div>
+</div>
+
+<div class="col">
+
+ <div class="field">
+    <%= f.label "Estado" %> <br />
+    <%= f.check_box :estado %> <br />
+</div>
+</div>
+
+ </div>
+  <div class="actions">
+    <%= f.submit "Guardar Usuario" ,class:"btn btn-success"%>
+  </div>
+<% end %>
+</div>

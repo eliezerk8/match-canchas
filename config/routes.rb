@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
   resources :users
 
-
+  delete 'users/:id/edit', to: 'users#delete'
 
 
 

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def show
   end
 
-  def destroy
+  def delete
     #@user.destroy
     
     @user.estado = false
