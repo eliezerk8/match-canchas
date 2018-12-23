@@ -54,23 +54,23 @@
   </tr>
 
   <% @facultades.each do |t| %>
-  <tr>
-  <td><%= t.nombrefacultad %></td>
-  <td><%= t.created_at %></td>
-  <td><%= t.updated_at %></td>
+    <tr>
+      <td><%= t.nombrefacultad %></td>
+      <td><%= t.created_at %></td>
+      <td><%= t.updated_at %></td>
 
-  <td><button type="button" class="btn btn btn-outline-success  btn-sm">
-<%= link_to "Mostrar" %>
-</button>
-<button type="button" class="btn btn-outline-warning  btn-sm">
-<%= link_to "Editar" %>
-</button>
-<button type="button" class="btn btn-danger  btn-sm">
-<%= link_to "Eliminar" %>
-</button>
-</td>
-</tr>
-<%end%>
+      <td><button type="button" class="btn btn btn-outline-success  btn-sm">
+      <%= link_to "Mostrar" %>
+      </button>
+      <button type="button" class="btn btn-outline-warning  btn-sm">
+      <%= link_to "Editar" %>
+      </button>
+      <button type="button" class="btn btn-danger  btn-sm">
+      <%= link_to "Eliminar" %>
+      </button>
+      </td>
+      </tr>
+  <% end %>
 </table>
 
 
