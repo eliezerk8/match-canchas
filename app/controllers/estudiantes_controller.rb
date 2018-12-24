@@ -1,5 +1,5 @@
 class EstudiantesController < ApplicationController
-  
+  layout"prueba"
     def index
         @estudiantes=Estudiante.all
         end
@@ -25,9 +25,7 @@ class EstudiantesController < ApplicationController
 
     private
 def estudiante_params
-  params.require(:estudiante).permit(:nombre, :nem, :situacioneconomica,:colegio,:ranking
-  , :carrera_id,:user_id,:fecha_nacimiento, :estado, :rut, :telefono, :email
-  , :apellidopa, :apellidoma)
+  params.require(:estudiante).permit(:nombre, :nem, :situacioneconomica,:colegio,:ranking, :carrera_id,:user_id,:fecha_nacimiento, :estado, :rut, :telefono, :email, :apellidopa, :apellidoma)
 end
 
 end

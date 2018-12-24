@@ -1,49 +1,88 @@
-<h1> Crear Estudiante</h1>
+<h1>Agregar Estudiante </h1>
+<hr> </hr> 
+  <%= form_for(@estudiantes) do |f|  %>
+<div class="row">
+  
+    <div class="col-md-4">
+    <p class="bg-success text-center">Datos Personales </p> 
+    <hr> </hr> 
+        <div class="form-group">
+             <label for="formGroupExampleInput">Nombre </label>
+             <%= f.text_field:nombreestudiante, placeholder:"Agregar Nombre" , class:"form-control"  %>
+        </div>
 
-render "facultads/show"
+        <div class="form-group">
+              <label for="formGroupExampleInput">Primer Apellido </label>
+              <%= f.text_field:apellidopa, placeholder:"Primer apellido" , class:"form-control"  %>
+        </div>
 
-<%=form_for(@estudiantes) do |f| %>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Agregar Estudiante </label>
-    <%= f.text_field:nombreestudiante, placeholder:"Agregar Nombre" , class:"form-control"  %>
+        <div class="form-group">
+              <label for="formGroupExampleInput">Segundo Apellido </label>
+              <%= f.text_field:apellidoma, placeholder:"Ej:" , class:"form-control"  %>
+        </div>
+        
     
-  </div>
-
-  <div class="form-group">
-  <label for="formGroupExampleInput">Notas Enseñanza Media </label>
-  <%= f.text_field:nem, placeholder:"Agregar Notas" , class:"form-control"  %>
-   </div>
-
-   <div class="form-group">
-   <label for="formGroupExampleInput">Situacion Economica </label>
-   <%= f.text_field:situacioneconomica, placeholder:"Situacion Socioeconomica" , class:"form-control"  %>
-       </div>
-
-
-    <div class="form-group">
-   <label for="formGroupExampleInput">Colegio </label>
-   <%= f.text_field:colegio, placeholder:"Colegio" , class:"form-control"  %>
-   </div>
-
-  <div class="form-group">
-   <label for="formGroupExampleInput">Rankings</label>
-
-   <%= f.text_field:ranking, placeholder:"Rankins" , class:"form-control"  %>
-
-    <div class="form-group">
-      <label for="formGroupExampleInput">Rankings</label>
-      <%= f.text_field:ranking, placeholder:"Rankins" , class:"form-control"  %>
-
-   <%= f.text_field:ranking, placeholder:"Rankings" , class:"form-control"  %>
-   </div>
+        <div class="form-group">
+               <label for="formGroupExampleInput">RUT  </label>
+               <%= f.text_field:rut, placeholder:"Ej:" , class:"form-control"  %>
+        </div>
+        
+        <div class="col">
+               <div class="field">
+               <%= f.label :fecha_nacimiento %><br/>
+               <%= f.date_field :fecha_nacimiento, autofocus: true, class:"form-control" %>
+        </div>
+    </div>
    
-   
-  </div>
-  </div>
+</div>
 
-   <%= f.submit "Guardar" ,class:"btn btn-primary" %> 
- 
-  <%end%>
 
+
+<div class="row col-md-4 offset">
+
+     <div class="col">
+     <p class="bg-info text-center">Datos Academicos</p>
+     <hr> </hr> 
+         <div class="form-group">
+              <label for="formGroupExampleInput">Notas de Enseñanza Media  </label>
+              <%= f.text_field:nem, placeholder:"Ej:" , class:"form-control"  %>
+         </div>
+       
+         <div class="form-group">
+              <label for="formGroupExampleInput">Facultad </label>
+              <div class="dropdown">
+              <%= f.collection_select :carrera_id, Carrera.all, :id, :nombrecarrera, {:include_blank => "Seleccionar Carrera"},{class: "btn btn-outline-info btn-sm"}  %>
+              </div>
+         </div> 
+
+        
+             <div class="field">
+                 <%= f.label :email %><br/>
+                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
+             </div>
+     
+          </div>
+</div>
+
+ <div class="row col-md-4 offset">  
+  
+    <div class="col">
+     <p class="bg-primary text-center">Profesionales Asignados</p>
+
+
+
+
+    </div>
+
+
+</div>
+</div>
+
+<hr> </hr> <hr> </hr> 
+      <div class="form-actions ">
+      <center>
+      <%= f.submit "Guardar" ,class:"btn btn-success" %> 
+      </center>
+      </div>
+    <% end %>
  
