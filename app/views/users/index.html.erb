@@ -15,7 +15,9 @@
 	<% @users.each do |t| %>
   <tr>
   <td><%= t.nombre %> <%= t.apellidopa %> <%=t.apellidoma%></td>
+  <% unless t.rol.descripcion.nil? %>
   <td><%= t.rol.descripcion %></td>
+  <%end%>
   <td><%= t.facultad.nombrefacultad %></td>
 	<td class="text-success">
 	<%if t.estado ==true %>
@@ -48,7 +50,10 @@
       <p>Apellidos: <%= t.apellidopa  %> <%= t.apellidoma%></p>
       <p>Rut: <%= t.rut %></p>
       <p>Fecha de Nacimiento: <%= t.fecha_nacimiento %></p>
+      
+    
       <p>Rol: <%= t.rol.descripcion %></p>
+      
       <p>Facultad: <%= t.facultad.nombrefacultad %>
       <p>Telefono: <%= t.telefono %></p>
        

@@ -1,18 +1,29 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users  , :path_prefix => 'my', :controllers => {:registrations => "registrations"}
+  devise_scope :user do
+    get 'login', to: 'devise/session#new'
+  end
+
+  
   get 'informes/index'
   get 'informes/new'
-  #devise_for :users
+  resources :users
+  
   resources :facultads
 
   resources :estudiantes
-  #resources :users
+ 
+  
+
+  
 
   resources :informes
   resources :rols
   
   resources :carreras
   resources :page
+
+  
 
   devise_scope :user do
     authenticated :user do

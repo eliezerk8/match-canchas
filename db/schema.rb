@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_24_032426) do
+ActiveRecord::Schema.define(version: 2018_12_26_045418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,13 +26,21 @@ ActiveRecord::Schema.define(version: 2018_12_24_032426) do
     t.index ["prioridad_id"], name: "index_alerta_on_prioridad_id"
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "visits_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "carreras", force: :cascade do |t|
     t.string "nombrecarrera"
     t.string "codigo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "facultad_id"
-    t.boolean "estado"
+    t.boolean "estado", default: true
     t.index ["facultad_id"], name: "index_carreras_on_facultad_id"
   end
 
@@ -44,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_12_24_032426) do
     t.decimal "ranking"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "facultad_id"
     t.integer "carrera_id"
     t.date "fecha_nacimiento"
     t.boolean "estado", default: true
@@ -58,7 +67,7 @@ ActiveRecord::Schema.define(version: 2018_12_24_032426) do
     t.string "nombrefacultad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "estado"
+    t.boolean "estado", default: true
   end
 
   create_table "informes", force: :cascade do |t|
@@ -85,7 +94,7 @@ ActiveRecord::Schema.define(version: 2018_12_24_032426) do
     t.datetime "updated_at", null: false
     t.bigint "estudiante_id"
     t.bigint "user_id"
-    t.boolean "estado"
+    t.boolean "estado", default: true
     t.index ["estudiante_id"], name: "index_informes_on_estudiante_id"
     t.index ["user_id"], name: "index_informes_on_user_id"
   end
@@ -100,7 +109,7 @@ ActiveRecord::Schema.define(version: 2018_12_24_032426) do
     t.text "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "estado"
+    t.boolean "estado", default: true
   end
 
   create_table "supervisars", force: :cascade do |t|
@@ -122,11 +131,11 @@ ActiveRecord::Schema.define(version: 2018_12_24_032426) do
     t.string "apellidopa"
     t.string "apellidoma"
     t.integer "rol_id"
-    t.string "telefono"
     t.integer "facultad_id"
     t.date "fecha_nacimiento"
     t.boolean "estado", default: true
     t.string "rut"
+    t.string "telefono"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
