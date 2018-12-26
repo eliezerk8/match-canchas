@@ -1,4 +1,5 @@
 class FacultadsController < ApplicationController
+  before_action :authenticate_user!
   layout "prueba"
   def index
   @facultades=Facultad.all

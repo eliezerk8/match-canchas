@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  devise_for :users
   get 'informes/index'
   get 'informes/new'
   #devise_for :users
@@ -11,16 +11,19 @@ Rails.application.routes.draw do
   resources :informes
   resources :rols
   
-  root to: 'welcome#index'
   resources :carreras
   resources :page
 
- 
-  devise_for :users, :path_prefix => 'my', :controllers => {:registrations => "registrations"}
   devise_scope :user do
-    get 'login', to: 'devise/session#new'
+    authenticated :user do
+      root 'page#index', as: :authenticated_root
+    end
   end
-  resources :users
+  unauthenticated do
+    root 'devise/sessions#new', as: :unauthenticated_root
+  end
+
+
 
   delete 'users/:id/edit', to: 'users#delete'
 
