@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'login', to: 'devise/session#new'
   end
+  resources :users
+  delete 'users/:id/edit', to: 'users#delete'
 
-  
   get 'informes/index'
   get 'informes/new'
-  resources :users
   
   resources :facultads
 
@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
 
 
-  delete 'users/:id/edit', to: 'users#delete'
+  
 
 
 

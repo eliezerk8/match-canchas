@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
   layout"prueba"
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show,:delete,:edit,:update]
 
   def index
     @users = User.all
   end
-
 
   def new
     @user= User.new
@@ -48,19 +47,16 @@ class UsersController < ApplicationController
       end
     end
   end
-  def destroy
-    @user.destroy
-    format.html { redirect_to users_url }
-  end
+
 
   private
-    # `params[:id]` will be dynamically assigned to the method parameter `id` here
-    def user_params
-      params.require(:user).permit(:nombre, :apellidopa, :apellidoma, :rut, :fecha_nacimiento, :facultad_id, :telefono, :email, :password, :password_confirmation, :rol_id, :estado)
-    end
 
+  def user_params
+    params.require(:user).permit(:nombre, :apellidopa, :apellidoma, :rut, :fecha_nacimiento, :facultad_id, :telefono, :email, :password, :password_confirmation, :rol_id, :estado)
+    
+  end
 
   def set_user
-    @users = User.find(params[:id])
-end
+    @user = User.find(params[:id])
+  end
 end
