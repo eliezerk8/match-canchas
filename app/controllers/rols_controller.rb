@@ -25,7 +25,7 @@ class RolsController < ApplicationController
   end
 private
 def rol_params
-  params.require(:rol).permit(:descripcion)
+  params.require(:rol).permit(:descripcion, :estado)
 end
 
 

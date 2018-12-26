@@ -25,8 +25,12 @@ class CarrerasController < ApplicationController
       end
   end
 
+
+
+
 end
+
 private
 def carrera_params
-  params.require(:carrera).permit(:nombrecarrera, :codigo,:facultad_id)
+  params.require(:carrera).permit(:nombrecarrera, :codigo, :facultad_id, :estado)
 end
