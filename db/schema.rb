@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_22_173139) do
+ActiveRecord::Schema.define(version: 2018_12_24_032426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,14 +24,6 @@ ActiveRecord::Schema.define(version: 2018_12_22_173139) do
     t.bigint "informe_id"
     t.index ["informe_id"], name: "index_alerta_on_informe_id"
     t.index ["prioridad_id"], name: "index_alerta_on_prioridad_id"
-  end
-
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "visits_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "carreras", force: :cascade do |t|
@@ -52,9 +44,7 @@ ActiveRecord::Schema.define(version: 2018_12_22_173139) do
     t.decimal "ranking"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "facultad_id"
     t.integer "carrera_id"
-    t.bigint "user_id"
     t.date "fecha_nacimiento"
     t.boolean "estado", default: true
     t.string "rut"
@@ -62,7 +52,6 @@ ActiveRecord::Schema.define(version: 2018_12_22_173139) do
     t.string "email"
     t.string "apellidopa"
     t.string "apellidoma"
-    t.index ["user_id"], name: "index_estudiantes_on_user_id"
   end
 
   create_table "facultads", force: :cascade do |t|
@@ -114,6 +103,13 @@ ActiveRecord::Schema.define(version: 2018_12_22_173139) do
     t.boolean "estado"
   end
 
+  create_table "supervisars", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "estudiante_id"
+    t.index ["estudiante_id"], name: "index_supervisars_on_estudiante_id"
+    t.index ["user_id"], name: "index_supervisars_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -126,11 +122,11 @@ ActiveRecord::Schema.define(version: 2018_12_22_173139) do
     t.string "apellidopa"
     t.string "apellidoma"
     t.integer "rol_id"
+    t.string "telefono"
     t.integer "facultad_id"
     t.date "fecha_nacimiento"
     t.boolean "estado", default: true
     t.string "rut"
-    t.string "telefono"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -139,9 +135,10 @@ ActiveRecord::Schema.define(version: 2018_12_22_173139) do
   add_foreign_key "alerta", "prioridads"
   add_foreign_key "carreras", "facultads"
   add_foreign_key "estudiantes", "carreras"
-  add_foreign_key "estudiantes", "users"
   add_foreign_key "informes", "estudiantes"
   add_foreign_key "informes", "users"
+  add_foreign_key "supervisars", "estudiantes"
+  add_foreign_key "supervisars", "users"
   add_foreign_key "users", "facultads"
   add_foreign_key "users", "rols"
 end
