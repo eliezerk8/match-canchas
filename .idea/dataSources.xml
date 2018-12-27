@@ -7,5 +7,29 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/paedb</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Rails Sistema-Alerta-Temprana-UTEM: test" uuid="2eef99df-f240-48f5-85a6-d60e9474c923">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/paedb</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails Sistema-Alerta-Temprana-UTEM: development" uuid="2d5cac4f-6c07-4c3d-9417-3c82585a4dec">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/paedb</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails Sistema-Alerta-Temprana-UTEM: production" uuid="57e0895d-05bb-48f9-a378-dba21c08f686">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/paedb</jdbc-url>
+    </data-source>
   </component>
 </project>
