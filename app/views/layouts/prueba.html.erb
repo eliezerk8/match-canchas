@@ -33,18 +33,22 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <img src="https://cdn130.picsart.com/269267134014211.png?r1024x1024" class="w3-circle w3-margin-right" style="width:46px">
     </div>
     <div class="w3-col s8 w3-bar">
-      <span>Welcome, <strong>Administrador</strong></span><br>
+      <span><strong>Bienvenid@</strong></span><br>
+      <%= current_user.nombre %><br>
+      <%= current_user.rol.descripcion %> <br>     
+
+
     <% if signed_in? %>
-    <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
-  <% else %>
+      <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"btn btn btn-outline-secondary btn-sm"  %>
+	    <% else %>
     <%= link_to "Registrarse", new_user_registration_path %>
     <%= link_to "Ingresar", new_user_session_path %>
   <% end %>
     </div>
   </div>
-  <hr>
+  
   <div class="w3-container">
-    <h5 align="center">Sistema <br> de <br>alerta temprana</h5>
+    <p align="center">Sistema <br> de <br>Alerta temprana</p>
   </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>

@@ -1,102 +1,260 @@
-<h1> Crear informe</h1>
+<h1> Crear informe </h1>
+
+<% if current_user.rol.descripcion == "Administrador" %>
+<%=form_for( @informes) do |f| %>
+  
+
+  <div class="row">
+    <div class="col-md-3">
+       <% user_id= current_user.id %>
+        <label for="formGroupExampleInput">Pregunta 1 </label>
+        <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1 "},{class: "btn btn-secundary btn-sm"})%> 
+  
+        <label for="formGroupExampleInput">Pregunta 2 </label>
+        <%= f.select(:nota2,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°2 "},{class: "btn btn-secundary btn-sm"} )%>
+ 
+
+        <label for="formGroupExampleInput">Pregunta 3 </label>
+        <%= f.select(:nota3,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°3 "},{class: "btn btn-secundary btn-sm"} ) %>
+  
+
+  
+        <label for="formGroupExampleInput">Pregunta 4 </label>
+        <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4 "},{class: "btn btn-secundary btn-sm"} ) %>
+  
+
+  
+        <label for="formGroupExampleInput">Pregunta 5 </label>
+        <%= f.select(:nota5,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°5 "},{class: "btn btn-secundary btn-sm"} )%>
+        
 
 
+    </div>
+ <div class="col-md-3">
+  
+       <label for="formGroupExampleInput">Pregunta 6 </label>
+       <%= f.select(:nota6,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°6 "},{class: "btn btn-secundary btn-sm"} )%>
+ 
+  
+       <label for="formGroupExampleInput">Pregunta 7 </label>
+       <%= f.select(:nota7,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°7 "},{class: "btn btn-secundary btn-sm"} )%>
+  
+  
+       <label for="formGroupExampleInput">Pregunta 8 </label>
+       <%= f.select(:nota8,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°8 "},{class: "btn btn-Primary btn-sm"} )%>
+  
+  
+       <label for="formGroupExampleInput">Pregunta 9 </label>
+       <%= f.select(:nota9,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°9 "},{class: "btn btn-secundary btn-sm"} )%>
+  
+
+       <label for="formGroupExampleInput">Pregunta 10 </label>
+       <%= f.select(:nota10,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°10"},{class: "btn btn-secundary btn-sm"} )%>
+  </div>
+
+ <div class="col-md-3">
+  
+    <label for="formGroupExampleInput">Pregunta 11 </label>
+    <%= f.select(:nota11,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°11"},{class: "btn btn-secundary btn-sm"} )%>
+  
+ 
+    <label for="formGroupExampleInput">Pregunta 12 </label>
+    <%= f.select(:nota12,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°12"},{class: "btn btn-secundary btn-sm"} )%>
+  
+
+    <label for="formGroupExampleInput">Pregunta 13 </label>
+    <%= f.select(:nota13,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°13"},{class: "btn btn-secundary btn-sm"} )%>
+  
+ 
+    <label for="formGroupExampleInput">Pregunta 14 </label>
+    <%= f.select(:nota14,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°14"},{class: "btn btn-secundary btn-sm"} )%>
+  
+
+  
+    <label for="formGroupExampleInput">Pregunta 15 </label>
+    <%= f.select(:nota15,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°15"},{class: "btn btn-secundary btn-sm"} )%>
+ 
+  </div>
+</div>
+
+  
+    <label for="formGroupExampleInput">Observacion </label>
+    <%= f.text_area:observacion, placeholder:"Agregar Notas" , class:"form-control"  %>
+
+  
+
+      <%= f.submit "Guardar" ,class:"btn btn-primary" %>
+     
+<%end%>
+
+<%end%>
+
+<% if current_user.rol.descripcion == "Tutor" %>
 <%=form_for(@informes) do |f| %>
 
-  <div class="form-group">
-    <label for="formGroupExampleInput">Estudiante id </label>
-    <%= f.text_field:estudianteid, placeholder:"Estudiante id" , class:"form-control"  %>
+  <div class="row">
+    <div class="col-md-3">
+    
+        <label for="formGroupExampleInput">Pregunta 1 </label>
+        <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1"},{class: "btn btn-secundary btn-sm"})%> 
+  
+        <label for="formGroupExampleInput">Pregunta 2 </label>
+        <%= f.select(:nota2,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°2"},{class: "btn btn-secundary btn-sm"} )%>
+ 
 
+        <label for="formGroupExampleInput">Pregunta 3 </label>
+        <%= f.select(:nota3,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°3"},{class: "btn btn-secundary btn-sm"} ) %>
+  
+
+  
+        <label for="formGroupExampleInput">Pregunta 4 </label>
+        <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4"},{class: "btn btn-secundary btn-sm"} ) %>
+  
+
+  
+        <label for="formGroupExampleInput">Pregunta 5 </label>
+        <%= f.select(:nota5,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°5"},{class: "btn btn-secundary btn-sm"} )%>
+  
+    </div>
+ <div class="col-md-3">
+  
+       <label for="formGroupExampleInput">Pregunta 6 </label>
+       <%= f.select(:nota6,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°6"},{class: "btn btn-secundary btn-sm"} )%>
+ 
+  
+       <label for="formGroupExampleInput">Pregunta 7 </label>
+       <%= f.select(:nota7,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°7"},{class: "btn btn-secundary btn-sm"} )%>
+  
+  
+       <label for="formGroupExampleInput">Pregunta 8 </label>
+       <%= f.select(:nota8,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°8"},{class: "btn btn-Primary btn-sm"} )%>
+  
+  
+       <label for="formGroupExampleInput">Pregunta 9 </label>
+       <%= f.select(:nota9,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°9"},{class: "btn btn-secundary btn-sm"} )%>
+  
+
+       <label for="formGroupExampleInput">Pregunta 10 </label>
+       <%= f.select(:nota10,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°10"},{class: "btn btn-secundary btn-sm"} )%>
   </div>
 
-  <div class="form-group">
-    <label for="formGroupExampleInput">Usuario id </label>
-    <%= f.text_field:usuarioid, placeholder:"Usuario" , class:"form-control"  %>
+ <div class="col-md-3">
+  
+    <label for="formGroupExampleInput">Pregunta 11 </label>
+    <%= f.select(:nota11,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°11"},{class: "btn btn-secundary btn-sm"} )%>
+  
+ 
+    <label for="formGroupExampleInput">Pregunta 12 </label>
+    <%= f.select(:nota12,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°12"},{class: "btn btn-secundary btn-sm"} )%>
+  
 
+    <label for="formGroupExampleInput">Pregunta 13 </label>
+    <%= f.select(:nota13,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°13"},{class: "btn btn-secundary btn-sm"} )%>
+  
+ 
+    <label for="formGroupExampleInput">Pregunta 14 </label>
+    <%= f.select(:nota14,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°14"},{class: "btn btn-secundary btn-sm"} )%>
+  
+
+  
+    <label for="formGroupExampleInput">Pregunta 15 </label>
+    <%= f.select(:nota15,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°15"},{class: "btn btn-secundary btn-sm"} )%>
+ 
   </div>
+</div>
 
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 1 </label>
-    <%= f.text_field:nota1, placeholder:"Nota 1" , class:"form-control"  %>
-  </div>
-
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 2 </label>
-    <%= f.text_field:nota2, placeholder:"Nota 2" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 3 </label>
-    <%= f.text_field:nota3, placeholder:"Nota 3" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 4 </label>
-    <%= f.text_field:nota4, placeholder:"Nota 4" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 5 </label>
-    <%= f.text_field:nota5, placeholder:"Nota 5" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 6 </label>
-    <%= f.text_field:nota6, placeholder:"Nota 6" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 7 </label>
-    <%= f.text_field:nota7, placeholder:"Nota 7" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 8 </label>
-    <%= f.text_field:nota8, placeholder:"Nota 8" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 9 </label>
-    <%= f.text_field:nota9, placeholder:"Nota 9" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 10 </label>
-    <%= f.text_field:nota10, placeholder:"Nota 10" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 11 </label>
-    <%= f.text_field:nota11, placeholder:"Nota 11" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 12 </label>
-    <%= f.text_field:nota12, placeholder:"Nota 12" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 13 </label>
-    <%= f.text_field:nota13, placeholder:"Nota 13" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 14 </label>
-    <%= f.text_field:nota14, placeholder:"Nota 14" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
-    <label for="formGroupExampleInput">Nota 15 </label>
-    <%= f.text_field:nota15, placeholder:"Nota 15" , class:"form-control"  %>
-  </div>
-
-  <div class="form-group">
+  
     <label for="formGroupExampleInput">Observacion </label>
-    <%= f.text_field:observacion, placeholder:"Observacion" , class:"form-control"  %>
+    <%= f.text_area:observacion, placeholder:"Agregar Notas" , class:"form-control"  %>
 
-  </div>
+  
 
       <%= f.submit "Guardar" ,class:"btn btn-primary" %>
 
+<%end%>
+<%end%>
+
+<% if current_user.rol.descripcion == "Asistente Social" %>
+<%=form_for(@informes) do |f| %>
+
+  <div class="row">
+    <div class="col-md-3">
+    
+        <label for="formGroupExampleInput">Pregunta 1 </label>
+        <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1"},{class: "btn btn-secundary btn-sm"})%> 
+  
+        <label for="formGroupExampleInput">Pregunta 2 </label>
+        <%= f.select(:nota2,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°2"},{class: "btn btn-secundary btn-sm"} )%>
+ 
+
+        <label for="formGroupExampleInput">Pregunta 3 </label>
+        <%= f.select(:nota3,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°3"},{class: "btn btn-secundary btn-sm"} ) %>
+  
+
+  
+        <label for="formGroupExampleInput">Pregunta 4 </label>
+        <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4"},{class: "btn btn-secundary btn-sm"} ) %>
+  
+
+  
+        <label for="formGroupExampleInput">Pregunta 5 </label>
+        <%= f.select(:nota5,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°5"},{class: "btn btn-secundary btn-sm"} )%>
+  
+    </div>
+ <div class="col-md-3">
+  
+       <label for="formGroupExampleInput">Pregunta 6 </label>
+       <%= f.select(:nota6,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°6"},{class: "btn btn-secundary btn-sm"} )%>
+ 
+  
+       <label for="formGroupExampleInput">Pregunta 7 </label>
+       <%= f.select(:nota7,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°7"},{class: "btn btn-secundary btn-sm"} )%>
+  
+  
+       <label for="formGroupExampleInput">Pregunta 8 </label>
+       <%= f.select(:nota8,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°8"},{class: "btn btn-Primary btn-sm"} )%>
+  
+  
+       <label for="formGroupExampleInput">Pregunta 9 </label>
+       <%= f.select(:nota9,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°9"},{class: "btn btn-secundary btn-sm"} )%>
+  
+
+       <label for="formGroupExampleInput">Pregunta 10 </label>
+       <%= f.select(:nota10,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°10"},{class: "btn btn-secundary btn-sm"} )%>
+  </div>
+
+ <div class="col-md-3">
+  
+    <label for="formGroupExampleInput">Pregunta 11 </label>
+    <%= f.select(:nota11,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°11"},{class: "btn btn-secundary btn-sm"} )%>
+  
+ 
+    <label for="formGroupExampleInput">Pregunta 12 </label>
+    <%= f.select(:nota12,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°12"},{class: "btn btn-secundary btn-sm"} )%>
+  
+
+    <label for="formGroupExampleInput">Pregunta 13 </label>
+    <%= f.select(:nota13,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°13"},{class: "btn btn-secundary btn-sm"} )%>
+  
+ 
+    <label for="formGroupExampleInput">Pregunta 14 </label>
+    <%= f.select(:nota14,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°14"},{class: "btn btn-secundary btn-sm"} )%>
+  
+
+  
+    <label for="formGroupExampleInput">Pregunta 15 </label>
+    <%= f.select(:nota15,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°15"},{class: "btn btn-secundary btn-sm"} )%>
+ 
+  </div>
+</div>
+
+  
+    <label for="formGroupExampleInput">Observacion </label>
+    <%= f.text_area:observacion, placeholder:"Agregar Notas" , class:"form-control"  %>
+
+  
+
+      <%= f.submit "Guardar" ,class:"btn btn-primary" %>
+
+<%end%>
 <%end%>

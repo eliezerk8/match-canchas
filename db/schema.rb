@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_27_201142) do
+ActiveRecord::Schema.define(version: 2018_12_29_212650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "alerta", force: :cascade do |t|
-    t.boolean "completado"
     t.date "fecharecepcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "prioridad_id"
     t.bigint "informe_id"
+    t.boolean "estado", default: true
     t.index ["informe_id"], name: "index_alerta_on_informe_id"
     t.index ["prioridad_id"], name: "index_alerta_on_prioridad_id"
   end

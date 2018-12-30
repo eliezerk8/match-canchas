@@ -1,4 +1,5 @@
 class Informe < ApplicationRecord
-  has_one :alertum
-  belongs_to :estudiante
+  has_one :alerta
+  belongs_to :estudiante, optional:true
+
 end

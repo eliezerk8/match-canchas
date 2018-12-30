@@ -1,3 +1,2 @@
 class Prioridad < ApplicationRecord
-  belongs_to :alertum
-end
+  belongs_to :alerta
