@@ -1,14 +1,9 @@
 <%= form_for(@user, :html => {:role => 'form'}) do |f| %>
-  <% if @user.errors.any? %>
-  <div class="alert alert-info">
-    <%= pluralize(@user.errors.count, "Errores") %>
-  </div>
-  <div class="alert alert-danger">
-    <% @user.errors.full_messages.each do |error| %>
-      <%= error %><br>
-    <% end %>
-  </div>
-    <% end %>
+  <%flash.each do |name , msg| %>
+    <div class="alert alert-<%= name %>">
+      <%= msg %>
+    </div>
+  <% end %>
 
 <div class="form">
   <h1 class="text-center"> Registro de Usuarios</h1>

@@ -1,6 +1,10 @@
 <h1>Usuarios</h1>
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
 <%= link_to 'Agregar Usuario', new_user_path, :class => "btn btn-primary" %>
-
 <Table class="table">
   <tr>
     <thead class="thead-dark">

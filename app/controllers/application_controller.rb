@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   layout :layout
 
+  add_flash_types :danger ,:info ,:success ,:warning
+
   private
 
   def layout
