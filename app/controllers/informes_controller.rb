@@ -21,17 +21,14 @@ class InformesController < ApplicationController
     
     @informe.estado = false
     @informe.save
-      respond_to do |format|
-        format.html {redirect_to informes_path, notice: 'Informe inactivo'}
+      redirect_to informes_path, success: "Informe inactivo"
       end
   
   end
   
   def update
     if @informe.update(informe_params)
-      respond_to do |format|
-      format.html {redirect_to informe_path(@informe), notice: 'Se Actualizaron los datos'}
-    end
+      redirect_to informe_path, success: "Se Actualizaron los datos"
     else
       render :edit
     end

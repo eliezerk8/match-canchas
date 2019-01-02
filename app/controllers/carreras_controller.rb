@@ -16,17 +16,14 @@ class CarrerasController < ApplicationController
     
     @carrera.estado = false
     @carrera.save
-      respond_to do |format|
-        format.html {redirect_to carreras_path, notice: 'Carrera no existente'}
+      redirect_to carreras_path, success: "Carrera no existente"
       end
   
   end
 
   def update
       if @carrera.update(carrera_params)
-        respond_to do |format|
-        format.html {redirect_to carrera_path(@carrera), notice: 'Se Actualizaron los datos'}
-      end
+        redirect_to carrera_path, success: "Se Actualizaron los datos"
       else
         render :edit
       end

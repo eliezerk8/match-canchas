@@ -17,17 +17,14 @@ class FacultadsController < ApplicationController
     
     @facultad.estado = false
     @facultad.save
-      respond_to do |format|
-        format.html {redirect_to facultads_path, notice: 'Facultad no existente'}
-      end
+      redirect_to facultads_path, success: "Facultad no existente"
+  end
   
   end
 
   def update
       if @facultad.update(facultad_params)
-        respond_to do |format|
-        format.html {redirect_to facultad_path(@facultad), notice: 'Se Actualizaron los datos'}
-      end
+        redirect_to facultad_path, success: "Se Actualizaron los datos"
       else
         render :edit
       end

@@ -1,14 +1,4 @@
 <%= form_for(@carrera, :html => {:role => 'form'}) do |f| %>
-    <% if @carrera.errors.any? %>
-    <div class="alert alert-info">
-      <%= pluralize(@carrera.errors.count, "Errores") %>
-    </div>
-    <div class="alert alert-danger">
-      <% @facultad.errors.full_messages.each do |error| %>
-        <%= error %><br>
-      <% end %>
-    </div>
-      <% end %>
   
   <div class="form">
     <h1 class="text-center"> Actualizacion de Carrera</h1>
