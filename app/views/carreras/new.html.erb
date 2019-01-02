@@ -1,28 +1,27 @@
-<h1> Crear carrera</h1>
+<h3 class="text-uppercase">Crear Carrera  <%= link_to '<= Volver', carreras_path, :class => "btn btn-info-3 btn-sm" %></h3></h1>
 
-
-<%=form_for(@carrera, :html => {:role => 'form'}) do |f| %>
+<%=form_for(@carreras) do |f| %>
 
   <div class="form-group">
     <label for="formGroupExampleInput">Nombre </label>
-    <%= f.text_field :nombrecarrera, placeholder:"Agregar Nombre" , class:"form-control"  %>
+    <%= f.text_field:nombrecarrera, placeholder:"Agregar Nombre" , class:"form-control"  %>
     
   </div>
 
   <div class="form-group">
   <label for="formGroupExampleInput">Codigo </label>
-  <%= f.text_field :codigo, placeholder:"Agregar Notas" , class:"form-control"  %>
+  <%= f.text_field:codigo, placeholder:"Agregar Codigo" , class:"form-control"  %>
    
   </div>
 
   <div class="form-group">
   <label for="formGroupExampleInput">Facultad </label>
   <div class="dropdown">
-  <%= f.collection_select :facultad_id, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-secundary btn-sm"}  %>
+  <%= f.collection_select :facultad_id, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-outline-info "}  %>
   </div>
 
   </div>
-   <%= f.submit "Guardar" ,class:"btn btn-primary" %> 
+   <%= f.submit "Guardar" ,class:"btn btn-info" %> 
  
   <%end%>
 

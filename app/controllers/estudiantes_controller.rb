@@ -14,6 +14,11 @@ class EstudiantesController < ApplicationController
           @users = User.all
         end
     def create
+     
+      @sicologos=User.where(role: 'Sicologo')
+      @asistentes=User.where(role: 'Asistente Social')
+      @tutores =User.where(role:'Tutor')
+      
       @estudiante= Estudiante.new(estudiante_params)
        params[:users].each do |k,v|
          @estudiante.users << User.find(k)
