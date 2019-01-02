@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_12_29_212650) do
-=======
 ActiveRecord::Schema.define(version: 2019_01_02_175747) do
->>>>>>> gerson
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,17 +54,10 @@ ActiveRecord::Schema.define(version: 2019_01_02_175747) do
     t.string "apellidoma"
   end
 
-<<<<<<< HEAD
-  create_table "estudiantes_users", force: :cascade do |t|
-    t.bigint "estudiantes_id"
-    t.bigint "user_id"
-    t.index ["estudiantes_id"], name: "index_estudiantes_users_on_estudiantes_id"
-=======
   create_table "estudiantes_users", id: false, force: :cascade do |t|
     t.bigint "estudiante_id"
     t.bigint "user_id"
     t.index ["estudiante_id"], name: "index_estudiantes_users_on_estudiante_id"
->>>>>>> gerson
     t.index ["user_id"], name: "index_estudiantes_users_on_user_id"
   end
 
@@ -121,6 +110,15 @@ ActiveRecord::Schema.define(version: 2019_01_02_175747) do
     t.boolean "estado", default: true
   end
 
+  create_table "supervisars", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "estudiante_id"
+    t.index ["estudiante_id"], name: "index_supervisars_on_estudiante_id"
+    t.index ["user_id"], name: "index_supervisars_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -148,6 +146,8 @@ ActiveRecord::Schema.define(version: 2019_01_02_175747) do
   add_foreign_key "estudiantes", "carreras"
   add_foreign_key "informes", "estudiantes"
   add_foreign_key "informes", "users"
+  add_foreign_key "supervisars", "estudiantes"
+  add_foreign_key "supervisars", "users"
   add_foreign_key "users", "facultads"
   add_foreign_key "users", "rols"
 end
