@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_26_045418) do
+ActiveRecord::Schema.define(version: 2019_01_02_175747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(version: 2018_12_26_045418) do
     t.string "email"
     t.string "apellidopa"
     t.string "apellidoma"
+  end
+
+  create_table "estudiantes_users", id: false, force: :cascade do |t|
+    t.bigint "estudiante_id"
+    t.bigint "user_id"
+    t.index ["estudiante_id"], name: "index_estudiantes_users_on_estudiante_id"
+    t.index ["user_id"], name: "index_estudiantes_users_on_user_id"
   end
 
   create_table "facultads", force: :cascade do |t|

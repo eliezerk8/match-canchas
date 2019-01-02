@@ -26,6 +26,7 @@
                <label for="formGroupExampleInput">RUT  </label>
                <%= f.text_field:rut, placeholder:"Ej:" , class:"form-control"  %>
         </div>
+
         
         <div class="col">
                <div class="field">
@@ -69,7 +70,14 @@
     <div class="col">
      <p class="bg-primary text-center">Profesionales Asignados</p>
 
-
+     <div class="form-group">
+               <p for="formGroupExampleInput">Tutor:</p><br>
+               <% @users.each do |t| %>
+                  <%= label_tag t.email  %>
+                  <%= check_box_tag "users[#{t.id}]", t.email  %>
+                  <br />
+                <% end %>
+        </div>  
 
 
     </div>
