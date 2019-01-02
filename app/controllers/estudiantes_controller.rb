@@ -11,10 +11,13 @@ class EstudiantesController < ApplicationController
         def new
       
          @estudiantes= Estudiante.new
-      
+          @users = User.all
         end
     def create
       @estudiante= Estudiante.new(estudiante_params)
+       params[:users].each do |k,v|
+         @estudiante.users << User.find(k)
+      end
       if @estudiante.save
         redirect_to estudiantes_path
     else
