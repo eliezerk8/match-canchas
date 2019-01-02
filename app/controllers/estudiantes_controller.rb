@@ -14,6 +14,11 @@ class EstudiantesController < ApplicationController
       
         end
     def create
+     
+      @sicologos=User.where(role: 'Sicologo')
+      @asistentes=User.where(role: 'Asistente Social')
+      @tutores =User.where(role:'Tutor')
+      
       @estudiante= Estudiante.new(estudiante_params)
       if @estudiante.save
         redirect_to estudiantes_path

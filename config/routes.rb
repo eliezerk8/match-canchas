@@ -10,17 +10,15 @@ Rails.application.routes.draw do
   get 'informes/new'
   
   resources :facultads
-
+  delete 'facultads/:id/edit', to: 'facultads#delete'
+  resources :alertas
   resources :estudiantes
  
-  
-
-  
-
   resources :informes
   resources :rols
   
   resources :carreras
+  delete 'carreras/:id/edit', to: 'carreras#delete'
   resources :page
 
   

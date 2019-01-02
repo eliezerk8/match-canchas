@@ -68,8 +68,8 @@
   
     <div class="col">
      <p class="bg-primary text-center">Profesionales Asignados</p>
-
-
+     <p><%= f.select :sicologo, @sicologos.map { |c| [c.nombre, c.id] }, {:prompt => "Seleccione sicologo"} %></p>
+      
 
 
     </div>
