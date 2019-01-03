@@ -5154,12 +5154,12 @@ button.bg-warning:focus {
   background-color: #ffe608 !important; }
 
 .bg-danger {
-  background-color: #f44336 !important; }
+  background-color: #fb1201dc !important; }
 
 a.bg-danger:hover, a.bg-danger:focus,
 button.bg-danger:hover,
 button.bg-danger:focus {
-  background-color: #ea1c0d !important; }
+  background-color: #ff1100 !important; }
 
 .bg-light {
   background-color: #f8f9fa !important; }
@@ -11248,7 +11248,7 @@ fieldset[disabled] .form-group .form-control {
     .navbar.bg-rose .navbar-toggler .navbar-toggler-icon {
       background-color: #fff; }
   .navbar.bg-danger {
-    color: #fff;
+    color: rgb(243, 0, 0);
     background-color: #f44336 !important;
     -webkit-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(244, 67, 54, 0.46);
             box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(244, 67, 54, 0.46); }
