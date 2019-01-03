@@ -6,6 +6,12 @@ class CarrerasController < ApplicationController
     @carreras= Carrera.new
 
   end
+  
+  def new
+    @carreras= Carrera.new
+   end
+
+
 
   def show
     @carrera= Carrera.find(params[:id])
@@ -33,9 +39,6 @@ class CarrerasController < ApplicationController
   end
    
 
-  def new
-   @carreras= Carrera.new
-  end
 
   def create
     @carrera= Carrera.new(carrera_params)
@@ -58,5 +61,6 @@ class CarrerasController < ApplicationController
   def set_carrera
     @carrera = Carrera.find(params[:id])
   end
+
 
 end

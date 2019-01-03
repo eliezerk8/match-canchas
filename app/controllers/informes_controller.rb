@@ -53,10 +53,7 @@ class InformesController < ApplicationController
       
           @alertas.informe_id = @informe.id
           @alertas.save
-        end
-       
-      
-      else
+        else
         format.html {render :new}
       end
     end

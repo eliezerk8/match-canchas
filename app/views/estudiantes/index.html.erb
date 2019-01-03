@@ -1,6 +1,7 @@
 <h1>hola mundo </h1>
 <% @estudiantes.each do |estudiante| %>
-
-<h1><%= estudiante.nombreestudiante %>
-
+<% if estudiante.users.map(&:descripcion)=='Sicologo'%>
+<h1><%= estudiante.users.map(&:nombre).join('') %></h1>
+<h1><%= estudiante.users.map(&:apellidopa) %></h1>
+<%end%>
 <%end%>

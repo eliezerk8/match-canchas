@@ -2,6 +2,7 @@ class EstudiantesController < ApplicationController
   layout"prueba"
     def index
         @estudiantes=Estudiante.all
+        @users=User.all
         end
       
         def show
