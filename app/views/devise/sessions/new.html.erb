@@ -1,124 +1,193 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>SAT UTEM Login</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-      footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-  .bg-1 { 
-    width: 100%;
-    height: 100%;
-    background-color: #48b1ff; /* Green */
-    color: #ffffff;
-  }
-  </style>
-</head>
+<html>
+<title>SAT UTEM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+</style>
 <body>
-<div>
-<div class="bg-1">
-<div class="header">
-            <a href="https://www.facebook.com/plandeapoyoestudiantil/"><img src="http://admision.utem.cl/wp-content/uploads/2016/10/grf_plan-1-300x230.jpg" width="60" height="45" alt="PAE UTEM" /></a>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logoutem-1.png" width="60" height="45">
-</div>
-<section class="login-block">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="container">
-  <div class="row">
-    <div class="col-md-4 login-sec">
-        <h2 class="text-center">Acceder</h2>
-        <h5 class="text-center">Ir a SAT UTEM</h5>
-        <form class="login-form">
 
-    <div class="form-group">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Correo Electronico", class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.password_field :password, autocomplete: "off", placeholder: "Contraseña", class: "form-control"  %>
-  </div>
-  
-<div class="form-group">
-  <div class="actions">
-    <%= f.submit "Iniciar Sesion", class: "btn btn-primary btn-block" %>
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-large w3-light-grey">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block">Inicio</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#acercade" class="w3-button w3-block">Acerca de</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#acceso" class="w3-button w3-block">Acceder</a>
+    </div>
   </div>
 </div>
-  <div class="clearfix">
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :recordarme  , class: "pull-left checkbox-inline"%>
+
+<!-- Content -->
+<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
+  <div class="w3-panel">
+    <h1><b>SAT UTEM</b></h1>
+    <p>Sistema de Alerta Temprana UTEM</p>
+  </div>
+
+  <!-- Slideshow -->
+  <div class="w3-container">
+    <div class="w3-display-container mySlides">
+      <img src="https://scontent.fscl12-1.fna.fbcdn.net/v/t1.15752-9/49203587_469532996909785_8089991581177741312_n.jpg?_nc_cat=111&_nc_ht=scontent.fscl12-1.fna&oh=1b584a24023f8ddb6ab596fd63f3d5f8&oe=5CD8AB54" style="width:100%">
+      <div class="w3-display-topleft w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom">Vocación</span>
       </div>
-    <% end -%>
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="https://scontent.fscl12-1.fna.fbcdn.net/v/t1.15752-9/49176560_273087666712410_2934801846855794688_n.jpg?_nc_cat=108&_nc_ht=scontent.fscl12-1.fna&oh=3609d5c0e056c7ba2f87666a443ee35f&oe=5CD79059" style="width:100%">
+      <div class="w3-display-middle w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom">Habitos de estudio</span>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="https://scontent.fscl12-1.fna.fbcdn.net/v/t1.15752-9/49653998_2158020834448581_6483107602640142336_n.jpg?_nc_cat=103&_nc_ht=scontent.fscl12-1.fna&oh=1555eded41cc9a2182f5ce6cd7b446cc&oe=5CC5AF12" style="width:100%">
+      <div class="w3-display-topright w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom">Salud fisica y mental</span>
+      </div>
+    </div>
+
+    <!-- Slideshow next/previous buttons -->
+    <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+    
+      <div class="w3-center">
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+      </div>
+    </div>
   </div>
-    <%= render "devise/shared/links" %>
-<% end %>
-
-
   
-</form>
-<div class="copy-text">Creado <i class="fa fa-heart"> por </i><b>Gerson Peralta</b></div>
+  <!-- Grid -->
+  <div class="w3-row-padding" id="acercade">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Acerca de:</span>
     </div>
-    <div class="col-md-8 banner-sec">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                  </ol>
-            <div class="carousel-inner" role="listbox">
-    <div class="carousel-item active">
-      <img class="d-block img-fluid" src="https://www.cosasdeeducacion.es/wp-content/uploads/2018/02/h%C3%A1bitos-de-estudio-examenes.jpg" alt="First slide">
-      <div class="carousel-caption d-none d-md-block">
-        <div class="banner-text">
-            <h2>Vocaciónn</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-        </div>  
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="https://vrac.utem.cl/wp-content/uploads/2017/05/PAE.jpg" alt="PAE" style="width:100%">
+        <div class="w3-container">
+          <h3>PAE</h3>
+          <p class="w3-opacity">Plan de Apoyo Estudiantil</p>
+          <p>Enfoca su trabajo abordando la etapa del desarrollo en que se encuentran los/as jóvenes, y cómo ésta repercute de manera transversal en todas las actividades que desempeñan más aún, aquellas que están afectando ...</p>
+          <a href="https://vrac.utem.cl/estudiantes/plan-de-apoyo-estudiantil/"><button class="w3-button w3-light-grey w3-block">Más información</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="http://www.utem.cl/wp-content/uploads/2018/01/IMG_8652.jpg" alt="UTEM" style="width:100%">
+        <div class="w3-container">
+          <h3>UTEM</h3>
+          <p class="w3-opacity">Universidad Tecnológica Metropolitana</p>
+          <p>Es una institución de educación superior del Estado de Chile, acreditada en 2016 por cuatro años en las áreas de Gestión Institucional, Docencia de Pregrado y Vinculación con el Medio...</p>
+          <a href="http://www.utem.cl/universidad/acerca-de-la-utem/"><button class="w3-button w3-light-grey w3-block">Más información</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="https://vrac.utem.cl/wp-content/uploads/2017/06/pace.jpg" alt="PACE" style="width:100%">
+        <div class="w3-container">
+          <h3>PACE</h3>
+          <p class="w3-opacity">Programa de Acompañamiento y Acceso Efectivo</p>
+          <p>Busca restituir el derecho a la educación superior a estudiantes de sectores vulnerables, garantizándoles un cupo en la educación superior...</p>
+          <a href="https://vrac.utem.cl/estudiantes/pace/"><button class="w3-button w3-light-grey w3-block">Más información</button></a>
+        </div>
+      </div>
+    </div>
   </div>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block img-fluid" src="https://fundacioncompartir.org/sites/default/files/styles/slick_600x320/public/saben-los-jovenes-cual-es-su-vocacion-profesional.jpg?itok=RyVxR-Ef" alt="First slide">
-      <div class="carousel-caption d-none d-md-block">
-        <div class="banner-text">
-            <h2>Habitos de estudio</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-        </div>  
-    </div>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block img-fluid" src="https://www.cosasdeeducacion.es/wp-content/uploads/2018/02/habitos-de-estudio-ideas.jpg" alt="First slide">
-      <div class="carousel-caption d-none d-md-block">
-        <div class="banner-text">
-            <h2>This is Heaven</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-        </div>  
-    </div>
+
+  <!-- Contact -->
+  <div class="w3-center w3-padding-64" id="acceso">
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Acceder</span>
   </div>
-            </div>     
-        
+
+    <div class="w3-center container">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="w3-center container">
+            
+                    <div class="form-group">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Correo Electronico", class: "form-control" %>
+                    </div>
+
+                    <div class="form-group">
+                      <%= f.password_field :password, autocomplete: "off", placeholder: "Contraseña", class: "form-control"  %>
+                    </div>
+            
+                    <div class="form-group">
+                      <div class="actions">
+                        <%= f.submit "Iniciar Sesion", class: "btn btn-primary btn-block" %>
+                      </div>
+                    </div>
+                    <%= render "devise/shared/links" %>
+                    <% end %>
+          </div>
     </div>
   </div>
 </div>
-</section>
-</div>
+
+<!-- Footer -->
+
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  <h4>Footer</h4>
+  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>Ir al inicio</a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.facebook.com/plandeapoyoestudiantil/" class="fa fa-facebook-official w3-hover-opacity"></a>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+
+
+<script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
 </body>
 </html>
-
