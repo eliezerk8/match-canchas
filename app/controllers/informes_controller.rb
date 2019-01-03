@@ -22,7 +22,7 @@ class InformesController < ApplicationController
     @informe.estado = false
     @informe.save
       redirect_to informes_path, success: "Informe inactivo"
-      end
+      
   
   end
   
@@ -37,32 +37,38 @@ class InformesController < ApplicationController
 
   def create
     @informe = Informe.new(informe_params)
-    @informe.promhabitos = (@informe.nota1 + @informe.nota2 + @informe.nota3 + @informe.nota4 + @informe.nota5)/5 
-    @informe.promvocacion = (@informe.nota6 + @informe.nota7 + @informe.nota8 + @informe.nota9 + @informe.nota10)/5 
-    @informe.promsalud = (@informe.nota11 + @informe.nota12 + @informe.nota13 + @informe.nota14 + @informe.nota15)/5 
-    
-   
-    
+    @informe.promhabitos = ((@informe.nota1 + @informe.nota2 + @informe.nota3 + @informe.nota4 + @informe.nota5)/5) 
+    @informe.promvocacion = ((@informe.nota6 + @informe.nota7 + @informe.nota8 + @informe.nota9 + @informe.nota10)/5 )
+    @informe.promsalud = ((@informe.nota11 + @informe.nota12 + @informe.nota13 + @informe.nota14 + @informe.nota15)/5 )
     
     respond_to do |format|
       if @informe.save
         format.html {redirect_to informe_path(@informe), notice: 'Informe Creado'}
-        
-        @alertas = Alerta.new(alerta_params)
-        if @informe.promhabitos<5 
+           @alertas = Alerta.new(alerta_params)
+          if ( (@informe.promhabitos<5 && @informe.promhabitos>4) || (@informe.promvocacion<5 && @informe.promvocacion>4) || (@informe.promsalud<5 && @informe.promsalud>4)) 
+          @alertas.prioridad= 'Baja'
+          end    
       
-          @alertas.informe_id = @informe.id
-          @alertas.save
-        end
-       
-      
+          if ( (@informe.promhabitos<4 && @informe.promhabitos>3) || (@informe.promvocacion<4 && @informe.promvocacion>3) || (@informe.promsalud<4 && @informe.promsalud>3)) 
+          @alertas.prioridad = 'Media'
+          end 
+
+          if ( (@informe.promhabitos<3 && @informe.promhabitos>1) || (@informe.promvocacion<3 && @informe.promvocacion>1) || (@informe.promsalud<3 && @informe.promsalud>1)) 
+          @alertas.prioridad = 'Alta'
+          end 
+
+
+
+      @alertas.informe_id = @informe.id
+      @alertas.save
       else
-        format.html {render :new}
+      format.html {render :new}
       end
+         
     end
   end
-
-    
+  
+  
    
   
 
@@ -73,7 +79,7 @@ class InformesController < ApplicationController
   end
 
   def alerta_params
-  params.permit(:estado, :fecharecepcion, :prioridad_id, :informe_id )
+  params.permit(:estado, :fecharecepcion, :prioridad, :informe_id )
   end
 
   def set_informe

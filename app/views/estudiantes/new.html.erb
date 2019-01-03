@@ -71,12 +71,52 @@
      <p class="bg-primary text-center">Profesionales Asignados</p>
 
      <div class="form-group">
-               <p for="formGroupExampleInput">Tutor:</p><br>
-               <% @users.each do |t| %>
-                  <%= label_tag t.email  %>
-                  <%= check_box_tag "users[#{t.id}]", t.email  %>
-                  <br />
-                <% end %>
+
+        
+               
+
+                
+                
+                
+                <p class=" text-center">Sicologo</p>
+                
+                <% @users.each do |t| %>
+                                 
+                <% if t.rol.descripcion== 'Sicologo' %>
+                <%= label_tag t.nombre  %>
+                <%= label_tag t.apellidopa  %>
+                <%= label_tag t.apellidoma  %>
+                <%= radio_button_tag :some_same_name, "users_#{t.id}", false, class: 'radio-checkbox' %>
+                <br />
+                <%end%>
+                <%end%>
+                
+                
+
+                
+               
+                
+                <p class=" text-center">Asistente Social</p>
+                <% @users.each do |t| %>
+                <% if t.rol.descripcion == 'Asistente Social' %>    
+                <%= label_tag t.nombre  %>
+                <%= label_tag t.apellidopa  %>
+                <%= label_tag t.apellidoma  %>
+                <%= radio_button_tag :some_same_name, "users_#{t.id}", false, class: 'radio-checkbox' %>
+                <%end%>
+                <%end%>
+                <br />
+                
+               
+                <p class=" text-center">Tutor</p>
+                <% @users.each do |t| %>
+                <% if t.rol.descripcion == 'Tutor' %>    
+                <%= label_tag t.email  %>
+                <%= radio_button_tag :some_same_name, "users_#{t.id}", false, class: 'radio-checkbox' %>
+                <%end%>
+                <%end%>
+                
+               
         </div>  
 
 
@@ -94,3 +134,7 @@
       </div>
     <% end %>
  
+
+
+    
+        

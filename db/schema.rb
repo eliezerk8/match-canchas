@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_02_175747) do
+ActiveRecord::Schema.define(version: 2019_01_03_194921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,10 @@ ActiveRecord::Schema.define(version: 2019_01_02_175747) do
     t.date "fecharecepcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "prioridad_id"
     t.bigint "informe_id"
     t.boolean "estado", default: true
+    t.string "prioridad"
     t.index ["informe_id"], name: "index_alerta_on_informe_id"
-    t.index ["prioridad_id"], name: "index_alerta_on_prioridad_id"
   end
 
   create_table "carreras", force: :cascade do |t|
@@ -69,38 +68,32 @@ ActiveRecord::Schema.define(version: 2019_01_02_175747) do
   end
 
   create_table "informes", force: :cascade do |t|
-    t.integer "nota1"
-    t.integer "nota2"
-    t.integer "nota3"
-    t.integer "nota4"
-    t.integer "nota5"
-    t.decimal "promhabitos"
-    t.integer "nota6"
-    t.integer "nota7"
-    t.integer "nota8"
-    t.integer "nota9"
-    t.integer "nota10"
-    t.decimal "promvocacion"
-    t.integer "nota11"
-    t.integer "nota12"
-    t.integer "nota13"
-    t.integer "nota14"
-    t.integer "nota15"
-    t.decimal "promsalud"
+    t.float "nota2"
+    t.float "nota3"
+    t.float "nota4"
+    t.float "nota5"
+    t.float "promhabitos"
+    t.float "nota6"
+    t.float "nota7"
+    t.float "nota8"
+    t.float "nota9"
+    t.float "nota10"
+    t.float "promvocacion"
+    t.float "nota11"
+    t.float "nota12"
+    t.float "nota13"
+    t.float "nota14"
+    t.float "nota15"
+    t.float "promsalud"
     t.string "observacion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "estudiante_id"
     t.bigint "user_id"
     t.boolean "estado", default: true
+    t.float "nota1"
     t.index ["estudiante_id"], name: "index_informes_on_estudiante_id"
     t.index ["user_id"], name: "index_informes_on_user_id"
-  end
-
-  create_table "prioridads", force: :cascade do |t|
-    t.text "descripcion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "rols", force: :cascade do |t|
@@ -141,7 +134,6 @@ ActiveRecord::Schema.define(version: 2019_01_02_175747) do
   end
 
   add_foreign_key "alerta", "informes"
-  add_foreign_key "alerta", "prioridads"
   add_foreign_key "carreras", "facultads"
   add_foreign_key "estudiantes", "carreras"
   add_foreign_key "informes", "estudiantes"
