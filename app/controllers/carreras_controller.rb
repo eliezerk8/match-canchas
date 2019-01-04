@@ -23,8 +23,6 @@ class CarrerasController < ApplicationController
     @carrera.estado = false
     @carrera.save
       redirect_to carreras_path, success: "Carrera no existente"
-      end
-  
   end
 
   def update
@@ -45,7 +43,7 @@ class CarrerasController < ApplicationController
     if @carrera.save
       redirect_to carreras_path
     else
-    render 'new'
+      redirect_to new_carrera_path
     end
   end
 

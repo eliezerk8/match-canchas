@@ -1,16 +1,22 @@
 <h3 class="text-uppercase">Crear Carrera  <%= link_to '<= Volver', carreras_path, :class => "btn btn-info-3 btn-sm" %></h3></h1>
 
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
+
 <%=form_for(@carreras) do |f| %>
 
   <div class="form-group">
     <label for="formGroupExampleInput">Nombre </label>
-    <%= f.text_field:nombrecarrera, placeholder:"Agregar Nombre" , class:"form-control"  %>
+    <%= f.text_field :nombrecarrera, placeholder:"Agregar Nombre" , class:"form-control"  %>
     
   </div>
 
   <div class="form-group">
   <label for="formGroupExampleInput">Codigo </label>
-  <%= f.text_field:codigo, placeholder:"Agregar Codigo" , class:"form-control"  %>
+  <%= f.text_field :codigo, placeholder:"Agregar Codigo" , class:"form-control"  %>
    
   </div>
 

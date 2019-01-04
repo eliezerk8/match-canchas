@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e1a47c6-8d7b-4ecf-80f6-e764b2368c42" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Sistema-Alerta-Temprana-UTEM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sistema-Alerta-Temprana-UTEM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/carreras_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/carreras_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/facultads_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/facultads_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/informes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/informes_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/carreras/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/carreras/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/facultads/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/facultads/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/carrera.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/carrera.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/informe.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/informe.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/carreras/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/carreras/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/informes/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/informes/new.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -96,60 +94,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+        <entry file="file://$PROJECT_DIR$/app/models/carrera.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/carreras_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/informes_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="64" column="4" lean-forward="true" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/menu_controller.rb">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/rols_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/estudiantes_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/facultads_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="29" column="9" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="29" selection-end-column="9" />
+            <state relative-caret-position="75">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -197,15 +145,11 @@
         <option value="$PROJECT_DIR$/db/migrate/20181215224327_add_foreign_keys.rb" />
         <option value="$PROJECT_DIR$/app/views/facultads/new.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20181218182128_remove_add_foreing_key.rb" />
-        <option value="$PROJECT_DIR$/app/views/carreras/new.html.erb" />
         <option value="$PROJECT_DIR$/app/models/rol.rb" />
         <option value="$PROJECT_DIR$/app/models/prioridad.rb" />
-        <option value="$PROJECT_DIR$/app/models/informe.rb" />
         <option value="$PROJECT_DIR$/app/models/alertum.rb" />
         <option value="$PROJECT_DIR$/app/models/facultad.rb" />
         <option value="$PROJECT_DIR$/app/views/estudiantes/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/informes/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/carrera.rb" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/db/migrate/20181219181011_modelos_foreing_correctas.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20181219194742_llaves_correspondientes.rb" />
@@ -235,7 +179,11 @@
         <option value="$PROJECT_DIR$/app/views/facultads/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/facultads_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/carreras_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/informe.rb" />
+        <option value="$PROJECT_DIR$/app/views/carreras/new.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/informes_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/informes/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/carrera.rb" />
       </list>
     </option>
   </component>
@@ -251,7 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -268,7 +216,7 @@
               <item name="Sistema-Alerta-Temprana-UTEM" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sistema-Alerta-Temprana-UTEM" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Sistema-Alerta-Temprana-UTEM" type="b2602c69:ProjectViewProjectNode" />
@@ -279,13 +227,22 @@
             <path>
               <item name="Sistema-Alerta-Temprana-UTEM" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sistema-Alerta-Temprana-UTEM" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="informes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sistema-Alerta-Temprana-UTEM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sistema-Alerta-Temprana-UTEM" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -507,12 +464,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33286000" />
+    <option name="totallyTimeSpent" value="35322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24621513" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24860558" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -525,7 +483,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49880478" visible="true" weight="0.27131784" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49880478" visible="true" weight="0.2387597" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5011952" side_tool="true" weight="0.28217053" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32868218" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32868218" />
@@ -568,20 +526,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Mensajes User" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/estudiante.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/confirmations/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -611,9 +555,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/alertas/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/carreras/new.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/carreras/show.html.erb">
@@ -691,16 +632,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/informes/index.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/informes/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/informes/show.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -717,13 +648,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/rols/show.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="57" selection-start-column="57" selection-end-column="57" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
@@ -772,20 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/carreras_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/informes_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="64" column="4" lean-forward="true" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/menu_controller.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -800,6 +710,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/informe.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="155" selection-start-line="3" selection-start-column="155" selection-end-line="3" selection-end-column="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/informes_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/informes/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2906">
+          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/carreras/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/carreras_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/carrera.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -36,14 +36,12 @@ class InformesController < ApplicationController
 
 
   def create
-    @informe = Informe.new(informe_params)
-    @informe.promhabitos = ((@informe.nota1 + @informe.nota2 + @informe.nota3 + @informe.nota4 + @informe.nota5)/5) 
-    @informe.promvocacion = ((@informe.nota6 + @informe.nota7 + @informe.nota8 + @informe.nota9 + @informe.nota10)/5 )
-    @informe.promsalud = ((@informe.nota11 + @informe.nota12 + @informe.nota13 + @informe.nota14 + @informe.nota15)/5 )
-    
-    respond_to do |format|
+      @informe = Informe.new(informe_params)
       if @informe.save
-        format.html {redirect_to informe_path(@informe), notice: 'Informe Creado'}
+        @informe.promhabitos = ((@informe.nota1 + @informe.nota2 + @informe.nota3 + @informe.nota4 + @informe.nota5)/5)
+        @informe.promvocacion = ((@informe.nota6 + @informe.nota7 + @informe.nota8 + @informe.nota9 + @informe.nota10)/5 )
+        @informe.promsalud = ((@informe.nota11 + @informe.nota12 + @informe.nota13 + @informe.nota14 + @informe.nota15)/5 )
+        @informe.save
            @alertas = Alerta.new(alerta_params)
           if ( (@informe.promhabitos<5 && @informe.promhabitos>4) || (@informe.promvocacion<5 && @informe.promvocacion>4) || (@informe.promsalud<5 && @informe.promsalud>4)) 
           @alertas.prioridad= 'Baja'
@@ -61,11 +59,11 @@ class InformesController < ApplicationController
 
       @alertas.informe_id = @informe.id
       @alertas.save
+      redirect_to informe_path, success: "Informe Creado"
       else
-      format.html {render :new}
+      redirect_to new_informe_path, danger: "No se logro crear el informe"
       end
-         
-    end
+
   end
   
   

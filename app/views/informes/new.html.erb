@@ -1,5 +1,11 @@
 <h1> Crear informe </h1>
 
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
+
 <% if current_user.rol.descripcion == "Administrador" %>
 <%=form_for( @informes) do |f| %>
   
