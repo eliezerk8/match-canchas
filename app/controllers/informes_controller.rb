@@ -37,6 +37,7 @@ class InformesController < ApplicationController
 
   def create
       @informe = Informe.new(informe_params)
+      @informe.user_id=current_user.id
       if @informe.save
         @informe.promhabitos = ((@informe.nota1 + @informe.nota2 + @informe.nota3 + @informe.nota4 + @informe.nota5)/5)
         @informe.promvocacion = ((@informe.nota6 + @informe.nota7 + @informe.nota8 + @informe.nota9 + @informe.nota10)/5 )

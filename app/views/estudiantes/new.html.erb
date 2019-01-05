@@ -1,6 +1,6 @@
 <h1>Agregar Estudiante </h1>
 <%flash.each do |name , msg| %>
-  <div class="alert alert-<%= name %>">
+  <div class="alert alert-<%= name %>
     <%= msg %>
   </div>
 <% end %>
@@ -77,10 +77,7 @@
 
      <div class="form-group">
 
-        
-               
-
-                
+                         
                 
                 
                 <p class=" text-center">Sicologo</p>
@@ -91,14 +88,12 @@
                 <%= label_tag t.nombre  %>
                 <%= label_tag t.apellidopa  %>
                 <%= label_tag t.apellidoma  %>
-                <%= radio_button_tag :some_same_name, "users_#{t.id}", false, class: 'radio-checkbox' %>
+                <%=  radio_button_tag "users[#{t.id}]", t.email  %>
                 <br />
                 <%end%>
                 <%end%>
                 
-                
-
-                
+        
                
                 
                 <p class=" text-center">Asistente Social</p>
@@ -107,7 +102,7 @@
                 <%= label_tag t.nombre  %>
                 <%= label_tag t.apellidopa  %>
                 <%= label_tag t.apellidoma  %>
-                <%= radio_button_tag :some_same_name, "users_#{t.id}", false, class: 'radio-checkbox' %>
+                <%= check_box_tag "users[#{t.id}]", t.email  %>
                 <%end%>
                 <%end%>
                 <br />
@@ -117,7 +112,7 @@
                 <% @users.each do |t| %>
                 <% if t.rol.descripcion == 'Tutor' %>    
                 <%= label_tag t.email  %>
-                <%= radio_button_tag :some_same_name, "users_#{t.id}", false, class: 'radio-checkbox' %>
+                <%= check_box_tag "users[#{t.id}]", t.email  %>
                 <%end%>
                 <%end%>
                 
