@@ -1,0 +1,40 @@
+<H1 align="center"> Información de contacto: </H1>
+<br>
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
+<Table class="table">
+  <tr>
+    <thead class="thead-dark">
+    <th> Nombre  </th>
+    <th> Rut </th>
+    <th> Telefono </th>
+    <th> Rol </th>
+    <th> Facultad </th>
+    <th> Estado </th>
+  </thead>
+  </tr>
+
+  <% @users.each do |t| %>
+  <tr>
+  <td><%= t.nombre %> <%= t.apellidopa %> <%=t.apellidoma%></td>
+  <td><%= t.rut %></td>
+  <td><%= t.telefono %></td>
+  <% unless t.rol.descripcion.nil? %>
+  <td><%= t.rol.descripcion %></td>
+  <%end%>
+  <td><%= t.facultad.nombrefacultad %></td>
+  <td class="text-success">
+  <%if t.estado ==true %>
+  Activo 
+ <%else%> 
+  Inactivo
+<%end%>
+  </td>
+  <td>
+
+</tr>
+<%end%>
+</table>

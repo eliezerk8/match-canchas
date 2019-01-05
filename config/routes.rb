@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'informes/index'
   get 'informes/new'
-  
+  resources :informacion
   resources :facultads
   delete 'facultads/:id/edit', to: 'facultads#delete'
   resources :alertas
