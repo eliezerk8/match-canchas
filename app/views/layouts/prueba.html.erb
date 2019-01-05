@@ -60,11 +60,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <a href="#" class="w3-button w3-block w3-left-align">Agregar Estudiante</a>
     </div>
 
+    <% if current_user.rol.descripcion=='Administrador'%>
     <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-black w3-left-align"><i class="fa fa-group"></i> Profesionales</button>
     <div id="Demo2" class="w3-hide w3-animate-zoom">
       <a href="/users" class="w3-button w3-block w3-left-align">Ver profesionales</a>
       <a href="/users/new" class="w3-button w3-block w3-left-align">Agregar profesional</a>
     </div>
+    <%end%>
 
     <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-black w3-left-align"><i class="fa fa-line-chart"></i> Informes</button>
     <div id="Demo3" class="w3-hide w3-animate-zoom">
@@ -72,12 +74,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <a href="/informes/new" class="w3-button w3-block w3-left-align">Crear informe</a>
     </div>
 
+    <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-black w3-left-align"><i class="fa fa-line-chart"></i> Alertas</button>
+    <div id="Demo4" class="w3-hide w3-animate-zoom">
+      <a href="#" class="w3-button w3-block w3-left-align">Ver alertas</a>
+    </div>
+
+    <% if current_user.rol.descripcion=='Administrador'%>
     <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-black w3-left-align"><i class="fa fa-institution"></i> Administrar</button>
     <div id="Demo4" class="w3-hide w3-animate-zoom">
       <a href="/facultads" class="w3-button w3-block w3-left-align">Facultades</a>
       <a href="/carreras" class="w3-button w3-block w3-left-align">Carreras</a>
     </div>
-
+    <%end%>
     <a href="/informacion" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user-circle"></i>  Contacto</a>
     <img src="https://learnchile.cl/wp-content/uploads/2012/08/utem.png" alt="UTEM" width="280" height="180"> 
 

@@ -22,4 +22,5 @@
 //= require material/bootstrap-notify
 //= require material/material-dashboard
 //= require material/demo
+//= require Datatable.js
 //= require_tree .

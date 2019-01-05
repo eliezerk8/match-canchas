@@ -71,6 +71,7 @@
   <%= f.label :Tipo_de_usuario %>
   <%= f.select('rol_id',
                Rol.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
+  </button>
 </div>
 </div>
 
