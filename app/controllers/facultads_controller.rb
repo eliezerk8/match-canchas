@@ -26,7 +26,7 @@ class FacultadsController < ApplicationController
       if @facultad.update(facultad_params)
         redirect_to facultad_path, success: "Se Actualizaron los datos"
       else
-        render :edit
+        render :edit , danger: "Modifique por valores válidos"
       end
   end
 
@@ -41,9 +41,9 @@ class FacultadsController < ApplicationController
   def create
     @facultad= Facultad.new(facultad_params)
     if @facultad.save
-      redirect_to facultads_path
+      redirect_to facultads_path, success: "Se creo correctamente"
     else
-    render 'new'
+    render 'new' ,danger:"Ingrese datos Validos"
     end
   end
   

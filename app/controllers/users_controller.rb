@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     
     @user.estado = false
     @user.save
-        redirect_to users_path, success: "Apoderado no regular"
+        redirect_to users_path, success: "Se ah desvinculado el usuario"
   end
 
 

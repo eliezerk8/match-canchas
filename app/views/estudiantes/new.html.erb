@@ -1,4 +1,9 @@
 <h1>Agregar Estudiante </h1>
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
 <hr> </hr> 
   <%= form_for(@estudiantes) do |f|  %>
 <div class="row">

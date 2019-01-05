@@ -1,5 +1,9 @@
 <h1> Crear Rol</h1>
-
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
 
 <%=form_for(@rols) do |f| %>
 

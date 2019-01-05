@@ -29,7 +29,7 @@ class CarrerasController < ApplicationController
       if @carrera.update(carrera_params)
         redirect_to carrera_path, success: "Se Actualizaron los datos"
       else
-        render :edit
+        render :edit ,danger: "Modifique por valores válidos"
       end
   end
 
@@ -41,9 +41,9 @@ class CarrerasController < ApplicationController
   def create
     @carrera= Carrera.new(carrera_params)
     if @carrera.save
-      redirect_to carreras_path
+      redirect_to carreras_path, success: "Se creo correctamente"
     else
-      redirect_to new_carrera_path
+      redirect_to new_carrera_path, danger: "Complete correctamente el formulario"
     end
   end
 

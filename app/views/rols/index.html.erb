@@ -1,5 +1,9 @@
 <h1> Roles </h1>
-
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
 
 
 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong">

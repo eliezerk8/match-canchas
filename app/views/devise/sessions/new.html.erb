@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
 <html>
 <title>SAT UTEM</title>
 <meta charset="UTF-8">

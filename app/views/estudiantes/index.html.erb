@@ -1,4 +1,9 @@
 <h1>hola mundo </h1>
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
 <% @estudiantes.each do |estudiante| %>
 <% if estudiante.users.map(&:rol_id)=='3' %>
 <h1><%= estudiante.users.map(&:nombre).join(' ') %></h1>

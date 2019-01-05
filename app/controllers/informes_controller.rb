@@ -30,7 +30,7 @@ class InformesController < ApplicationController
     if @informe.update(informe_params)
       redirect_to informe_path, success: "Se Actualizaron los datos"
     else
-      render :edit
+      render :edit, danger: "Modifique por valores válidos"
     end
   end
 

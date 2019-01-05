@@ -1,4 +1,7 @@
 class RolsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_facultad, only: [:show,:delete,:edit,:update]
+
   layout "prueba"
     def index
         @roles=Rol.all
@@ -18,9 +21,9 @@ class RolsController < ApplicationController
   def create
     @rol= Rol.new(rol_params)
     if @rol.save
-      redirect_to rols_path
+      redirect_to rols_path ,success:"Se creo correctamente"
     else
-      render 'new'
+      render 'new' , danger: "Ingrese datos válidos"
     end
   end
 private
