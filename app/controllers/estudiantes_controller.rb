@@ -12,13 +12,13 @@ class EstudiantesController < ApplicationController
         def new
       
          @estudiantes= Estudiante.new
-          @users = User.all
+         @users = User.all
+   
+ 
+
         end
     def create
-     
-      @sicologos=User.where(role: 'Sicologo')
-      @asistentes=User.where(role: 'Asistente Social')
-      @tutores =User.where(role:'Tutor')
+   
       
       @estudiante= Estudiante.new(estudiante_params)
        params[:users].each do |k,v|
@@ -34,7 +34,7 @@ class EstudiantesController < ApplicationController
 
     private
 def estudiante_params
-  params.require(:estudiante).permit(:nombre, :nem, :situacioneconomica,:colegio,:ranking, :carrera_id,:user_id,:fecha_nacimiento, :estado, :rut, :telefono, :email, :apellidopa, :apellidoma)
+  params.require(:estudiante).permit(:nombreestudiante, :nem, :situacioneconomica,:colegio,:ranking, :carrera_id,:user_id,:fecha_nacimiento, :estado, :rut, :telefono, :email, :apellidopa, :apellidoma)
 end
 
 end

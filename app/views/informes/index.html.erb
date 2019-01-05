@@ -1,2 +1,92 @@
-<h1>Informes#index</h1>
-<p>Find me in app/views/informes/index.html.erb</p>
+<h1>Informes</h1>
+
+<%= link_to 'Generar Informe', new_informe_path, :class => "btn btn-info" %>
+<Table class="table">
+  <tr>
+    <thead class="thead-dark">
+    <th> Nombre Estudiante </th>
+    <th> Carrera </th>
+    <th> Opciones </th>
+  </thead>
+  </tr>
+
+  <% @informes.each do |t| %>
+  <tr>
+  <td><%= t.estudiante.nombreestudiante %></td>
+  <td><%= t.estudiante.carrera.nombrecarrera %></td>
+ 
+  <td>
+
+
+  <button type="button" class="btn btn btn-outline-success  btn-sm" " data-toggle="modal" data-target="#exampleModalLong">
+  Mostrar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Agregar Carrera</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      <div class="container-form" font-size: 4px>
+      <p>Profesional: <%=t.user.nombre %>
+      <p>Nota1: <%= t.nota1 %></p>
+      <p>Nota2: <%= t.nota2  %> </p>
+      <p>Nota3: <%= t.nota3 %></p>
+      <p>Nota4: <%= t.nota4 %></p>
+      <p>Nota5: <%= t.nota5 %></p>
+      <p>Nota6: <%= t.nota6 %></p>
+      <p>Nota7: <%= t.nota7 %></p>
+      <p>Nota8: <%= t.nota8 %></p>
+      <p>Nota9: <%= t.nota9 %></p>
+      <p>Nota10: <%= t.nota10 %></p>
+      <p>Nota11: <%= t.nota11%></p>
+      <p>Nota12: <%= t.nota12%></p>
+      <p>Nota13: <%= t.nota13%></p>
+      <p>Nota14: <%= t.nota14%></p>
+      <p>Nota15: <%= t.nota15%></p>
+
+      <p>Fecha de Creacion : <%= t.created_at %></p>
+      <p>Fecha de Modificacion: <%= t.updated_at %></p>
+          
+      
+      </div>
+      
+      
+
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary " data-dismiss="modal">Salir</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+ 
+ 
+
+
+
+
+<%= link_to 'Editar', edit_carrera_url(t), class:"btn btn-outline-warning  btn-sm" %>
+
+    
+	<% unless t.estado.nil? %>
+	<% if t.estado == true %>
+			
+	  <%= link_to 'Cambiar estado', edit_carrera_url(t), class: "btn btn-danger btn-sm",
+                        method: :delete, data: {confirm: '¿Estas seguro?'} %>
+    <% end %>
+	  <% end %>
+</td>
+</tr>
+<%end%>
+</table>
