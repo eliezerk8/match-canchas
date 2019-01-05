@@ -20,8 +20,6 @@ class FacultadsController < ApplicationController
       redirect_to facultads_path, success: "Facultad no existente"
   end
   
-  end
-
   def update
       if @facultad.update(facultad_params)
         redirect_to facultad_path, success: "Se Actualizaron los datos"
