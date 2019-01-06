@@ -29,52 +29,10 @@
   </td>
   <td>
 
-
-  <button type="button" class="btn btn btn-outline-success  btn-sm" " data-toggle="modal" data-target="#exampleModalLong">
-  Mostrar
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Agregar Carrera</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-      <div class="container-form" font-size: 4px>
-      <p>Nombre: <%= t.nombrecarrera %></p>
-      <p>Codigo: <%= t.codigo  %> </p>
-      <p>Facultad: <%= t.facultad.nombrefacultad %></p>
-      <p>Fecha de Creacion : <%= t.created_at %></p>
-      <p>Fecha de Modificacion: <%= t.updated_at %></p>
-          
+  <%= link_to 'Mostrar', carrera_url(t), class: "btn btn-outline-success  btn-sm" %>
+     
       
-      </div>
-      
-      
-
-
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary " data-dismiss="modal">Salir</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-</div>
- 
- 
-
-
-
-
-<%= link_to 'Editar', edit_carrera_url(t), class:"btn btn-outline-warning  btn-sm" %>
+  <%= link_to 'Editar', edit_carrera_url(t), class:"btn btn-outline-warning  btn-sm" %>
 
     
 	<% unless t.estado.nil? %>

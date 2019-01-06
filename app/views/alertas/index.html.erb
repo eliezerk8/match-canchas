@@ -4,7 +4,9 @@
 <Table class="table">
   <tr>
     <thead class="thead-dark">
-   	<th> Prioridad</th>
+    <th>Nombre Estudiante</th>
+    <th>Profesional</th>
+    <th> Prioridad</th>
 	  <th> Fecha </th>
     <th> Opciones </th>
   </thead>
@@ -14,18 +16,31 @@
   
     <% if t.prioridad=='Alta' %>
   <tr>
-  
+  <td class="bg-danger text-light"><%= t.informe.estudiante.nombreestudiante%></td>
+  <td class="bg-danger text-light"><%= t.informe.user.nombre%></td>
   <td class="bg-danger text-light"><%= t.prioridad %></td>
   <td class="bg-danger text-light"><%= t.created_at.strftime("%d-%m-%Y = Hora: %H:%M:%S") %></td>
 	<td class="bg-danger text-light">
-	</td>
+  
+  
+
+
+
+
+
+
+
+
+
+  </td>
   
   </tr>
   <%end%>
   <% if t.prioridad=='Media' %>
   <tr>
 
-  
+  ztd class="bg-warning text-light"><%= t.informe.estudiante.nombreestudiante%></td>
+  <td class="bg-warning text-light"><%= t.informe.user.nombre%></td>
   <td class="bg-warning text-dark"><%= t.prioridad %></td>
   <td class="bg-warning text-dark"><%= t.created_at.strftime("%d-%m-%Y = Hora: %H:%M:%S") %></td>
 	<td class="bg-warning text-dark">
@@ -36,6 +51,8 @@
 
   <% if t.prioridad=='Baja' %>
   <tr>
+  <td class="bg-info text-dark"><%= t.informe.estudiante.nombreestudiante%></td>
+  <td class="bg-info text-dark"><%= t.informe.user.nombre%></td>
   <td class="bg-info text-dark"><%= t.prioridad %></td>
   <td class="bg-info text-dark"><%= t.created_at.strftime("%d-%m-%Y = Hora: %H:%M:%S") %></td>
 	<td class="bg-info text-dark">

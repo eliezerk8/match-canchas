@@ -1,0 +1,11 @@
+<h1 class= "text-info"><u> Datos Carrera </u> </h1> 
+<br>
+
+
+<p>Nombre: <%= @carrera.nombrecarrera %></p>
+<p>Codigo: <%= @carrera.codigo  %> </p>
+<p>Facultad: <%= @carrera.facultad.nombrefacultad %></p>
+<p>Fecha de Creacion : <%= @carrera.created_at %></p>
+<p>Fecha de Modificacion: <%= @carrera.updated_at %></p>
+
+<%= link_to '<== Volver', carreras_path, :class => "btn btn-info btn-lg" %></h3> 

@@ -3,3 +3,4 @@ layout "prueba"
 def index
 	@alertas= Alerta.all
 end
+end

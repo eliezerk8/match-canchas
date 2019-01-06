@@ -11,7 +11,9 @@
   </tr>
 
   <% @informes.each do |t| %>
-  <tr>
+ 
+ 
+    <tr>
   <td><%= t.estudiante.nombreestudiante %></td>
   <td><%= t.estudiante.carrera.nombrecarrera %></td>
  
@@ -35,7 +37,8 @@
       <div class="modal-body">
 
       <div class="container-form" font-size: 4px>
-      <p>Profesional: <%=t.user.nombre %>
+      <p>Profesional: <%=t.user.nombre %> <%= t.user.apellidopa %> <%= t.user.apellidoma %></p>
+      <p>Alumno : <%=t.estudiante.nombreestudiante %> <%= t.estudiante.apellidopa %> <%= t.estudiante.apellidoma %> </p>
       <p>Nota1: <%= t.nota1 %></p>
       <p>Nota2: <%= t.nota2  %> </p>
       <p>Nota3: <%= t.nota3 %></p>
