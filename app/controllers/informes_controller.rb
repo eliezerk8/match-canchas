@@ -6,9 +6,17 @@ class InformesController < ApplicationController
   def index
     @informes=Informe.all
     @alertas= Alerta.all
+  
+    
   end
 
   def show
+    @informe= Informe.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf { render template: 'informes/reporte', pdf:'Reporte'}
+    end
   end
 
   def new

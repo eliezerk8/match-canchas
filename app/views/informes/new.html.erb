@@ -1,4 +1,4 @@
-<h1> Crear informe </h1>
+
 
 <%flash.each do |name , msg| %>
   <div class="alert alert-<%= name %>">
@@ -6,262 +6,325 @@
   </div>
 <% end %>
 
-<% if current_user.rol.descripcion == "Administrador" %>
+<% if current_user.rol.descripcion == "Sicologo" %>
+<center><h1 class= text-info ><u> Informe Profesional Sicológico </u></h1><br></center>
 <%=form_for( @informes) do |f| %>
-   
+  <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
+  <br><br><label class="text-dark"><u>Estudiante</u></label>
 
   <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+ <br><br>
   <div class="row">
-    <div class="col-md-3">
-     
-        <label for="formGroupExampleInput">Pregunta 1 </label>
-        <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1 "},{class: "btn btn-secundary btn-sm"})%> 
+    <div class="col-md-4">
+    <p class="bg-info text-center">Habitos de Estudio </p> 
+       <label class="text-dark text-justify"><li>Si tiene problemas con materias, ¿que tan grave es?.</li></label>
+        <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1 "},{class: "btn btn-secundary btn-sm "})%> 
         <br>
-        <label for="formGroupExampleInput">Pregunta 2 </label>
+        <br>
+        <label class="text-dark text-justify"><li>Cuales fueron sus resultados academicos antes de entrar a la universidad ?</li> </label>
         <%= f.select(:nota2,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°2 "},{class: "btn btn-secundary btn-sm"} )%>
         <br>
-
-        <label for="formGroupExampleInput">Pregunta 3 </label>
+        <br>
+        <label class="text-dark text-justify"><li>Si tiene algun tipo de problema a la hora de estudiar, ¿que tan grave es ?</li> </label>
         <%= f.select(:nota3,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°3 "},{class: "btn btn-secundary btn-sm"} ) %>
         <br>
-
-  
-        <label for="formGroupExampleInput">Pregunta 4 </label>
-        <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4 "},{class: "btn btn-secundary btn-sm"} ) %>
         <br>
 
   
-        <label for="formGroupExampleInput">Pregunta 5 </label>
+        <label class="text-dark text-justify"><li>¿Puede eliminar facilmente los ruidos molestos al estudiar?</li> </label>
+        <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4 "},{class: "btn btn-secundary btn-sm"} ) %>
+        <br>
+        <br>
+
+  
+        <label class="text-dark text-justify"><li>¿Suele dejar para ultimo momento los trabajos y estudios?</li> </label>
         <%= f.select(:nota5,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°5 "},{class: "btn btn-secundary btn-sm"} )%>
+        <br>
         <br>
 
 
     </div>
- <div class="col-md-3">
-  
-       <label for="formGroupExampleInput">Pregunta 6 </label>
+ <div class="col-md-4">
+        <p class="bg-info text-center text-justify">Vocación </p> 
+       <label class="text-dark"><li>¿Siente problemas en su actual eleccion vocacional ? </li> </label>
        <%= f.select(:nota6,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°6 "},{class: "btn btn-secundary btn-sm"} )%>
        <br>
+       <br>
   
-       <label for="formGroupExampleInput">Pregunta 7 </label>
+       <label class="text-dark text-justify"><li>¿Cree que el area que eligio estudiar es la que de verdad le gusta ?</li> </label>
        <%= f.select(:nota7,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°7 "},{class: "btn btn-secundary btn-sm"} )%>
        <br>
+       <br>
   
-       <label for="formGroupExampleInput">Pregunta 8 </label>
+       <label class="text-dark text-justify"><li>¿Que tan drasticos han sido los cambios de vocacion que ha tenido en el tiempo ?</li> </label>
        <%= f.select(:nota8,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°8 "},{class: "btn btn-Primary btn-sm"} )%>
        <br>
+        <br>
   
-       <label for="formGroupExampleInput">Pregunta 9 </label>
+       <label class="text-dark text-justify"><li>¿Tiendes a emplear tiempo en leer revistas, ver televisión o charlar cuando debieras dedicarlos a estudiar? </li></label>
        <%= f.select(:nota9,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°9 "},{class: "btn btn-secundary btn-sm"} )%>
        <br>
+        <br>
 
-       <label for="formGroupExampleInput">Pregunta 10 </label>
+       <label class="text-dark text-justify"><li>¿Piensas con frecuencia que las materias que estudias tienen poco valor practico para ti? </li></label>
        <%= f.select(:nota10,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°10"},{class: "btn btn-secundary btn-sm"} )%>
   </div>
   <br>
- <div class="col-md-3">
-  
-    <label for="formGroupExampleInput">Pregunta 11 </label>
+ <div class="col-md-4">
+ <p class="bg-info text-center text-justify">Salud Fisica y Mental </p> 
+    <label class="text-dark"><li>En la Sala de clases, si tiene problemas de concentracion, que tan frecuentes son ?</li>  </label>
     <%= f.select(:nota11,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°11"},{class: "btn btn-secundary btn-sm"} )%>
     <br>
+    <br>
  
-    <label for="formGroupExampleInput">Pregunta 12 </label>
+    <label class="text-dark text-justify"><li>¿Siente malestar fisico o emocional al estar en la sala de clases con mas personas ?</li> </label>
     <%= f.select(:nota12,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°12"},{class: "btn btn-secundary btn-sm"} )%>
     <br>
-
-    <label for="formGroupExampleInput">Pregunta 13 </label>
+    <br>
+    <label class="text-dark text-justify"><li>¿Ha dejado la actividad fisica o los estudios, solo por que no se siente bien emocionalmente ?</li></label>
     <%= f.select(:nota13,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°13"},{class: "btn btn-secundary btn-sm"} )%>
     <br>
+    <br>
  
-    <label for="formGroupExampleInput">Pregunta 14 </label>
+    <label class="text-dark text-justify"><li>¿Si tiene alteraciones de sueño, que tan frecuentes son ? </li></label>
     <%= f.select(:nota14,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°14"},{class: "btn btn-secundary btn-sm"} )%>
     <br>
+       <br>
 
   
-    <label for="formGroupExampleInput">Pregunta 15 </label>
+    <label class="text-dark text-justify"><li>¿Es capaz de expresar abiertamiente su opinion y compartir con compañeros ? </li></label>
     <%= f.select(:nota15,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°15"},{class: "btn btn-secundary btn-sm"} )%>
-    <br>
+    
   </div>
 </div>
-
+<br>
+       <br>
+       <br>
+       
+    <label class="text-dark text-justify"><li>Observacion </label>
+    <%= f.text_area:observacion,cols:"300",rows:"500", placeholder:"Agregar Notas" , class:"form-control"  %>
+    <br>
+    <br>
   
-    <label for="formGroupExampleInput">Observacion </label>
-    <%= f.text_area:observacion, placeholder:"Agregar Notas" , class:"form-control"  %>
 
-  
-
-      <%= f.submit "Guardar" ,class:"btn btn-primary" %>
+      <%= f.submit "Guardar" ,class:"btn btn-info" %>
      
 <%end%>
 
 <%end%>
 
 <% if current_user.rol.descripcion == "Tutor" %>
-<%=form_for(@informes) do |f| %>
+<center><h1 class= text-info ><u> Informe Tutoria </u></h1><br></center>
+<%=form_for( @informes) do |f| %>
+  <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
+  <br><br><label class="text-dark"><u>Estudiante</u></label>
 
+  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+ <br><br>
   <div class="row">
-    <div class="col-md-3">
-    
-        <label for="formGroupExampleInput">Pregunta 1 </label>
-        <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1"},{class: "btn btn-secundary btn-sm"})%> 
-  
-        <label for="formGroupExampleInput">Pregunta 2 </label>
-        <%= f.select(:nota2,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°2"},{class: "btn btn-secundary btn-sm"} )%>
- 
-
-        <label for="formGroupExampleInput">Pregunta 3 </label>
-        <%= f.select(:nota3,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°3"},{class: "btn btn-secundary btn-sm"} ) %>
-  
-
-  
-        <label for="formGroupExampleInput">Pregunta 4 </label>
-        <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4"},{class: "btn btn-secundary btn-sm"} ) %>
-  
+    <div class="col-md-4">
+    <p class="bg-info text-center">Habitos de Estudio </p> 
+       <label class="text-dark text-justify"><li> ¿Estudias al menos cinco días por semana?</li></label>
+        <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1 "},{class: "btn btn-secundary btn-sm "})%> 
+        <br>
+        <br>
+        <label class="text-dark text-justify"><li>¿Anotas las tareas que debes realizar en tu casa?</li> </label>
+        <%= f.select(:nota2,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°2 "},{class: "btn btn-secundary btn-sm"} )%>
+        <br>
+        <br>
+        <label class="text-dark text-justify"><li>¿Realizas una lectura rápida del texto , previo al estudio más detallado?
+        </li> </label>
+        <%= f.select(:nota3,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°3 "},{class: "btn btn-secundary btn-sm"} ) %>
+        <br>
+        <br>
 
   
-        <label for="formGroupExampleInput">Pregunta 5 </label>
-        <%= f.select(:nota5,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°5"},{class: "btn btn-secundary btn-sm"} )%>
+        <label class="text-dark text-justify"><li>¿Utilizas alguna técnica para memorizar estos datos?</li> </label>
+        <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4 "},{class: "btn btn-secundary btn-sm"} ) %>
+        <br>
+        <br>
+
   
+        <label class="text-dark text-justify"><li>¿Consultas otros libros además de tu texto de estudio?</li> </label>
+        <%= f.select(:nota5,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°5 "},{class: "btn btn-secundary btn-sm"} )%>
+        <br>
+        <br>
+
+
     </div>
- <div class="col-md-3">
+ <div class="col-md-4">
+        <p class="bg-info text-center text-justify">Vocación </p> 
+       <label class="text-dark"><li>¿Tienes claras las razones por las que estudias?</li> </label>
+       <%= f.select(:nota6,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°6 "},{class: "btn btn-secundary btn-sm"} )%>
+       <br>
+       <br>
   
-       <label for="formGroupExampleInput">Pregunta 6 </label>
-       <%= f.select(:nota6,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°6"},{class: "btn btn-secundary btn-sm"} )%>
- 
+       <label class="text-dark text-justify"><li>¿Piensas que las personas deben estudiar para aprender y no sólo para aprobar una asignatura?</li> </label>
+       <%= f.select(:nota7,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°7 "},{class: "btn btn-secundary btn-sm"} )%>
+       <br>
+       <br>
   
-       <label for="formGroupExampleInput">Pregunta 7 </label>
-       <%= f.select(:nota7,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°7"},{class: "btn btn-secundary btn-sm"} )%>
+       <label class="text-dark text-justify"><li>¿Cuándo te has sacado una mala nota , intentas superar tu estado de ánimo continuando con interés en las materias?</li> </label>
+       <%= f.select(:nota8,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°8 "},{class: "btn btn-Primary btn-sm"} )%>
+       <br>
+        <br>
   
-  
-       <label for="formGroupExampleInput">Pregunta 8 </label>
-       <%= f.select(:nota8,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°8"},{class: "btn btn-Primary btn-sm"} )%>
-  
-  
-       <label for="formGroupExampleInput">Pregunta 9 </label>
-       <%= f.select(:nota9,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°9"},{class: "btn btn-secundary btn-sm"} )%>
-  
+       <label class="text-dark text-justify"><li>Cuando faltas a clases,¿procuras informarte de lo que se ha realizado y de lo que se va a realizar? </li></label>
+       <%= f.select(:nota9,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°9 "},{class: "btn btn-secundary btn-sm"} )%>
+       <br>
+        <br>
 
-       <label for="formGroupExampleInput">Pregunta 10 </label>
+       <label class="text-dark text-justify"><li>¿Tratas de entregar lo máximo de ti para obtener un buen resultado academico?</li></label>
        <%= f.select(:nota10,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°10"},{class: "btn btn-secundary btn-sm"} )%>
   </div>
-
- <div class="col-md-3">
-  
-    <label for="formGroupExampleInput">Pregunta 11 </label>
+  <br>
+ <div class="col-md-4">
+ <p class="bg-info text-center text-justify">Salud Fisica y Mental </p> 
+    <label class="text-dark"><li>¿Se ha sentido más fatigado y débil que de costumbre?</li>  </label>
     <%= f.select(:nota11,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°11"},{class: "btn btn-secundary btn-sm"} )%>
-  
+    <br>
+    <br>
  
-    <label for="formGroupExampleInput">Pregunta 12 </label>
+    <label class="text-dark text-justify"><li>¿Tiene dificultades para concentrarse o siente que su memoria ha estado fallando?
+    </li> </label>
     <%= f.select(:nota12,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°12"},{class: "btn btn-secundary btn-sm"} )%>
-  
-
-    <label for="formGroupExampleInput">Pregunta 13 </label>
+    <br>
+    <br>
+    <label class="text-dark text-justify"><li>¿Se ha alejado últimamente de familiares y amigos?</li></label>
     <%= f.select(:nota13,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°13"},{class: "btn btn-secundary btn-sm"} )%>
-  
+    <br>
+    <br>
  
-    <label for="formGroupExampleInput">Pregunta 14 </label>
+    <label class="text-dark text-justify"><li>¿Siente que su rendimiento y eficacia en sus ocupaciones ha disminuido últimamente?</li></label>
     <%= f.select(:nota14,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°14"},{class: "btn btn-secundary btn-sm"} )%>
-  
+    <br>
+       <br>
 
   
-    <label for="formGroupExampleInput">Pregunta 15 </label>
+    <label class="text-dark text-justify"><li>¿Es capaz de expresar abiertamiente su opinion y compartir con compañeros ? </li></label>
     <%= f.select(:nota15,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°15"},{class: "btn btn-secundary btn-sm"} )%>
- 
+    
   </div>
 </div>
-
+<br>
+       <br>
+       <br>
+       
+    <label class="text-dark text-justify"><li>Observacion </label>
+    <%= f.text_area:observacion,cols:"300",rows:"500", placeholder:"Agregar Notas" , class:"form-control"  %>
+    <br>
+    <br>
   
-    <label for="formGroupExampleInput">Observacion </label>
-    <%= f.text_area:observacion, placeholder:"Agregar Notas" , class:"form-control"  %>
 
-  
-
-      <%= f.submit "Guardar" ,class:"btn btn-primary" %>
-
+      <%= f.submit "Guardar" ,class:"btn btn-info" %>
+     
 <%end%>
+
 <%end%>
 
 <% if current_user.rol.descripcion == "Asistente Social" %>
-<%=form_for(@informes) do |f| %>
+<center><h1 class= text-info ><u> Informe Profesional Sicológico </u></h1><br></center>
+<%=form_for( @informes) do |f| %>
+  <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
+  <br><br><label class="text-dark"><u>Estudiante</u></label>
 
+  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+ <br><br>
   <div class="row">
-    <div class="col-md-3">
-    
-        <label for="formGroupExampleInput">Pregunta 1 </label>
-        <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1"},{class: "btn btn-secundary btn-sm"})%> 
-  
-        <label for="formGroupExampleInput">Pregunta 2 </label>
-        <%= f.select(:nota2,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°2"},{class: "btn btn-secundary btn-sm"} )%>
- 
-
-        <label for="formGroupExampleInput">Pregunta 3 </label>
-        <%= f.select(:nota3,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°3"},{class: "btn btn-secundary btn-sm"} ) %>
-  
-
-  
-        <label for="formGroupExampleInput">Pregunta 4 </label>
-        <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4"},{class: "btn btn-secundary btn-sm"} ) %>
-  
+    <div class="col-md-4">
+    <p class="bg-info text-center">Habitos de Estudio </p> 
+       <label class="text-dark text-justify"><li>Si tiene problemas con materias, ¿que tan grave es?.</li></label>
+        <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1 "},{class: "btn btn-secundary btn-sm "})%> 
+        <br>
+        <br>
+        <label class="text-dark text-justify"><li>Cuales fueron sus resultados academicos antes de entrar a la universidad ?</li> </label>
+        <%= f.select(:nota2,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°2 "},{class: "btn btn-secundary btn-sm"} )%>
+        <br>
+        <br>
+        <label class="text-dark text-justify"><li>Si tiene algun tipo de problema a la hora de estudiar, ¿que tan grave es ?</li> </label>
+        <%= f.select(:nota3,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°3 "},{class: "btn btn-secundary btn-sm"} ) %>
+        <br>
+        <br>
 
   
-        <label for="formGroupExampleInput">Pregunta 5 </label>
-        <%= f.select(:nota5,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°5"},{class: "btn btn-secundary btn-sm"} )%>
+        <label class="text-dark text-justify"><li>¿Puede eliminar facilmente los ruidos molestos al estudiar?</li> </label>
+        <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4 "},{class: "btn btn-secundary btn-sm"} ) %>
+        <br>
+        <br>
+
   
+        <label class="text-dark text-justify"><li>¿Suele dejar para ultimo momento los trabajos y estudios?</li> </label>
+        <%= f.select(:nota5,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°5 "},{class: "btn btn-secundary btn-sm"} )%>
+        <br>
+        <br>
+
+
     </div>
- <div class="col-md-3">
+ <div class="col-md-4">
+        <p class="bg-info text-center text-justify">Vocación </p> 
+       <label class="text-dark"><li>¿Siente problemas en su actual eleccion vocacional ? </li> </label>
+       <%= f.select(:nota6,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°6 "},{class: "btn btn-secundary btn-sm"} )%>
+       <br>
+       <br>
   
-       <label for="formGroupExampleInput">Pregunta 6 </label>
-       <%= f.select(:nota6,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°6"},{class: "btn btn-secundary btn-sm"} )%>
- 
+       <label class="text-dark text-justify"><li>¿Cree que el area que eligio estudiar es la que de verdad le gusta ?</li> </label>
+       <%= f.select(:nota7,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°7 "},{class: "btn btn-secundary btn-sm"} )%>
+       <br>
+       <br>
   
-       <label for="formGroupExampleInput">Pregunta 7 </label>
-       <%= f.select(:nota7,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°7"},{class: "btn btn-secundary btn-sm"} )%>
+       <label class="text-dark text-justify"><li>¿Que tan drasticos han sido los cambios de vocacion que ha tenido en el tiempo ?</li> </label>
+       <%= f.select(:nota8,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°8 "},{class: "btn btn-Primary btn-sm"} )%>
+       <br>
+        <br>
   
-  
-       <label for="formGroupExampleInput">Pregunta 8 </label>
-       <%= f.select(:nota8,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°8"},{class: "btn btn-Primary btn-sm"} )%>
-  
-  
-       <label for="formGroupExampleInput">Pregunta 9 </label>
-       <%= f.select(:nota9,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°9"},{class: "btn btn-secundary btn-sm"} )%>
-  
+       <label class="text-dark text-justify"><li>¿Tiendes a emplear tiempo en leer revistas, ver televisión o charlar cuando debieras dedicarlos a estudiar? </li></label>
+       <%= f.select(:nota9,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°9 "},{class: "btn btn-secundary btn-sm"} )%>
+       <br>
+        <br>
 
-       <label for="formGroupExampleInput">Pregunta 10 </label>
+       <label class="text-dark text-justify"><li>¿Piensas con frecuencia que las materias que estudias tienen poco valor practico para ti? </li></label>
        <%= f.select(:nota10,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°10"},{class: "btn btn-secundary btn-sm"} )%>
   </div>
-
- <div class="col-md-3">
-  
-    <label for="formGroupExampleInput">Pregunta 11 </label>
+  <br>
+ <div class="col-md-4">
+ <p class="bg-info text-center text-justify">Salud Fisica y Mental </p> 
+    <label class="text-dark"><li>En la Sala de clases, si tiene problemas de concentracion, que tan frecuentes son ?</li>  </label>
     <%= f.select(:nota11,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°11"},{class: "btn btn-secundary btn-sm"} )%>
-  
+    <br>
+    <br>
  
-    <label for="formGroupExampleInput">Pregunta 12 </label>
+    <label class="text-dark text-justify"><li>¿Siente malestar fisico o emocional al estar en la sala de clases con mas personas ?</li> </label>
     <%= f.select(:nota12,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°12"},{class: "btn btn-secundary btn-sm"} )%>
-  
-
-    <label for="formGroupExampleInput">Pregunta 13 </label>
+    <br>
+    <br>
+    <label class="text-dark text-justify"><li>¿Ha dejado la actividad fisica o los estudios, solo por que no se siente bien emocionalmente ?</li></label>
     <%= f.select(:nota13,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°13"},{class: "btn btn-secundary btn-sm"} )%>
-  
+    <br>
+    <br>
  
-    <label for="formGroupExampleInput">Pregunta 14 </label>
+    <label class="text-dark text-justify"><li>¿Si tiene alteraciones de sueño, que tan frecuentes son ? </li></label>
     <%= f.select(:nota14,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°14"},{class: "btn btn-secundary btn-sm"} )%>
-  
+    <br>
+       <br>
 
   
-    <label for="formGroupExampleInput">Pregunta 15 </label>
+    <label class="text-dark text-justify"><li>¿Es capaz de expresar abiertamiente su opinion y compartir con compañeros ? </li></label>
     <%= f.select(:nota15,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°15"},{class: "btn btn-secundary btn-sm"} )%>
- 
+    
   </div>
 </div>
-
+<br>
+       <br>
+       <br>
+       
+    <label class="text-dark text-justify"><li>Observacion </label>
+    <%= f.text_area:observacion,cols:"300",rows:"500", placeholder:"Agregar Notas" , class:"form-control"  %>
+    <br>
+    <br>
   
-    <label for="formGroupExampleInput">Observacion </label>
-    <%= f.text_area:observacion, placeholder:"Agregar Notas" , class:"form-control"  %>
 
-  
-
-      <%= f.submit "Guardar" ,class:"btn btn-primary" %>
-
+      <%= f.submit "Guardar" ,class:"btn btn-info" %>
+     
 <%end%>
+
 <%end%>

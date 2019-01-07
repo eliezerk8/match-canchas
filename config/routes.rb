@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :estudiantes
  
   resources :informes
+  delete 'informes/:id/edit', to: 'informes#delete'
   resources :rols
   
   resources :carreras
