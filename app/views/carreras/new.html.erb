@@ -23,7 +23,7 @@
   <div class="form-group">
   <label for="formGroupExampleInput">Facultad </label>
   <div class="dropdown">
-  <%= f.collection_select :facultad_id, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-outline-info "}  %>
+  <%= f.collection_select :facultad_id, Facultad.where(estado:[true]), :id, :nombrefacultad,{include_blank: "Seleccionar Facultad"}, {class: "btn btn-outline-info "}  %>
   </div>
 
   </div>

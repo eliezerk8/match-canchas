@@ -53,16 +53,23 @@ class InformesController < ApplicationController
         @informe.promsalud = ((@informe.nota11 + @informe.nota12 + @informe.nota13 + @informe.nota14 + @informe.nota15)/5 )
         @informe.save
            @alertas = Alerta.new(alerta_params)
-          if ( (@informe.promhabitos<5 && @informe.promhabitos>4) || (@informe.promvocacion<5 && @informe.promvocacion>4) || (@informe.promsalud<5 && @informe.promsalud>4)) 
+          if ( (@informe.promhabitos<5 && @informe.promhabitos>=4) || (@informe.promvocacion<5 && @informe.promvocacion>=4) || (@informe.promsalud<5 && @informe.promsalud>=4)||(@informe.nota1<=3)||(@informe.nota2<=3)||(@informe.nota3<=3)||(@informe.nota4<=3)||(@informe.nota5<=3)||(@informe.nota6<=3)||(@informe.nota7<=3)||(@informe.nota8<=3)||(@informe.nota9<=3)||(@informe.nota10<=3)||(@informe.nota11<=3)||(@informe.nota12<=3)||(@informe.nota13<=3)||(@informe.nota14<=3)||(@informe.nota15<=3)) 
           @alertas.prioridad= 'Baja'
           end    
       
-          if ( (@informe.promhabitos<4 && @informe.promhabitos>3) || (@informe.promvocacion<4 && @informe.promvocacion>3) || (@informe.promsalud<4 && @informe.promsalud>3)) 
-          @alertas.prioridad = 'Media'
+          if ( (@informe.promhabitos<4 && @informe.promhabitos>=3) || (@informe.promvocacion<4 && @informe.promvocacion>=3) || (@informe.promsalud<4 && @informe.promsalud>=3)|| (@informe.nota1<=3 && @informe.nota2<=3) || (@informe.nota1<=3 && @informe.nota3<=3) || (@informe.nota1<=3 && @informe.nota4<=3) || (@informe.nota1<=3 && @informe.nota5<=3)|| (@informe.nota2<=3 && @informe.nota3<=3) || (@informe.nota2<=3 && @informe.nota4<=3) || (@informe.nota2<=3 && @informe.nota5<=3) || (@informe.nota3<=3 && @informe.nota4<=3) || (@informe.nota3<=3 && @informe.nota5<=3) || (@informe.nota4<=3 && @informe.nota5<=3)|| (@informe.nota6<=3 && @informe.nota7<=3) || (@informe.nota6<=3 && @informe.nota8<=3) || (@informe.nota6<=3 && @informe.nota9<=3) ||(@informe.nota6<=3 && @informe.nota10<=3)|| (@informe.nota7<=3 && @informe.nota8<=3) || (@informe.nota7<=3 && @informe.nota9<=3) ||(@informe.nota7<=3 && @informe.nota10<=3)|| (@informe.nota8<=3 && @informe.nota9<=3) ||(@informe.nota8<=3 && @informe.nota10<=3)||(@informe.nota9<=3 && @informe.nota10<=3) ||(@informe.nota11<=3 && @informe.nota12<=3)||(@informe.nota11<=3 && @informe.nota13<=3)||(@informe.nota11<=3 && @informe.nota14<=3)||(@informe.nota11<=3 && @informe.nota15<=3) ||(@informe.nota12<=3 && @informe.nota13<=3)||(@informe.nota12<=3 && @informe.nota14<=3)||(@informe.nota12<=3 && @informe.nota15<=3)||(@informe.nota13<=3 && @informe.nota14<=3)||(@informe.nota12<=3 && @informe.nota15<=3)||(@informe.nota14<=3 && @informe.nota15<=3))
+             
+          
+             @alertas.prioridad = 'Media'
           end 
 
-          if ( (@informe.promhabitos<3 && @informe.promhabitos>1) || (@informe.promvocacion<3 && @informe.promvocacion>1) || (@informe.promsalud<3 && @informe.promsalud>1)) 
-          @alertas.prioridad = 'Alta'
+          if ( (@informe.promhabitos<3 && @informe.promhabitos>=1) || (@informe.promvocacion<3 && @informe.promvocacion>=1) || (@informe.promsalud<3 && @informe.promsalud>=1)||(@informe.nota1<=3 && @informe.nota2<=3 && @informe.nota3<=3)||(@informe.nota1<=3 && @informe.nota2<=3 && @informe.nota4<=3)||(@informe.nota1<=3 && @informe.nota2<=3 && @informe.nota5<=3)||(@informe.nota1<=3 && @informe.nota3<=3 && @informe.nota4<=3)||(@informe.nota1<=3 && @informe.nota3<=3 && @informe.nota5<=3)||(@informe.nota1<=3 && @informe.nota4<=3 && @informe.nota5<=3)||(@informe.nota2<=3 && @informe.nota3<=3 && @informe.nota4<=3)||(@informe.nota2<=3 && @informe.nota4<=3 && @informe.nota5<=3)||(@informe.nota2<=3 && @informe.nota4<=3 && @informe.nota5<=3)||(@informe.nota3<=3 && @informe.nota4<=3 && @informe.nota4<=3)||(@informe.nota6<=3 && @informe.nota7<=3 && @informe.nota8<=3)||(@informe.nota6<=3 && @informe.nota7<=3 && @informe.nota9<=3)||(@informe.nota6<=3 && @informe.nota7<=3 && @informe.nota10<=3)||(@informe.nota6<=3 && @informe.nota8<=3 && @informe.nota9<=3)||(@informe.nota6<=3 && @informe.nota8<=3 && @informe.nota10<=3)||(@informe.nota6<=3 && @informe.nota9<=3 && @informe.nota10<=3)||(@informe.nota7<=3 && @informe.nota8<=3 && @informe.nota9<=3)||(@informe.nota7<=3 && @informe.nota8<=3 && @informe.nota10<=3)||(@informe.nota7<=3 && @informe.nota9<=3 && @informe.nota10<=3)||(@informe.nota8<=3 && @informe.nota9<=3 && @informe.nota10<=3)||(@informe.nota11<=3 && @informe.nota12<=3 && @informe.nota13<=3)||(@informe.nota11<=3 && @informe.nota12<=3 && @informe.nota14<=3)||(@informe.nota11<=3 && @informe.nota12<=3 && @informe.nota15<=3)||(@informe.nota11<=3 && @informe.nota13<=3 && @informe.nota14<=3)||(@informe.nota11<=3 && @informe.nota13<=3 && @informe.nota15<=3)||(@informe.nota11<=3 && @informe.nota14<=3 && @informe.nota15<=3)||(@informe.nota12<=3 && @informe.nota13<=3 && @informe.nota14<=3)||(@informe.nota12<=3 && @informe.nota13<=3 && @informe.nota15<=3)||(@informe.nota12<=3 && @informe.nota14<=3 && @informe.nota15<=3)||(@informe.nota13<=3 && @informe.nota14<=3 && @informe.nota15<=3))
+
+            @alertas.prioridad = 'Alta'
+         
+        
+        
+        
           end 
 
 
