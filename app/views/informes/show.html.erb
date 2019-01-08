@@ -1,21 +1,194 @@
-<h1 class= "text-info"><u> Informe  <%= @informe.user.rol.descripcion %></h1> </u>
+<h1 class= "text-info pull-center"><u> Informe  <%= @informe.user.rol.descripcion %></h1> </u><br>
+<%= link_to 'Generar PDF', informe_path(format: "pdf"), class:"btn btn-danger  btn-sm pull-right" %>
 
+
+<h5>N° Informe : <%= @informe.id %></h5>
+<h5>Fecha : <%= @informe.created_at.strftime("%d-%m-%Y = Hora: %H:%M:%S") %></h5><br>
+
+<% if @informe.user.rol.descripcion=='Sicologo' %>
 <p>Nombre de Profesional : <%= @informe.user.nombre %> <%= @informe.user.apellidopa %> <%= @informe.user.apellidoma%></p>
 <p>Nombre Estudiante :  <%= @informe.estudiante.nombreestudiante %> <%= @informe.estudiante.apellidopa %> <%= @informe.estudiante.apellidoma%></p>
-<p>Nota1:  <%= @informe.nota1 %></p>
-<p>Nota2:  <%= @informe.nota2  %> </p>
-<p>Nota3:  <%= @informe.nota3 %></p>
-<p>Nota4:  <%= @informe.nota4 %></p>
-<p>Nota5:  <%= @informe.nota5 %></p>
-<p>Nota6:  <%= @informe.nota6 %></p>
-<p>Nota7:  <%= @informe.nota7 %></p>
-<p>Nota8:  <%= @informe.nota8 %></p>
-<p>Nota9:  <%= @informe.nota9 %></p>
-<p>Nota10: <%= @informe.nota10 %></p>
-<p>Nota11: <%= @informe.nota11%></p>
-<p>Nota12: <%= @informe.nota12%></p>
-<p>Nota13: <%= @informe.nota13%></p>
-<p>Nota14: <%= @informe.nota14%></p>
-<p>Nota15: <%= @informe.nota15%></p>
+<p>Carrera : <%=@informe.estudiante.carrera.nombrecarrera%>
 
-<p>Fecha de Creacion : <%= @informe.created_at %></p>
+<br>
+<h4><li><u>Habitos de Estudio</u></li></h4>
+
+<table class= "table">
+<tr><td>&nbsp &nbsp &nbsp &nbsp Si tiene problemas con materias, ¿que tan grave es?. </td> 
+<td> <%= @informe.nota1 %></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cómo considera que es la comprensión de los contenidos que estudia?.</th> 
+<th> <%= @informe.nota2  %> </th></tr>
+
+<tr><th> &nbsp &nbsp &nbsp &nbsp¿En relación al espacio físico de su lugar de estudio, ¿cómo lo califica?.</th>    
+<th> <%= @informe.nota3 %></th> </tr>
+
+<tr><th> &nbsp &nbsp &nbsp &nbsp¿Cómo es el tiempo que dedica a estudiar?.</th>   
+<th> <%= @informe.nota4 %></th> </tr>
+<tr><th>&nbsp &nbsp &nbsp &nbsp¿Cómo estima que son sus calificaciones en función de su estudio y esfuerzo?.</th>  
+<th> <%= @informe.nota5  %> </th> </tr>
+<tr class="bg-info"><th class="col-5">Promedio Habitos de Estudio: </th>
+<th > <%=@informe.promhabitos%></th></tr>
+
+</table>
+
+<h4><li><u>Vocación</u></li></h4>
+<table class= "table">
+<td >&nbsp &nbsp &nbsp &nbsp¿Cómo considera que fue la elección que hizo de la carrera que cursa?.</td>
+<td> <%= @informe.nota6 %></th> </td>
+<tr><th >&nbsp &nbsp &nbsp &nbspCon respecto a su elección universitaria, ¿cómo la califica hoy? </th>
+<th> <%= @informe.nota7 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cómo  piensa que son los contenidos de las materias que imparte su carrera?. </th> 
+<th> <%= @informe.nota8 %></th> </tr>
+<tr><th>&nbsp &nbsp &nbsp &nbsp¿Qué tan drásticos cree que  han sido los cambios a lo largo del tiempo en relación a su vocación?.  </th>
+<th> <%= @informe.nota9 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cómo considera su nivel de vocación de elección universitaria antes de ingresar a la educación superior?. </th>
+<th> <%= @informe.nota10 %></th> </tr>
+<tr class="bg-info"><th class="col-5">Promedio Vocación: </th>
+<th > <%=@informe.promvocacion%></th></tr>
+</table>
+
+<table class= "table">
+<h4><li><u>Salud Fisica y Mental</u></li></h4>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Qué nivel de concentración presenta en la sala de clases?.</th>
+<th> <%= @informe.nota11 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cómo considera que es su salud mental luego de periodos prolongados de estudio?.</th>  
+<th> <%= @informe.nota12 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbspReferente a su salud física actual, ¿de qué manera cree que afecta su rendimiento académico?.</th>  
+<th> <%= @informe.nota13 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cómo se siente cuando debe expresar su opinión frente a sus compañeros?. </th> 
+<th> <%= @informe.nota14 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cómo estima que es la relación entre su salud física y mental?.</th>
+<th> <%= @informe.nota15 %></th> </tr>
+<tr class="bg-info"><th class="col-5">Promedio Salud Fisica y Mental: </th>
+<th > <%=@informe.promsalud%></th></tr>
+</table>
+<h4><li><u>Observación</u></li></h4>
+<p><%=@informe.observacion%><p>
+<%end%>
+
+
+<% if @informe.user.rol.descripcion=='Asistente Social' %>
+<p>Nombre de Profesional : <%= @informe.user.nombre %> <%= @informe.user.apellidopa %> <%= @informe.user.apellidoma%></p>
+<p>Nombre Estudiante :  <%= @informe.estudiante.nombreestudiante %> <%= @informe.estudiante.apellidopa %> <%= @informe.estudiante.apellidoma%></p>
+<p>Carrera : <%=@informe.estudiante.carrera.nombrecarrera%>
+
+<br>
+<h4><li><u>Habitos de Estudio</u></li></h4>
+
+<table class= "table">
+<tr><th>&nbsp &nbsp &nbsp &nbsp Pensando en las últimas semanas, ¿cómo considera que es el tiempo que destinó para estudiar y preparar sus exámenes?. </th> 
+<th> <%= @informe.nota1 %></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cómo ha que sido el trabajo colaborativo con sus compañeros al momento de estudiar en los últimos días?.</th> 
+<th> <%= @informe.nota2  %> </th></tr>
+
+<tr><th> &nbsp &nbsp &nbsp &nbsp¿Cómo califica la atención- concentración al momento de estudiar?</th>    
+<th> <%= @informe.nota3 %></th> </tr>
+
+<tr><th> &nbsp &nbsp &nbsp &nbspEn los últimos días, ¿estima que los problemas afectivos han perjudicado su rendimiento?.</th>   
+<th> <%= @informe.nota4 %></th> </tr>
+<tr><th>&nbsp &nbsp &nbsp &nbspEn el estudio de las últimas evaluaciones, ¿cómo consideras que ha trabajado con métodos de estudio?(mapas conceptuales, resumen, etc.)</th>  
+<th> <%= @informe.nota5  %> </th> </tr>
+<tr class="bg-info"><th class="col-5">Promedio Habitos de Estudio: </th>
+<th > <%=@informe.promhabitos%></th></tr>
+
+</table>
+
+<h4><li><u>Vocación</u></li></h4>
+<table class= "table">
+<tr><th >&nbsp &nbsp &nbsp &nbspA partir de lo aprendido en el último tiempo, ¿cómo cree que es la relación entre su vocación y preparación?.</th>
+<th> <%= @informe.nota6 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbspEn los últimos días, ¿cómo se ha sentido con la decisión de estudiar la carrera que cursa?. </th>
+<th> <%= @informe.nota7 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cómo considera la preparación de las clases de los docentes?. </th> 
+<th> <%= @informe.nota8 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp ¿Cómo estima que es la relación de sus notas versus su preparación en el último tiempo?  </th>
+<th> <%= @informe.nota9 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cómo ha sido el aporte social para el desarrollo vocacional?. </th>
+<th> <%= @informe.nota10 %></th> </tr>
+<tr class="bg-info"><th class="col-5">Promedio Vocación: </th>
+<th > <%=@informe.promvocacion%></th></tr>
+</table>
+
+<table class= "table">
+<h4><li><u>Salud Fisica y Mental</u></li></h4>
+<tr><th >&nbsp &nbsp &nbsp &nbspEn la Sala de clases, si tiene problemas de concentracion, que tan frecuentes son ?</th>
+<th> <%= @informe.nota11 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Siente malestar fisico o emocional al estar en la sala de clases con mas personas ?</th>  
+<th> <%= @informe.nota12 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Ha dejado la actividad fisica o los estudios, solo por que no se siente bien emocionalmente ?</th>  
+<th> <%= @informe.nota13 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Si tiene alteraciones de sueño, que tan frecuentes son ?. </th> 
+<th> <%= @informe.nota14 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Es capaz de expresar abiertamiente su opinion y compartir con compañeros ?.</th>
+<th> <%= @informe.nota15 %></th> </tr>
+<tr class="bg-info"><th class="col-5">Promedio Salud Fisica y Mental: </th>
+<th > <%=@informe.promsalud%></th></tr>
+</table>
+<h4><li><u>Observación</u></li></h4>
+<p><%=@informe.observacion%><p>
+<%end%>
+
+
+<% if @informe.user.rol.descripcion=='Tutor' %>
+<p>Nombre de Profesional : <%= @informe.user.nombre %> <%= @informe.user.apellidopa %> <%= @informe.user.apellidoma%></p>
+<p>Nombre Estudiante :  <%= @informe.estudiante.nombreestudiante %> <%= @informe.estudiante.apellidopa %> <%= @informe.estudiante.apellidoma%></p>
+<p>Carrera : <%=@informe.estudiante.carrera.nombrecarrera%>
+
+<br>
+<h4><li><u>Habitos de Estudio</u></li></h4>
+
+<table class= "table">
+<tr><th>&nbsp &nbsp &nbsp &nbsp ¿Estudias al menos cinco días por semana?. </th> 
+<th> <%= @informe.nota1 %></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Anotas las tareas que debes realizar en tu casa?.</th> 
+<th> <%= @informe.nota2  %> </th></tr>
+
+<tr><th> &nbsp &nbsp &nbsp &nbsp¿Realizas una lectura rápida del texto , previo al estudio más detallado?</th>    
+<th> <%= @informe.nota3 %></th> </tr>
+
+<tr><th> &nbsp &nbsp &nbsp &nbsp¿Utilizas alguna técnica para memorizar estos datos?.</th>   
+<th> <%= @informe.nota4 %></th> </tr>
+<tr><th>&nbsp &nbsp &nbsp &nbsp¿Consultas otros libros además de tu texto de estudio?</th>  
+<th> <%= @informe.nota5  %> </th> </tr>
+<tr class="bg-info"><th class="col-5">Promedio Habitos de Estudio: </th>
+<th > <%=@informe.promhabitos%></th></tr>
+
+</table>
+
+<h4><li><u>Vocación</u></li></h4>
+<table class= "table">
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Tienes claras las razones por las que estudias?.</th>
+<th> <%= @informe.nota6 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Piensas que las personas deben estudiar para aprender y no sólo para aprobar una asignatura? </th>
+<th> <%= @informe.nota7 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cuándo te has sacado una mala nota , intentas superar tu estado de ánimo continuando con interés en las materias? </th> 
+<th> <%= @informe.nota8 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp Cuando faltas a clases,¿procuras informarte de lo que se ha realizado y de lo que se va a realizar?  </th>
+<th> <%= @informe.nota9 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Cómo ha sido el aporte social para el desarrollo vocacional?. </th>
+<th> <%= @informe.nota10 %></th> </tr>
+<tr class="bg-info"><th class="col-5">Promedio Vocación: </th>
+<th > <%=@informe.promvocacion%></th></tr>
+</table>
+
+<table class= "table">
+<h4><li><u>Salud Fisica y Mental</u></li></h4>
+<tr><th >&nbsp &nbsp &nbsp &nbspEn la Sala de clases, si tiene problemas de concentracion, que tan frecuentes son ?</th>
+<th> <%= @informe.nota11 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Siente malestar fisico o emocional al estar en la sala de clases con mas personas ?</th>  
+<th> <%= @informe.nota12 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Ha dejado la actividad fisica o los estudios, solo por que no se siente bien emocionalmente ?</th>  
+<th> <%= @informe.nota13 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Si tiene alteraciones de sueño, que tan frecuentes son ?. </th> 
+<th> <%= @informe.nota14 %></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp¿Tratas de entregar lo máximo de ti para obtener un buen resultado academico?.</th>
+<th> <%= @informe.nota15 %></th> </tr>
+<tr class="bg-info"><th class="col-5">Promedio Salud Fisica y Mental: </th>
+<th > <%=@informe.promsalud%></th></tr>
+</table>
+<h4><li><u>Observación</u></li></h4>
+<p><%=@informe.observacion%><p>
+<%end%>

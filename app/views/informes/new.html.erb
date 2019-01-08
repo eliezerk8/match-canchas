@@ -7,13 +7,30 @@
 <% end %>
 
 <% if current_user.rol.descripcion == "Sicologo" %>
+
+
 <center><h1 class= text-info ><u> Informe Profesional Sicológico </u></h1><br></center>
+
+
 <%=form_for( @informes) do |f| %>
   <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
   <br><br><label class="text-dark"><u>Estudiante</u></label>
 
-  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info btn-sm"}  %>
  <br><br>
+
+ <font size=2>*El propósito del presente informe es dejar de manifiesto la sesión realizada con el estudiante, de este cinco preguntas respectivamente, donde deberá calificar cada una de ellas de la siguiente manera:
+
+1.	Muy malo-
+2.	Malo-
+3.	Pésimo- 
+4.	Regular- 
+5.	Bueno -
+6.	Muy bueno -
+7.	Excelente-
+
+</font>
+<br><br>
   <div class="row">
     <div class="col-md-4">
     <p class="bg-info text-center">Habitos de Estudio </p> 
@@ -21,23 +38,23 @@
         <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1 "},{class: "btn btn-secundary btn-sm "})%> 
         <br>
         <br>
-        <label class="text-dark text-justify"><li>Cuales fueron sus resultados academicos antes de entrar a la universidad ?</li> </label>
+        <label class="text-dark text-justify"><li>¿Cómo considera que es la comprensión de los contenidos que estudia?</li> </label>
         <%= f.select(:nota2,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°2 "},{class: "btn btn-secundary btn-sm"} )%>
         <br>
         <br>
-        <label class="text-dark text-justify"><li>Si tiene algun tipo de problema a la hora de estudiar, ¿que tan grave es ?</li> </label>
+        <label class="text-dark text-justify"><li>¿En relación al espacio físico de su lugar de estudio, ¿cómo lo califica?</li> </label>
         <%= f.select(:nota3,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°3 "},{class: "btn btn-secundary btn-sm"} ) %>
         <br>
         <br>
 
   
-        <label class="text-dark text-justify"><li>¿Puede eliminar facilmente los ruidos molestos al estudiar?</li> </label>
+        <label class="text-dark text-justify"><li>¿Cómo es el tiempo que dedica a estudiar?</li> </label>
         <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4 "},{class: "btn btn-secundary btn-sm"} ) %>
         <br>
         <br>
 
   
-        <label class="text-dark text-justify"><li>¿Suele dejar para ultimo momento los trabajos y estudios?</li> </label>
+        <label class="text-dark text-justify"><li>¿Cómo estima que son sus calificaciones en función de su estudio y esfuerzo?</li> </label>
         <%= f.select(:nota5,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°5 "},{class: "btn btn-secundary btn-sm"} )%>
         <br>
         <br>
@@ -46,53 +63,53 @@
     </div>
  <div class="col-md-4">
         <p class="bg-info text-center text-justify">Vocación </p> 
-       <label class="text-dark"><li>¿Siente problemas en su actual eleccion vocacional ? </li> </label>
+       <label class="text-dark"><li>¿Cómo considera que fue la elección que hizo de la carrera que cursa? </li> </label>
        <%= f.select(:nota6,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°6 "},{class: "btn btn-secundary btn-sm"} )%>
        <br>
        <br>
   
-       <label class="text-dark text-justify"><li>¿Cree que el area que eligio estudiar es la que de verdad le gusta ?</li> </label>
+       <label class="text-dark text-justify"><li>Con respecto a su elección universitaria, ¿cómo la califica hoy?</li> </label>
        <%= f.select(:nota7,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°7 "},{class: "btn btn-secundary btn-sm"} )%>
        <br>
        <br>
   
-       <label class="text-dark text-justify"><li>¿Que tan drasticos han sido los cambios de vocacion que ha tenido en el tiempo ?</li> </label>
+       <label class="text-dark text-justify"><li>¿Cómo  piensa que son los contenidos de las materias que imparte su carrera? </li> </label>
        <%= f.select(:nota8,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°8 "},{class: "btn btn-Primary btn-sm"} )%>
        <br>
         <br>
   
-       <label class="text-dark text-justify"><li>¿Tiendes a emplear tiempo en leer revistas, ver televisión o charlar cuando debieras dedicarlos a estudiar? </li></label>
+       <label class="text-dark text-justify"><li>¿Qué tan drásticos cree que  han sido los cambios a lo largo del tiempo en relación a su vocación? </li></label>
        <%= f.select(:nota9,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°9 "},{class: "btn btn-secundary btn-sm"} )%>
        <br>
         <br>
 
-       <label class="text-dark text-justify"><li>¿Piensas con frecuencia que las materias que estudias tienen poco valor practico para ti? </li></label>
+       <label class="text-dark text-justify"><li>¿Cómo considera su nivel de vocación de elección universitaria antes de ingresar a la educación superior?</li></label>
        <%= f.select(:nota10,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°10"},{class: "btn btn-secundary btn-sm"} )%>
   </div>
   <br>
  <div class="col-md-4">
  <p class="bg-info text-center text-justify">Salud Fisica y Mental </p> 
-    <label class="text-dark"><li>En la Sala de clases, si tiene problemas de concentracion, que tan frecuentes son ?</li>  </label>
+    <label class="text-dark"><li>¿Qué nivel de concentración presenta en la sala de clases?</li>  </label>
     <%= f.select(:nota11,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°11"},{class: "btn btn-secundary btn-sm"} )%>
     <br>
     <br>
  
-    <label class="text-dark text-justify"><li>¿Siente malestar fisico o emocional al estar en la sala de clases con mas personas ?</li> </label>
+    <label class="text-dark text-justify"><li>¿Cómo considera que es su salud mental luego de periodos prolongados de estudio?</li> </label>
     <%= f.select(:nota12,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°12"},{class: "btn btn-secundary btn-sm"} )%>
     <br>
     <br>
-    <label class="text-dark text-justify"><li>¿Ha dejado la actividad fisica o los estudios, solo por que no se siente bien emocionalmente ?</li></label>
+    <label class="text-dark text-justify"><li>Referente a su salud física actual, ¿de qué manera cree que afecta su rendimiento académico?</li></label>
     <%= f.select(:nota13,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°13"},{class: "btn btn-secundary btn-sm"} )%>
     <br>
     <br>
  
-    <label class="text-dark text-justify"><li>¿Si tiene alteraciones de sueño, que tan frecuentes son ? </li></label>
+    <label class="text-dark text-justify"><li>¿Cómo se siente cuando debe expresar su opinión frente a sus compañeros? </li></label>
     <%= f.select(:nota14,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°14"},{class: "btn btn-secundary btn-sm"} )%>
     <br>
        <br>
 
   
-    <label class="text-dark text-justify"><li>¿Es capaz de expresar abiertamiente su opinion y compartir con compañeros ? </li></label>
+    <label class="text-dark text-justify"><li>¿Cómo estima que es la relación entre su salud física y mental?.</li></label>
     <%= f.select(:nota15,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°15"},{class: "btn btn-secundary btn-sm"} )%>
     
   </div>
@@ -223,7 +240,7 @@
 <%end%>
 
 <% if current_user.rol.descripcion == "Asistente Social" %>
-<center><h1 class= text-info ><u> Informe Profesional Sicológico </u></h1><br></center>
+<center><h1 class= text-info ><u> Informe Profesional Asistente Social </u></h1><br></center>
 <%=form_for( @informes) do |f| %>
   <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
   <br><br><label class="text-dark"><u>Estudiante</u></label>
@@ -233,27 +250,27 @@
   <div class="row">
     <div class="col-md-4">
     <p class="bg-info text-center">Habitos de Estudio </p> 
-       <label class="text-dark text-justify"><li>Si tiene problemas con materias, ¿que tan grave es?.</li></label>
+       <label class="text-dark text-justify"><li>Pensando en las últimas semanas, ¿cómo considera que es el tiempo que destinó para estudiar y preparar sus exámenes?</li></label>
         <%= f.select(:nota1,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]],{:include_blank => "N°1 "},{class: "btn btn-secundary btn-sm "})%> 
         <br>
         <br>
-        <label class="text-dark text-justify"><li>Cuales fueron sus resultados academicos antes de entrar a la universidad ?</li> </label>
+        <label class="text-dark text-justify"><li>¿Cómo ha que sido el trabajo colaborativo con sus compañeros al momento de estudiar en los últimos días?</li> </label>
         <%= f.select(:nota2,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°2 "},{class: "btn btn-secundary btn-sm"} )%>
         <br>
         <br>
-        <label class="text-dark text-justify"><li>Si tiene algun tipo de problema a la hora de estudiar, ¿que tan grave es ?</li> </label>
+        <label class="text-dark text-justify"><li>¿Cómo califica la atención- concentración al momento de estudiar?</li> </label>
         <%= f.select(:nota3,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°3 "},{class: "btn btn-secundary btn-sm"} ) %>
         <br>
         <br>
 
   
-        <label class="text-dark text-justify"><li>¿Puede eliminar facilmente los ruidos molestos al estudiar?</li> </label>
+        <label class="text-dark text-justify"><li>En los últimos días, ¿estima que los problemas afectivos han perjudicado su rendimiento?</li> </label>
         <%= f.select(:nota4,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°4 "},{class: "btn btn-secundary btn-sm"} ) %>
         <br>
         <br>
 
   
-        <label class="text-dark text-justify"><li>¿Suele dejar para ultimo momento los trabajos y estudios?</li> </label>
+        <label class="text-dark text-justify"><li>En el estudio de las últimas evaluaciones, ¿cómo consideras que ha trabajado con métodos de estudio?(mapas conceptuales, resumen, etc.)</li> </label>
         <%= f.select(:nota5,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°5 "},{class: "btn btn-secundary btn-sm"} )%>
         <br>
         <br>
@@ -262,27 +279,27 @@
     </div>
  <div class="col-md-4">
         <p class="bg-info text-center text-justify">Vocación </p> 
-       <label class="text-dark"><li>¿Siente problemas en su actual eleccion vocacional ? </li> </label>
+       <label class="text-dark"><li>A partir de lo aprendido en el último tiempo, ¿cómo cree que es la relación entre su vocación y preparación? </li> </label>
        <%= f.select(:nota6,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°6 "},{class: "btn btn-secundary btn-sm"} )%>
        <br>
        <br>
   
-       <label class="text-dark text-justify"><li>¿Cree que el area que eligio estudiar es la que de verdad le gusta ?</li> </label>
+       <label class="text-dark text-justify"><li>En los últimos días, ¿cómo se ha sentido con la decisión de estudiar la carrera que cursa?</li> </label>
        <%= f.select(:nota7,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°7 "},{class: "btn btn-secundary btn-sm"} )%>
        <br>
        <br>
   
-       <label class="text-dark text-justify"><li>¿Que tan drasticos han sido los cambios de vocacion que ha tenido en el tiempo ?</li> </label>
+       <label class="text-dark text-justify"><li>¿Cómo considera la preparación de las clases de los docentes?</li> </label>
        <%= f.select(:nota8,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°8 "},{class: "btn btn-Primary btn-sm"} )%>
        <br>
         <br>
   
-       <label class="text-dark text-justify"><li>¿Tiendes a emplear tiempo en leer revistas, ver televisión o charlar cuando debieras dedicarlos a estudiar? </li></label>
+       <label class="text-dark text-justify"><li>¿Cómo estima que es la relación de sus notas versus su preparación en el último tiempo? </li></label>
        <%= f.select(:nota9,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°9 "},{class: "btn btn-secundary btn-sm"} )%>
        <br>
         <br>
 
-       <label class="text-dark text-justify"><li>¿Piensas con frecuencia que las materias que estudias tienen poco valor practico para ti? </li></label>
+       <label class="text-dark text-justify"><li>Pensando en las últimas semanas, ¿cómo ha sido el aporte social para el desarrollo vocacional?</li></label>
        <%= f.select(:nota10,[['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7]], {:include_blank => "N°10"},{class: "btn btn-secundary btn-sm"} )%>
   </div>
   <br>
@@ -317,7 +334,7 @@
        <br>
        <br>
        
-    <label class="text-dark text-justify"><li>Observacion </label>
+    <label class="text-dark text-justify"><li>Observacion </label><br><br>
     <%= f.text_area:observacion,cols:"300",rows:"500", placeholder:"Agregar Notas" , class:"form-control"  %>
     <br>
     <br>

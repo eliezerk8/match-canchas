@@ -16,6 +16,7 @@ class InformesController < ApplicationController
       format.html
       format.json
       format.pdf { render template: 'informes/reporte', pdf:'Reporte'}
+
     end
   end
 

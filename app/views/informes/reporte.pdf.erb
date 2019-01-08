@@ -1,3 +1,85 @@
-<h1>Hola</h1>
+<%= wicked_pdf_image_tag "utemi.png", :size => "280x200", :align=>"left" %>
+<br><br><br><br><br><br><br>
+<h2 class="pull-center">&nbsp &nbsp &nbsp<u>Informe Profesional </u></h2>
+<h2 ><u>Plan de Apoyo Estudiantil</u></h1>
 
-<%= @informe.estudiante.nombreestudiante %>
+<br>
+<br>
+
+<%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+<link rel="stylesheet" type="text/scss" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<meta charset="utf-8">
+<font size=4><center>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  N° Informe : <%= @informe.id %></center></font><br>
+<font size=4><center>&nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Fecha : <%= @informe.created_at.strftime("%d-%m-%Y Hora: %H:%M:%S") %></center></font><br>
+
+<h3><li><u>Profesional</h4></u> <p>&nbsp &nbsp &nbsp &nbsp &nbsp  <font size=4> Nombre : <%= @informe.user.nombre %> <%= @informe.user.apellidopa %> <%= @informe.user.apellidoma %></font></li><br><br>
+<font size=4>&nbsp &nbsp &nbsp &nbsp Especialidad : <%= @informe.user.rol.descripcion%></font>
+<h3><li><u>Datos Estudiante</u></li></h4>
+
+<font size=4>&nbsp &nbsp &nbsp &nbsp    Nombre : <%= @informe.estudiante.nombreestudiante %> <%= @informe.estudiante.apellidopa %> <%= @informe.estudiante.apellidoma %></font><br><br>
+<font size=4>&nbsp &nbsp &nbsp &nbsp      Carrera : <%=@informe.estudiante.carrera.nombrecarrera%></font><br><br>
+<font size=4>&nbsp &nbsp &nbsp &nbsp      Rut &nbsp &nbsp &nbsp    : <%=@informe.estudiante.rut%></font><br><br>
+
+<% if @informe.user.rol.descripcion=='Sicologo' %>
+
+<br>
+<h3><li><u>Habitos de Estudio</u></li></h3>
+
+<table class="table" >
+<td class="col-lg"> Si tiene problemas con materias, ¿que tan grave es?. </font></td> 
+<td> <%= @informe.nota1 %></font></td> 
+<tr><td>¿Cómo considera que es la comprensión de los contenidos que estudia?.</font></td> 
+<td> <%= @informe.nota2  %> </font></td></tr>
+<tr><td>¿En relación al espacio físico de su lugar de estudio, ¿cómo lo califica?.</font></td>  
+<td><%= @informe.nota3 %></th></font> </td>
+<tr><td>¿Cómo es el tiempo que dedica a estudiar?.</font></th>  
+<td><%= @informe.nota4 %></font></th> </td>
+<tr><td class="col-lg">¿Cómo estima que son sus calificaciones en función de su estudio y esfuerzo?.</font></th>
+<td> <%= @informe.nota5  %></font> </th> </td>
+<tr><td><b>Promedio Habitos de Estudio: </b></font></td>
+<td><b><%=@informe.promhabitos%></b></td></tr>
+
+</table>
+<br><br>
+<h3><li><u>Vocación</u></li></h3>
+<table class= "table">
+<tr><td>¿Cómo considera que fue la elección que hizo de la carrera que cursa?.</th>
+<td><%= @informe.nota6 %></td> </tr>
+<td></td>
+<tr><td>Con respecto a su elección universitaria, ¿cómo la califica hoy? </th>
+<td><%= @informe.nota7 %></td> </tr>
+<td></td>
+<tr><td>¿Cómo  piensa que son los contenidos de las materias que imparte su carrera?. </th> 
+<td> <%= @informe.nota8 %></td> </tr>
+<td></td>
+<tr><td >¿Qué tan drásticos cree que  han sido los cambios a lo largo del tiempo en relación a su vocación?.  </th>
+<td> <%= @informe.nota9 %></td> </tr>
+<td></td>
+<tr><td >¿Cómo considera su nivel de vocación de elección universitaria antes de ingresar a la educación superior?. </th>
+<td> <%= @informe.nota10 %></td> </tr>
+<td></td>
+<tr><td><b>Promedio Vocación: </b></td>
+<td><b><%=@informe.promvocacion%></b></td></tr>
+<td></td>
+</table>
+
+<br><br><br><br><br><br><br><br><br>
+
+<table class= "table">
+<h3><li><u>Salud Fisica y Mental</u></li></h3>
+<tr><td>¿Qué nivel de concentración presenta en la sala de clases?.</td>
+<td> <%= @informe.nota11 %></td> </tr>
+<tr><td >¿Cómo considera que es su salud mental luego de periodos prolongados de estudio?.</td>  
+<td> <%= @informe.nota12 %></td> </tr>
+<tr><td >Referente a su salud física actual, ¿de qué manera cree que afecta su rendimiento académico?.</td>  
+<td> <%= @informe.nota13 %></td> </tr>
+<tr><td >¿Cómo se siente cuando debe expresar su opinión frente a sus compañeros?. </td> 
+<td> <%= @informe.nota14 %></td> </tr>
+<tr><td >¿Cómo estima que es la relación entre su salud física y mental?.</td>
+<td> <%= @informe.nota15 %></td> </tr>
+<tr><td><b>Promedio Salud Fisica y Mental: </b></td>
+<td><b> <%=@informe.promsalud%></b></td></tr>
+</table>
+<h4><li><u>Observación</u></li></h4>
+<p><<%=@informe.observacion%><p>
+<%end%>
