@@ -7232,10 +7232,10 @@ a.text-warning:hover, a.text-warning:focus {
   color: #ffe608 !important; }
 
 .text-danger {
-  color: #f44336 !important; }
+  color: #ff0101 !important; }
 
 a.text-danger:hover, a.text-danger:focus {
-  color: #ea1c0d !important; }
+  color: #ff0000 !important; }
 
 .text-light {
   color: #f8f9fa !important; }
@@ -11747,7 +11747,7 @@ h2.title {
   color: #9c27b0 !important; }
 
 .text-danger {
-  color: #f44336 !important; }
+  color: rgb(255, 0, 0) !important; }
 
 .text-success {
   color: #4caf50 !important; }

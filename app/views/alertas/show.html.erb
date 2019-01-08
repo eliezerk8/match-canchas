@@ -1,0 +1,18 @@
+<h3> Alerta Temprana </h3>
+<h5> Generada por : <%=@alerta.informe.user.nombre%> <%=@alerta.informe.user.apellidopa%>  , <%=@alerta.informe.user.rol.descripcion%></h5>
+<h5> Fecha : <%=@alerta.informe.created_at.strftime("%d-%m-%Y")%></h5>
+<h5> Informe N° : <%=@alerta.informe.id%></h5>
+
+<% if @alerta.informe.user.rol.descripcion=='Sicologo' %>
+     
+    <%if (@alerta.informe.nota1<=3)%>
+      <h5>< Problemas en Informe de Sicologo</h5>
+      <p> Si tiene problemas con materias, ¿que tan grave es?.</p> 
+     <%end%>
+
+
+
+
+<%end%>
+
+

@@ -22,40 +22,45 @@
 
 <% if @informe.user.rol.descripcion=='Sicologo' %>
 
-<br>
+<br><br>
 <h3><li><u>Habitos de Estudio</u></li></h3>
 
 <table class="table" >
-<td class="col-lg"> Si tiene problemas con materias, ¿que tan grave es?. </font></td> 
-<td> <%= @informe.nota1 %></font></td> 
-<tr><td>¿Cómo considera que es la comprensión de los contenidos que estudia?.</font></td> 
-<td> <%= @informe.nota2  %> </font></td></tr>
-<tr><td>¿En relación al espacio físico de su lugar de estudio, ¿cómo lo califica?.</font></td>  
-<td><%= @informe.nota3 %></th></font> </td>
-<tr><td>¿Cómo es el tiempo que dedica a estudiar?.</font></th>  
-<td><%= @informe.nota4 %></font></th> </td>
-<tr><td class="col-lg">¿Cómo estima que son sus calificaciones en función de su estudio y esfuerzo?.</font></th>
-<td> <%= @informe.nota5  %></font> </th> </td>
-<tr><td><b>Promedio Habitos de Estudio: </b></font></td>
+<tr><td> Si tiene problemas con materias, ¿que tan grave es?.</td> 
+<td left:20px;> <%= @informe.nota1 %></td></tr>
+<td></td>
+<tr><td>¿Cómo considera que es la comprensión de los contenidos que estudia?.</td> 
+<td><%= @informe.nota2  %></td></tr>
+<td></td>
+<tr><td>¿En relación al espacio físico de su lugar de estudio, ¿cómo lo califica?.</td>  
+<td><%= @informe.nota3 %></td></tr>
+<td></td>
+<tr><td>¿Cómo es el tiempo que dedica a estudiar?</td>  
+<td><%= @informe.nota4 %></td></tr>
+<td></td>
+<tr><td >¿Cómo estima que son sus calificaciones en función de su estudio y esfuerzo?.  &nbsp  </td>
+<td> <%= @informe.nota5%></td></tr>
+<td></td>
+<tr><td><b>Promedio Habitos de Estudio: </b></td>
 <td><b><%=@informe.promhabitos%></b></td></tr>
 
 </table>
 <br><br>
 <h3><li><u>Vocación</u></li></h3>
 <table class= "table">
-<tr><td>¿Cómo considera que fue la elección que hizo de la carrera que cursa?.</th>
+<tr><td>¿Cómo considera que fue la elección que hizo de la carrera que cursa?.</td>
 <td><%= @informe.nota6 %></td> </tr>
 <td></td>
-<tr><td>Con respecto a su elección universitaria, ¿cómo la califica hoy? </th>
+<tr><td>Con respecto a su elección universitaria, ¿cómo la califica hoy? </td>
 <td><%= @informe.nota7 %></td> </tr>
 <td></td>
-<tr><td>¿Cómo  piensa que son los contenidos de las materias que imparte su carrera?. </th> 
+<tr><td>¿Cómo  piensa que son los contenidos de las materias que imparte su carrera?. </td> 
 <td> <%= @informe.nota8 %></td> </tr>
 <td></td>
-<tr><td >¿Qué tan drásticos cree que  han sido los cambios a lo largo del tiempo en relación a su vocación?.  </th>
+<tr><td >¿Qué tan drásticos cree que  han sido los cambios a lo largo del tiempo en relación a su vocación?.  </td>
 <td> <%= @informe.nota9 %></td> </tr>
 <td></td>
-<tr><td >¿Cómo considera su nivel de vocación de elección universitaria antes de ingresar a la educación superior?. </th>
+<tr><td >¿Cómo considera su nivel de vocación de elección universitaria antes de ingresar a la educación superior?. </td>
 <td> <%= @informe.nota10 %></td> </tr>
 <td></td>
 <tr><td><b>Promedio Vocación: </b></td>
@@ -81,5 +86,91 @@
 <td><b> <%=@informe.promsalud%></b></td></tr>
 </table>
 <h4><li><u>Observación</u></li></h4>
-<p><<%=@informe.observacion%><p>
+<p><%=@informe.observacion%><p>
+<br><br><br><br>
+
+<center><h3>__________________________________</h3></center>
+<center><h3><%=@informe.user.nombre%> <%=@informe.user.apellidopa%> <%=@informe.user.apellidoma%></center></h3>
+<center><h3><%=@informe.user.rol.descripcion%></center></h3>
+<center><h3><%= Time.now.strftime("%d/%m/%Y") %></center></h3>
+<%end%>
+
+
+
+<% if @informe.user.rol.descripcion=='Asistente Social' %>
+
+<br><br>
+<h3><li><u>Habitos de Estudio</u></li></h3>
+
+<table class="table" >
+<tr><td> Pensando en las últimas semanas, ¿cómo considera que es el tiempo que destinó para estudiar y preparar sus exámenes?.</td> 
+<td left:20px;> <%= @informe.nota1 %></td></tr>
+<td></td>
+<tr><td>¿Cómo ha que sido el trabajo colaborativo con sus compañeros al momento de estudiar en los últimos días?</td> 
+<td><%= @informe.nota2  %></td></tr>
+<td></td>
+<tr><td>¿Cómo califica la atención- concentración al momento de estudiar?</td>  
+<td><%= @informe.nota3 %></td></tr>
+<td></td>
+<tr><td>En los últimos días, ¿estima que los problemas afectivos han perjudicado su rendimiento?</td>  
+<td><%= @informe.nota4 %></td></tr>
+<td></td>
+<tr><td >En el estudio de las últimas evaluaciones, ¿cómo consideras que ha trabajado con métodos de estudio?(mapas conceptuales, resumen, etc.)  &nbsp  </td>
+<td> <%= @informe.nota5%></td></tr>
+<td></td>
+<tr><td><b>Promedio Habitos de Estudio: </b></td>
+<td><b><%=@informe.promhabitos%></b></td></tr>
+
+</table>
+<br><br>
+<h3><li><u>Vocación</u></li></h3>
+<table class= "table">
+<tr><td>A partir de lo aprendido en el último tiempo, ¿cómo cree que es la relación entre su vocación y preparación?.</td>
+<td><%= @informe.nota6 %></td> </tr>
+<td></td>
+<tr><td>En los últimos días, ¿cómo se ha sentido con la decisión de estudiar la carrera que cursa? </td>
+<td><%= @informe.nota7 %></td> </tr>
+<td></td>
+<tr><td>¿Cómo considera la preparación de las clases de los docentes? </td> 
+<td> <%= @informe.nota8 %></td> </tr>
+<td></td>
+<tr><td >¿Cómo estima que es la relación de sus notas versus su preparación en el último tiempo?  </td>
+<td> <%= @informe.nota9 %></td> </tr>
+<td></td>
+<tr><td >Pensando en las últimas semanas, ¿cómo ha sido el aporte social para el desarrollo vocacional? </td>
+<td> <%= @informe.nota10 %></td> </tr>
+<td></td>
+<tr><td><b>Promedio Vocación: </b></td>
+<td><b><%=@informe.promvocacion%></b></td></tr>
+<td></td>
+</table>
+
+<br><br><br><br>
+
+<table class= "table">
+<h3><li><u>Salud Fisica y Mental</u></li></h3>
+<tr><td>En la Sala de clases, si tiene problemas de concentracion, que tan frecuentes son ?</td>
+<td> <%= @informe.nota11 %></td> </tr>
+<tr><td >¿Siente malestar fisico o emocional al estar en la sala de clases con mas personas ?</td>  
+<td> <%= @informe.nota12 %></td> </tr>
+<tr><td >¿Ha dejado la actividad fisica o los estudios, solo por que no se siente bien emocionalmente ?</td>  
+<td> <%= @informe.nota13 %></td> </tr>
+<tr><td >¿Si tiene alteraciones de sueño, que tan frecuentes son ? </td> 
+<td> <%= @informe.nota14 %></td> </tr>
+<tr><td >¿Es capaz de expresar abiertamiente su opinion y compartir con compañeros ? </td>
+<td> <%= @informe.nota15 %></td> </tr>
+<tr><td><b>Promedio Salud Fisica y Mental: </b></td>
+<td><b> <%=@informe.promsalud%></b></td></tr>
+</table>
+
+<h4><li><u>Observación</u></li></h4>
+<table>
+<td align="justify"><%=@informe.observacion%></td>
+</table>
+<br><br><br><br><br><br>
+
+<center><h3>__________________________________</h3></center>
+<center><h3><%=@informe.user.nombre%> <%=@informe.user.apellidopa%> <%=@informe.user.apellidoma%></center></h3>
+<center><h3><%=@informe.user.rol.descripcion%></center></h3>
+<center><h3><%= Time.now.strftime("%d/%m/%Y") %></center></h3>
 <%end%>

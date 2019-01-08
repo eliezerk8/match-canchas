@@ -4,6 +4,7 @@
 <Table class="table">
   <tr>
     <thead class="thead-dark">
+    <th>N° </th>
     <th> Nombre Estudiante </th>
     <th> Carrera </th>
     <th> Opciones </th>
@@ -12,8 +13,9 @@
 
   <% @informes.each do |t| %>
  
- 
-    <tr>
+  <% if (t.user.id==current_user.id && t.estado==true) || current_user.rol.descripcion=='Administrador' %>
+  <tr>
+  <td><%= t.id %></td>
   <td><%= t.estudiante.nombreestudiante %></td>
   <td><%= t.estudiante.carrera.nombrecarrera %></td>
  
@@ -33,5 +35,6 @@
 	  <% end %>
 </td>
 </tr>
+<%end%>
 <%end%>
 </table>

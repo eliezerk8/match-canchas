@@ -16,48 +16,35 @@
   
     <% if t.prioridad=='Alta' %>
   <tr>
-  <td class="bg-danger text-light"><%= t.informe.estudiante.nombreestudiante%></td>
-  <td class="bg-danger text-light"><%= t.informe.user.nombre%></td>
+  <td class="bg-danger text-light"><%= t.informe.estudiante.nombreestudiante%> <%= t.informe.estudiante.apellidopa%> <%= t.informe.estudiante.apellidoma%></td>
+  <td class="bg-danger text-light"><%= t.informe.user.nombre%> <%= t.informe.user.apellidopa%> <%= t.informe.user.apellidoma%></td>
   <td class="bg-danger text-light"><%= t.prioridad %></td>
-  <td class="bg-danger text-light"><%= t.created_at.strftime("%d-%m-%Y = Hora: %H:%M:%S") %></td>
+  <td class="bg-danger text-light"><%= t.created_at.strftime("%d-%m-%Y ") %></td>
 	<td class="bg-danger text-light">
-  
-  
-
-
-
-
-
-
-
-
-
+  <%= link_to 'Mostrar', alerta_url(t), class:"btn btn-success  btn-sm" %>
   </td>
-  
   </tr>
   <%end%>
+  
   <% if t.prioridad=='Media' %>
   <tr>
-
-  ztd class="bg-warning text-light"><%= t.informe.estudiante.nombreestudiante%></td>
-  <td class="bg-warning text-light"><%= t.informe.user.nombre%></td>
+  <td class="bg-warning text-dark"><%= t.informe.estudiante.nombreestudiante%> <%= t.informe.estudiante.apellidopa%> <%= t.informe.estudiante.apellidoma%></td>
+  <td class="bg-warning text-dark"><%= t.informe.user.nombre%> <%= t.informe.user.apellidopa%> <%= t.informe.user.apellidoma%></td>
   <td class="bg-warning text-dark"><%= t.prioridad %></td>
-  <td class="bg-warning text-dark"><%= t.created_at.strftime("%d-%m-%Y = Hora: %H:%M:%S") %></td>
-	<td class="bg-warning text-dark">
+  <td class="bg-warning text-dark"><%= t.created_at.strftime("%d-%m-%Y") %></td>
+	<td class="bg-warning text-dark"> <%= link_to 'Mostrar', alerta_url(t), class:"btn btn-success  btn-sm" %>
 	</td>
- 
   </tr>
   <%end%>
 
   <% if t.prioridad=='Baja' %>
   <tr>
-  <td class="bg-info text-dark"><%= t.informe.estudiante.nombreestudiante%></td>
-  <td class="bg-info text-dark"><%= t.informe.user.nombre%></td>
+  <td class="bg-info text-dark"><%= t.informe.estudiante.nombreestudiante%> <%= t.informe.estudiante.apellidopa%> <%= t.informe.estudiante.apellidoma%></td>
+  <td class="bg-info text-dark"><%= t.informe.user.nombre%> <%= t.informe.user.apellidopa%> <%= t.informe.user.apellidoma%></td>
   <td class="bg-info text-dark"><%= t.prioridad %></td>
-  <td class="bg-info text-dark"><%= t.created_at.strftime("%d-%m-%Y = Hora: %H:%M:%S") %></td>
-	<td class="bg-info text-dark">
+  <td class="bg-info text-dark"><%= t.created_at.strftime("%d-%m-%Y") %></td>
+	<td class="bg-info text-dark"> <%= link_to 'Mostrar', alerta_url(t), class:"btn btn-success  btn-sm" %>
 	</td>
- 
   </tr>
   <%end%>
 
