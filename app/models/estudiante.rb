@@ -4,11 +4,11 @@ class Estudiante < ApplicationRecord
   has_many :informes
   validates :fecha_nacimiento, :presence => true
   validates :email, :presence => true
-  validates :telefono, :presence => true
+  validates :telefono, :presence => true,numericality: { only_integer: true, greater_than: 0 }
   validates :apellidoma, :presence => true,:length => {minimum: 2, maximum: 20}
   validates :apellidopa, :presence => true,:length => {minimum: 2, maximum: 20}
   validates :carrera_id, :presence => true
-  validates :ranking, :presence => true
+  validates :ranking, :presence => true,numericality: { only_integer: true, greater_than: 0 }
   validates :colegio, :presence => true,:length => {minimum: 2, maximum: 40}
   validates :situacioneconomica, :presence => true
   validates :nombreestudiante, :presence => true,:length => {minimum: 2, maximum: 30}
