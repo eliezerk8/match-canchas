@@ -2,29 +2,7 @@ class Estudiante < ApplicationRecord
   has_and_belongs_to_many :users
   belongs_to :carrera
   has_many :informes
-  validates :fecha_nacimiento, :presence => true
-  validates :email, :presence => true
-  validates :telefono, :presence => true,numericality: { only_integer: true, greater_than: 0 }
-  validates :apellidoma, :presence => true,:length => {minimum: 2, maximum: 20}
-  validates :apellidopa, :presence => true,:length => {minimum: 2, maximum: 20}
-  validates :carrera_id, :presence => true
-  validates :ranking, :presence => true,numericality: { only_integer: true, greater_than: 0 }
-  validates :colegio, :presence => true,:length => {minimum: 2, maximum: 40}
-  validates :situacioneconomica, :presence => true
-  validates :nombreestudiante, :presence => true,:length => {minimum: 2, maximum: 30}
-  validates :nem, :presence => true
-  validates :rut, :presence => true,uniqueness:true#, format: {with: VALID_RUT_REGEX}
-  validate :mayor18
-  def mayor18
-    if fecha_nacimiento.nil?
-      errors.add(:fecha_nacimiento,"porque")
-    else
-      edad = Date.today.year - fecha_nacimiento.year
-      if edad < 18 || fecha_nacimiento > Date.today
-        errors.add(:fecha_nacimiento)
-      end
-    end
-  end
+  
 end
 
 
