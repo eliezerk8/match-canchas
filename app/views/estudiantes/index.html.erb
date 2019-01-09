@@ -1,11 +1,38 @@
-<h1>hola mundo </h1>
-<%flash.each do |name , msg| %>
-  <div class="alert alert-<%= name %>">
-    <%= msg %>
-  </div>
-<% end %>
-<% @estudiantes.each do |estudiante| %>
-<% if estudiante.users.map(&:rol_id)=='3' %>
-<h1><%= estudiante.users.map(&:nombre).join(' ') %></h1>
+<h1>Estudiantes</h1>
+
+<%= link_to 'Agregar Estudiante', new_estudiante_path, :class => "btn btn-info" %>
+<Table class="table">
+  <tr>
+    <thead class="thead-dark">
+    <th>N° </th>
+    <th> Nombre Estudiante </th>
+    <th> Carrera </th>
+    <th> Opciones </th>
+  </thead>
+  </tr>
+
+  <% @estudiantes.each do |t| %>
+ 
+ 
+  <tr>
+  
+  <td><%= t.nombreestudiante %> <%= t.apellidopa %> <%= t.apellidoma %></td>
+  <td><%= t.carrera.nombrecarrera %></td>
+ 
+  <td>
+
+
+  <%= link_to 'Mostrar', estudiante_url(t), class:"btn btn-outline-success  btn-sm" %>
+    
+     	<% unless t.estado.nil? %>
+           	<% if t.estado == true %>
+			
+	          <%= link_to 'Cambiar estado', edit_estudiante_url(t), class: "btn btn-danger btn-sm",
+                        method: :delete, data: {confirm: '¿Estas seguro?'} %>
+             <% end %>
+     	<% end %>
+  </td>
+</tr>
 <%end%>
-<%end%>
+
+</table>
