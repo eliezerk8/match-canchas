@@ -1,135 +1,105 @@
-<h1>Agregar Estudiante </h1>
-<%flash.each do |name , msg| %>
-  <div class="alert alert-<%= name %>
-    <%= msg %>
-  </div>
-<% end %>
+<h1 class="text-info"><u>Agregar Estudiante </u></h1>
+
 <hr> </hr> 
-  <%= form_for(@estudiantes) do |f|  %>
-<div class="row">
-  
-    <div class="col-md-4">
+<%= form_for(@estudiante) do |f| %>
+    <% if @estudiante.errors.any? %>
+    <div class="alert alert-info">
+      <%= pluralize(@estudiante.errors.count, "Errores") %>
+    </div>
+    <div class="alert alert-danger">
+      <% @estudiante.errors.full_messages.each do |error| %>
+      <li> <%= error %> 
+      <% end %>
+    </div>
+    <% end %>
     <p class="bg-success text-center">Datos Personales </p> 
-    <hr> </hr> 
-        <div class="form-group">
-             <label for="formGroupExampleInput">Nombre </label>
-             <%= f.text_field:nombreestudiante, placeholder:"Agregar Nombre" , class:"form-control"  %>
-        </div>
-
-        <div class="form-group">
-              <label for="formGroupExampleInput">Primer Apellido </label>
-              <%= f.text_field:apellidopa, placeholder:"Primer apellido" , class:"form-control"  %>
-        </div>
-
-        <div class="form-group">
-              <label for="formGroupExampleInput">Segundo Apellido </label>
-              <%= f.text_field:apellidoma, placeholder:"Ej:" , class:"form-control"  %>
-        </div>
+    <div class="row">
+  
         
-    
-        <div class="form-group">
+            <hr> </hr> 
+            <div class="col-md-4">
+                    <label for="formGroupExampleInput">Nombres </label>
+                    <%= f.text_field:nombreestudiante, placeholder:"Agregar Nombre" , class:"form-control"  %>
+             </div>  
+
+             <div class="col-md-4">
+                     <label for="formGroupExampleInput">Primer Apellido </label>
+                     <%= f.text_field:apellidopa, placeholder:"Primer apellido" , class:"form-control"  %>
+              </div>
+
+              <div class="col-md-4">
+                     <label for="formGroupExampleInput">Segundo Apellido </label>
+                     <%= f.text_field:apellidoma, placeholder:"Ej:" , class:"form-control"  %>
+              </div>             
+              <div class="col">  
+              </div> 
+
+</div>  
+
+
+<div class="row">
+            <div class="col-md-4">  
                <label for="formGroupExampleInput">RUT  </label>
                <%= f.text_field:rut, placeholder:"Ej:" , class:"form-control"  %>
-        </div>
-
-        
-        <div class="col">
-               <div class="field">
+            </div>  
+            <div class="col-md-4">  
+               <label for="formGroupExampleInput">Direccion </label>
+               <%= f.text_field:direccion, placeholder:"Ej:" , class:"form-control"  %>
+            </div>   
+            <div class="col-md-4"> 
+               <label>Comuna</label><br>
+               <%= f.select :comuna,["Cerrillos","Cerro Navia","Conchali","El Bosque","Estación Central","Huechuraba","Independencia","La Cisterna","La Florida","La Granja","La Pintana","La Reina","Las Condes","Lo barnechea","Lo Espejo","Lo Prado","Macul","Maipú","Ñuñoa","Pedro Aguirre Cerda","Peñalolén","Providencia","Pudahuel","Quilicura","Quinta Normal","Recoleta","Renca","San Joaquín","San Miguel","San Ramón","Santiago","Vitacura"],{:include_blank => "Seleccionar Comuna"},{class:'btn btn-info btn-sm'}%>
+            </div> 
+</div>
+<div class="row">            
+            <div class="col-md-4">
                <%= f.label :fecha_nacimiento %><br/>
                <%= f.date_field :fecha_nacimiento, autofocus: true, class:"form-control" %>
-        </div>
-    </div>
+               </div>
+
+               <div class="col-md-4">
+               <%= f.label :email %><br/>
+               <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Ej: ejemplo@ejemplo.cl " %>
+               </div>
+
+               <div class="col">
+               <label for="formGroupExampleInput">Telefono </label>
+               <%= f.text_field :telefono, placeholder:"Ej: 229325003" , class:"form-control"  %>
+       </div>
+
+
+</div>    
    
-</div>
+<br><br>
+<p class="bg-info text-center">Datos Academicos</p>
 
-
-
-<div class="row col-md-4 offset">
-
-     <div class="col">
-     <p class="bg-info text-center">Datos Academicos</p>
+<div class="row">
+      
      <hr> </hr> 
-         <div class="form-group">
-              <label for="formGroupExampleInput">Notas de Enseñanza Media  </label>
+         <div class=col-md-4">
+              <label>Notas de Enseñanza Media  </label>
               <%= f.text_field:nem, placeholder:"Ej:" , class:"form-control"  %>
          </div>
        
-         <div class="form-group">
-              <label for="formGroupExampleInput">Facultad </label>
-              <div class="dropdown">
+         <div class="col-md-4">
+              <label for="formGroupExampleInput">Carrera </label>
+              
               <%= f.collection_select :carrera_id, Carrera.all, :id, :nombrecarrera, {:include_blank => "Seleccionar Carrera"},{class: "btn btn-outline-info btn-sm"}  %>
-              </div>
+              
          </div> 
-
+ </div> 
         
-             <div class="field">
-                 <%= f.label :email %><br/>
-                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
-             </div>
-     
-          </div>
-</div>
 
- <div class="row col-md-4 offset">  
+
+ 
+ 
   
-    <div class="col">
-     <p class="bg-primary text-center">Profesionales Asignados</p>
+ 
 
-     <div class="form-group">
-
-                         
-                
-                
-                <p class=" text-center">Sicologo</p>
-                
-                <% @users.each do |t| %>
-                                 
-                <% if t.rol.descripcion== 'Sicologo' %>
-                <%= label_tag t.nombre  %>
-                <%= label_tag t.apellidopa  %>
-                <%= label_tag t.apellidoma  %>
-                <%=  radio_button_tag "users[#{t.id}]", t.email  %>
-                <br />
-                <%end%>
-                <%end%>
-                
-        
-               
-                
-                <p class=" text-center">Asistente Social</p>
-                <% @users.each do |t| %>
-                <% if t.rol.descripcion == 'Asistente Social' %>    
-                <%= label_tag t.nombre  %>
-                <%= label_tag t.apellidopa  %>
-                <%= label_tag t.apellidoma  %>
-                <%= check_box_tag "users[#{t.id}]", t.email  %>
-                <%end%>
-                <%end%>
-                <br />
-                
-               
-                <p class=" text-center">Tutor</p>
-                <% @users.each do |t| %>
-                <% if t.rol.descripcion == 'Tutor' %>    
-                <%= label_tag t.email  %>
-                <%= check_box_tag "users[#{t.id}]", t.email  %>
-                <%end%>
-                <%end%>
-                
-               
-        </div>  
-
-
-    </div>
-
-
-</div>
-</div>
-
-<hr> </hr> <hr> </hr> 
+<hr> </hr> 
       <div class="form-actions ">
       <center>
-      <%= f.submit "Guardar" ,class:"btn btn-success" %> 
+      <%= f.submit "Guardar" ,class:"btn btn-info" %> 
       </center>
       </div>
     <% end %>

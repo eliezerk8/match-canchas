@@ -11,7 +11,7 @@ class EstudiantesController < ApplicationController
       
         def new
       
-         @estudiantes= Estudiante.new
+         @estudiante= Estudiante.new
          @users = User.all
    
  
@@ -21,20 +21,19 @@ class EstudiantesController < ApplicationController
    
       
       @estudiante= Estudiante.new(estudiante_params)
-       params[:users].each do |k,v|
-         @estudiante.users << User.find(k)
-      end
+       
+      respond_to do |format| 
       if @estudiante.save
-        redirect_to estudiantes_path
-    else
-      render 'new'
-    end
-
+        format.html {redirect_to estudiantes_path, success: "Se Registro Estudiante"}
+      else
+      format.html {render :new}
+      end
+      end
     end
 
     private
 def estudiante_params
-  params.require(:estudiante).permit(:nombreestudiante, :nem, :situacioneconomica,:colegio,:ranking, :carrera_id,:user_id,:fecha_nacimiento, :estado, :rut, :telefono, :email, :apellidopa, :apellidoma)
+  params.require(:estudiante).permit(:nombreestudiante, :nem, :situacioneconomica,:colegio,:ranking, :carrera_id,:user_id,:fecha_nacimiento, :estado, :rut, :telefono, :email, :apellidopa, :apellidoma, :comuna, :direccion)
 end
 
 end

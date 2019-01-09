@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     
     @user.estado = false
     @user.save
-        redirect_to users_path, success: "Se ah desvinculado el usuario"
+        redirect_to users_path, success: "Se ha desvinculado el usuario"
   end
 
 
@@ -38,10 +38,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format| 
     if @user.save
-        redirect_to users_path, success: "Se Registro Usuario"
+      format.html {redirect_to users_path, success: "Se Registro Usuario"}
       else
-        
-        format.html {render :new}
+      format.html {render :new}
       end
       end
   end

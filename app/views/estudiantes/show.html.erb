@@ -1,0 +1,13 @@
+<h1 class= "text-info"><u> Datos Estudiante </u> </h1> 
+      
+<p>Nombre : <%= @estudiante.nombreestudiante %> <%= @estudiante.apellidopa%> <%= @estudiante.apellidoma%> </p>
+<p>Rut: <%= @estudiante.rut %></p>
+<p>Fecha de Nacimiento: <%= @estudiante.fecha_nacimiento %></p>
+<p>Dirección: <%= @estudiante.direccion %></p>
+<p>Comuna: <%=@estudiante.comuna%></p>
+<p>Telefono: <%= @estudiante.telefono %></p>
+<p>Email:  <%= @estudiante.email%></p>
+<p>Carrera: <%= @estudiante.carrera.nombrecarrera %></br>
+
+
+<%= link_to '<== Volver', estudiantes_path, :class => "btn btn-info btn-md" %></h3> 

@@ -1,4 +1,9 @@
 <h1>Estudiantes</h1>
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
 
 <%= link_to 'Agregar Estudiante', new_estudiante_path, :class => "btn btn-info" %>
 <Table class="table">
