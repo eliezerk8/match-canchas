@@ -17,9 +17,13 @@ class User < ApplicationRecord
      validates :rut, :presence => true,uniqueness:true, format: {with: VALID_RUT_REGEX}
      validate :mayor18
   def mayor18
-    edad = Date.today.year - fecha_nacimiento.year
-    if edad < 18 || fecha_nacimiento > Date.today
-      errors.add(:fecha_nacimiento, "porque")
+    if fecha_nacimiento.nil?
+      errors.add(:fecha_nacimiento,"porque")
+    else
+      edad = Date.today.year - fecha_nacimiento.year
+      if edad < 18 || fecha_nacimiento > Date.today
+        errors.add(:fecha_nacimiento)
       end
     end
+  end
 end
