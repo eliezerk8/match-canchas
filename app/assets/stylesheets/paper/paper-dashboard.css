@@ -2441,7 +2441,7 @@ a.text-warning:hover {
 .text-danger,
 a.text-danger:focus,
 a.text-danger:hover {
-  color: #ef8157 !important;
+  color: #ff0000 !important;
 }
 
 .text-gray,

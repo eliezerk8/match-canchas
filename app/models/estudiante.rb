@@ -13,7 +13,7 @@ class Estudiante < ApplicationRecord
   validates :situacioneconomica, :presence => true
   validates :nombreestudiante, :presence => true,:length => {minimum: 2, maximum: 30}
   validates :nem, :presence => true
-  validates :rut, :presence => true,uniqueness:true, format: {with: VALID_RUT_REGEX}
+  validates :rut, :presence => true,uniqueness:true#, format: {with: VALID_RUT_REGEX}
   validate :mayor18
   def mayor18
     edad = Date.today.year - fecha_nacimiento.year
@@ -24,4 +24,4 @@ class Estudiante < ApplicationRecord
 end
 
 
-end
+

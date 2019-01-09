@@ -64,13 +64,12 @@
 </div>
 </div>
 </div>
-
+<br>
 <div class="row">
   <div class="col">
 <div class="field">
   <%= f.label :Tipo_de_usuario %>
-  <%= f.select('rol_id',
-               Rol.all.collect {|c| [c.descripcion, c.id]}, class: "form-control") %>
+  <%= f.select('rol_id',Rol.all.collect {|c| [c.descripcion, c.id]}, class: "btn btn-info") %>
   </button>
 </div>
 </div>
@@ -85,7 +84,7 @@
 
  </div>
   <div class="actions">
-    <%= f.submit "Guardar Usuario" ,class:"btn btn-success"%>
+    <%= f.submit "Guardar Usuario" ,class:"btn btn-info"%>
   </div>
 <% end %>
 </div>
