@@ -1,55 +1,71 @@
-<div class="row row-eq-height row-flex-center full-height-login">
-  <div class="col-md-4">
-    <%= form_for(@user) do |f| %>
-        <div class="form-inputs">
-        
+
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+    <div class="alert alert-info">
+      <%= pluralize(@user.errors.count, "Errores") %>
+    </div>
+    <div class="alert alert-danger">
+      <% @user.errors.full_messages.each do |error| %>
+      <li> <%= error %> 
+      <% end %>
+    </div>
+      <% end %>
+      <div class="row">
+
+    
+                       <div class="col">
+
+                     <label for="formGroupExampleInput">Nombre </label>
+                       <%= f.text_field :nombre, placeholder:"Agregar Nombre" , class:"form-control"  %>
+                       </div>
        
-        <div class="form-group">
-        <label for="formGroupExampleInput">Nombre </label>
-        <%= f.text_field :nombre, placeholder:"Agregar Nombre" , class:"form-control"  %>
-        </div>
-        <div class="form-group">
-        <label for="formGroupExampleInput">Primer Apellido </label>
-        <%= f.text_field :apellidopa, placeholder:"Primer apellido" , class:"form-control"  %>
-        </div>
-
-        <div class="form-group">
-        <label for="formGroupExampleInput">Segundo Apellido </label>
-        <%= f.text_field :apellidoma, placeholder:"Ej:" , class:"form-control"  %>
-        </div>
-         <div class="form-group">
-           <label for="formGroupExampleInput">Telefono </label>
-           <%= f.text_field :telefono, placeholder:"Ej:" , class:"form-control"  %>
-         </div>
+                     <div class="col-md-4">
       
+                          <label for="formGroupExampleInput">Primer Apellido </label>
+                           <%= f.text_field :apellidopa, placeholder:"Primer apellido" , class:"form-control"  %>
+                     </div>
+                      <div class="col-md-4">
         
+                           <label for="formGroupExampleInput">Segundo Apellido </label>
+                                <%= f.text_field :apellidoma, placeholder:"Ej:" , class:"form-control"  %>
+                      </div>
+       </div>
+     <br>
+        <div class="row">
 
-        <div class="form-group">
-        <label for="formGroupExampleInput">RUT  </label>
-        <%= f.text_field :rut, placeholder:"Ej:" , class:"form-control"  %>
-        </div>
+    
+                         <div class="col">
+                                 <label for="formGroupExampleInput">RUT  </label>
+                                 <%= f.text_field :rut, placeholder:"Ej:" , class:"form-control"  %>
+                         </div>
+         
+         
+                         <div class="col">
+                                 <label for="formGroupExampleInput">Telefono </label>
+                                 <%= f.text_field :telefono, placeholder:"Ej:" , class:"form-control"  %>
+                         </div>
         
-        <div class="col">
-        <div class="field">
-          <%= f.label :fecha_nacimiento %><br/>
-          <%= f.date_field :fecha_nacimiento, autofocus: true, class:"form-control" %>
-        </div>
+                         <div class="col">
+       
+                                <%= f.label :fecha_nacimiento %><br/>
+                                <%= f.date_field :fecha_nacimiento, autofocus: true, class:"form-control" %>
+                         </div>
       </div>
-
+      <br>
+      <div class="row">
         
-        <div class="form-group">
-        <label for="formGroupExampleInput">Facultad </label>
-        <div class="dropdown">
-        <%= f.collection_select :facultad_id, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-outline-info "}  %>
-        </div>
+             <div class="col">
+                       <label for="formGroupExampleInput">Facultad </label>
+     
+                         <%= f.collection_select :facultad_id, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-outline-info btn-sm"}  %>
+             </div>
 
-        
-        <div class="form-group">
-        <label for="formGroupExampleInput">Facultad </label>
-        <div class="dropdown">
-        <%= f.collection_select :rol_id, Rol.all, :id, :descripcion, {:include_blank => "Seleccionar Rol"},{class: "btn btn-outline-info "}  %>
-        </div>
-          
+      
+             <div class="col">
+                       <label for="formGroupExampleInput">Facultad </label>
+                       <%= f.collection_select :rol_id, Rol.all, :id, :descripcion, {:include_blank => "Seleccionar Rol"},{class: "btn btn-outline-info btn-sm "}  %>
+             </div>
+        </div> 
 
         <div class="col">
         <div class="field">
@@ -79,9 +95,9 @@
 
        
 
-      <div class="form-actions">
+      
       <%= f.submit "Guardar" ,class:"btn btn-info" %> 
-      </div>
+      
     <% end %>
   </div>
 </div>

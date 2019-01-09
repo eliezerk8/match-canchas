@@ -36,10 +36,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-      if @user.save
+    respond_to do |format| 
+    if @user.save
         redirect_to users_path, success: "Se Registro Usuario"
       else
-        redirect_to new_user_path, danger: "Faltaron Campos Por Registrar"
+        
+        format.html {render :new}
+      end
       end
   end
 
