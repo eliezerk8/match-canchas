@@ -1,79 +1,75 @@
 
   <%= form_for(@user) do |f| %>
-    <% if @user.errors.any? %>
-    <div class="alert alert-info">
-      <%= pluralize(@user.errors.count, "Errores") %>
-    </div>
-    <div class="alert alert-danger">
-      <% @user.errors.full_messages.each do |error| %>
-      <li> <%= error %> 
+      <% if @user.errors.any? %>
+        <div class="alert alert-info">
+          <%= pluralize(@user.errors.count, "Errores") %>
+        </div>
+        <div class="alert alert-danger">
+          <% @user.errors.full_messages.each do |error| %>
+            <li> <%= error %> </li>
+          <% end %>
+        </div>
       <% end %>
-    </div>
-      <% end %>
-      <div class="row">
 
-    
-                       <div class="col">
-
-                     <label for="formGroupExampleInput">Nombres </label>
-                       <%= f.text_field :nombre, placeholder:"Ej: Monica Catalina" , class:"form-control"  %>
-                       </div>
-       
-                     <div class="col-md-4">
-      
-                          <label for="formGroupExampleInput">Primer Apellido </label>
-                           <%= f.text_field :apellidopa, placeholder:"Ej: Perez" , class:"form-control"  %>
-                     </div>
-                      <div class="col-md-4">
-        
-                           <label for="formGroupExampleInput">Segundo Apellido </label>
-                                <%= f.text_field :apellidoma, placeholder:"Ej:Perez" , class:"form-control"  %>
-                      </div>
-       </div>
-     <br>
         <div class="row">
+               <div class="col">
 
-    
-                         <div class="col">
-                                 <label for="formGroupExampleInput">RUT  </label>
-                                 <%= f.text_field :rut, placeholder:"Ej: 11.111.111-1" , class:"form-control"  %>
-                         </div>
-         
-         
-                         <div class="col">
-                                 <label for="formGroupExampleInput">Telefono </label>
-                                 <%= f.text_field :telefono, placeholder:"Ej: 229325003" , class:"form-control"  %>
-                         </div>
-        
-                         <div class="col">
+                   <label for="formGroupExampleInput">Nombres </label>
+                       <%= f.text_field :nombre, placeholder:"Ej: Monica Catalina" , class:"form-control"  %>
+               </div>
        
-                                <%= f.label :fecha_nacimiento %><br/>
-                                <%= f.date_field :fecha_nacimiento, autofocus: true, class:"form-control" %>
-                         </div>
-      </div>
+               <div class="col-md-4">
+                     <label for="formGroupExampleInput">Primer Apellido </label>
+                           <%= f.text_field :apellidopa, placeholder:"Ej: Perez" , class:"form-control"  %>
+               </div>
+
+               <div class="col-md-4">
+        
+                      <label for="formGroupExampleInput">Segundo Apellido </label>
+                           <%= f.text_field :apellidoma, placeholder:"Ej:Perez" , class:"form-control"  %>
+               </div>
+        </div>
       <br>
-      <div class="row">
+              <div class="row">
+
+               <div class="col">
+                      <label for="formGroupExampleInput">RUT  </label>
+                           <%= f.text_field :rut, placeholder:"Ej: 11.111.111-1" , class:"form-control"  %>
+               </div>
+         
+         
+               <div class="col">
+                      <label for="formGroupExampleInput">Telefono </label>
+                           <%= f.text_field :telefono, placeholder:"Ej: 229325003" , class:"form-control"  %>
+               </div>
+        
+               <div class="col">
+       
+                           <%= f.label :fecha_nacimiento %><br/>
+                           <%= f.date_field :fecha_nacimiento, autofocus: true, class:"form-control" %>
+               </div>
+        </div>
+      <br>
+        <div class="row">
         
              <div class="col">
                        <label for="formGroupExampleInput">Facultad </label>
-     
                          <%= f.collection_select :facultad_id, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-outline-info btn-sm"}  %>
              </div>
 
       
              <div class="col">
                        <label for="formGroupExampleInput">Rol </label>
-                       <%= f.collection_select :rol_id, Rol.all, :id, :descripcion, {:include_blank => "Seleccionar Rol"},{class: "btn btn-outline-info btn-sm "}  %>
+                         <%= f.collection_select :rol_id, Rol.all, :id, :descripcion, {:include_blank => "Seleccionar Rol"},{class: "btn btn-outline-info btn-sm "}  %>
              </div>
-        </div> 
+         </div>
 
-        <div class="col">
-        <div class="field">
-          <%= f.label :email %><br/>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
-        </div>
-      </div>
-      </div>
+          <div class="col">
+              <div class="field">
+                           <%= f.label :email %><br/>
+                           <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
+              </div>
+           </div>
       <div class="row">
         <div class="col">
         <div class="field">
@@ -90,7 +86,6 @@
           <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirmar contraseña" %>
         </div>
       </div>
-      </div>
 
 
        
@@ -100,4 +95,3 @@
       
     <% end %>
   </div>
-</div>
