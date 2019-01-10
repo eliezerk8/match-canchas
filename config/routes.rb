@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   delete 'facultads/:id/edit', to: 'facultads#delete'
   resources :alertas
   resources :estudiantes
- 
+  delete 'estudiantes/:id/edit', to: 'estudiantes#delete'
   resources :informes
   delete 'informes/:id/edit', to: 'informes#delete'
   resources :rols

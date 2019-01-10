@@ -13,7 +13,7 @@
   </tr>
 
 	<% @alertas.each do |t| %>
-  
+
     <% if t.prioridad=='Alta' %>
   <tr>
   <td class="bg-danger text-light"><%= t.informe.estudiante.nombreestudiante%> <%= t.informe.estudiante.apellidopa%> <%= t.informe.estudiante.apellidoma%></td>
@@ -50,8 +50,8 @@
 
 
  
-
 <%end%>
+
 </table>
 
 

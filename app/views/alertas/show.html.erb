@@ -1,8 +1,8 @@
 <h3> Alerta Temprana </h3>
 <h5> Generada por : <%=@alerta.informe.user.nombre%> <%=@alerta.informe.user.apellidopa%>  , <%=@alerta.informe.user.rol.descripcion%></h5>
 <h5> Fecha : <%=@alerta.informe.created_at.strftime("%d-%m-%Y")%></h5>
-<h5> Informe N° : <%=@alerta.informe.id%></h5><br>
-
+<h5> Informe N° : <%=@alerta.informe.id%></h5>
+<h5>Estudiante : <%= @alerta.informe.estudiante.nombreestudiante%> <%= @alerta.informe.estudiante.apellidopa%> <%= @alerta.informe.estudiante.apellidoma%></h5><br>
 <% if @alerta.informe.user.rol.descripcion=='Sicologo' %>
     <h5> Calificaciones  </h5>
     <%if (@alerta.informe.nota1<=3)||(@alerta.informe.nota2<=3)||(@alerta.informe.nota3<=3)||(@alerta.informe.nota4<=3)||(@alerta.informe.nota5<=3)||(@alerta.informe.promhabitos<=5)%>
@@ -405,4 +405,9 @@
   <%else%>
   <p> Promedio Salud Fisica y Mental : <%=@alerta.informe.promsalud%></p>  
   <%end%>
+  <%end%>
+
+
+  <% if @alerta.informe.user.rol.descripcion=='Jefe de Carrera' %>
+ <p class='text-danger'><%= @alerta.informe.observacion%>
   <%end%>

@@ -47,6 +47,32 @@ class InformesController < ApplicationController
   def create
       @informe = Informe.new(informe_params)
       @informe.user_id=current_user.id
+
+   if current_user.rol.descripcion=='Jefe de Carrera'
+      @informe.nota1=1
+      @informe.nota2=1
+      @informe.nota3=1
+      @informe.nota4=1
+      @informe.nota5=1
+      @informe.nota6=1
+      @informe.nota7=1
+      @informe.nota8=1
+      @informe.nota9=1
+      @informe.nota10=1
+      @informe.nota11=1
+      @informe.nota12=1
+      @informe.nota13=1
+      @informe.nota14=1
+      @informe.nota15=1
+      @informe.promhabitos=1
+      @informe.promsalud=1
+      @informe.promvocacion=1
+      @informe.save
+    end
+
+
+
+
       if @informe.save
         @informe.promhabitos = ((@informe.nota1 + @informe.nota2 + @informe.nota3 + @informe.nota4 + @informe.nota5)/5)
         @informe.promvocacion = ((@informe.nota6 + @informe.nota7 + @informe.nota8 + @informe.nota9 + @informe.nota10)/5 )
@@ -76,7 +102,7 @@ class InformesController < ApplicationController
 
       @alertas.informe_id = @informe.id
       @alertas.save
-      redirect_to informe_path, success: "Informe Creado"
+      redirect_to informes_path, success: "Informe Creado"
       else
       redirect_to new_informe_path, danger: "No se logro crear el informe"
       end

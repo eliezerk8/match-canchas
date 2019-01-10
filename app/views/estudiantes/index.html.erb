@@ -4,9 +4,9 @@
     <%= msg %>
   </div>
 <% end %>
-
+<% if current_user.rol.descripcion=='Administrador'%>
 <%= link_to 'Agregar Estudiante', new_estudiante_path, :class => "btn btn-info" %>
-
+<%end%>
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet" />
@@ -17,9 +17,9 @@
   <thead class="thead-dark">
   <tr>
     <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
-    <th> N° </th>
     <th onclick="sortTable(0)"> Nombre Estudiante </th>
     <th onclick="sortTable(1)"> Carrera </th>
+    <th onclick="sortTable(2)"> Estado </th>
     <th> Opciones </th>
   </tr>
   </tr>
@@ -28,18 +28,27 @@
       <td><%= t.nombreestudiante %> <%= t.apellidopa %> <%= t.apellidoma %></td>
       <td><%= t.carrera.nombrecarrera %></td>
 
+      <td class="text-success">
+      <%if t.estado ==true %>
+      Activo 
+      <%else%> 
+      Inactivo
+      <%end%>
+
       <td>
 
 
         <%= link_to 'Mostrar', estudiante_url(t), class:"btn btn-outline-success  btn-sm" %>
-
+        <% if current_user.rol.descripcion=='Administrador' %>
+        <%= link_to 'Editar', edit_estudiante_url(t), class:"btn btn-outline-warning  btn-sm" %> 
         <% unless t.estado.nil? %>
           <% if t.estado == true %>
 
             <%= link_to 'Cambiar estado', edit_estudiante_url(t), class: "btn btn-danger btn-sm",
                         method: :delete, data: {confirm: '¿Estas seguro?'} %>
           <% end %>
-        <% end %>
+          <%end%>
+          <% end %>
       </td>
     </tr>
   <%end%>

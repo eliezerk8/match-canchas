@@ -18,7 +18,7 @@
 
   <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info btn-sm"}  %>
  <br><br>
-
+ 
  <font size=2>*El propósito del presente informe es dejar de manifiesto la sesión realizada con el estudiante, de este cinco preguntas respectivamente, donde deberá calificar cada una de ellas de la siguiente manera:
 
 1.	Muy malo-
@@ -328,6 +328,30 @@
     
   </div>
 </div>
+<br>
+       <br>
+       <br>
+       
+    <label class="text-dark text-justify"><li>Observacion </label><br><br>
+    <%= f.text_area:observacion,cols:"300",rows:"500", placeholder:"Agregar Notas" , class:"form-control"  %>
+    <br>
+    <br>
+  
+
+      <%= f.submit "Guardar" ,class:"btn btn-info" %>
+     
+<%end%>
+
+<%end%>
+
+<% if current_user.rol.descripcion == "Jefe de Carrera" %>
+<center><h1 class= text-info ><u> Informe Profesional Asistente Social </u></h1><br></center>
+<%=form_for( @informes) do |f| %>
+  <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
+  <br><br><label class="text-dark"><u>Estudiante</u></label>
+
+  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+ <br><br>
 <br>
        <br>
        <br>

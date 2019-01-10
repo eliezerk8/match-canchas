@@ -254,3 +254,12 @@
 <center><h3><%=@informe.user.rol.descripcion%></center></h3>
 <center><h3><%= Time.now.strftime("%d/%m/%Y") %></center></h3>
 <%end%>
+
+
+
+<% if @informe.user.rol.descripcion=='Jefe de Carrera' %>
+<h4><li><u>Observación</u></li></h4>
+<p><%=@informe.observacion%><p>
+<br><br><br><br>
+
+<%end%>

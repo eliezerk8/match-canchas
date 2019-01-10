@@ -192,3 +192,16 @@
 <h4><li><u>Observación</u></li></h4>
 <p><%=@informe.observacion%><p>
 <%end%>
+
+
+
+<% if @informe.user.rol.descripcion=='Jefe de Carrera' %>
+<p>Nombre de Profesional : <%= @informe.user.nombre %> <%= @informe.user.apellidopa %> <%= @informe.user.apellidoma%></p>
+<p>Nombre Estudiante :  <%= @informe.estudiante.nombreestudiante %> <%= @informe.estudiante.apellidopa %> <%= @informe.estudiante.apellidoma%></p>
+<p>Carrera : <%=@informe.estudiante.carrera.nombrecarrera%>
+
+<h4><li><u>Observación</u></li></h4>
+<p><%=@informe.observacion%><p>
+<br><br><br><br>
+
+<%end%>

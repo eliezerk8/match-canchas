@@ -5,7 +5,7 @@ class Estudiante < ApplicationRecord
   
   validates :nombreestudiante, presence:  { message: 'Ingrese el primer nombre '}, length: {in: 3..40, message:'El nombre debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z\s]+\z/,
   message: "Se permiten solo letras en los nombres"}
-  validates :direccion, presence: {message: 'Ingrese Dirección'},length: {in: 8..20, message:'El nombre debe ser de mínimo largo 20'}
+  validates :direccion, presence: {message: 'Ingrese Dirección'},length: {in: 8..40, message:'El nombre debe ser de mínimo largo 20'}
   validates :comuna, presence: {message: 'Ingrese Comuna'}
   validates :apellidopa, presence: { message: 'Ingrese el primer apellido'}, length: {in: 3..20, message:'El apellido debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z\s]+\z/,
   message: "Se permiten solo letras en los apellidos"}

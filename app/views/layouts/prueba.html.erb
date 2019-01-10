@@ -57,7 +57,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-black w3-left-align"><i class="fa fa-user"></i> Estudiantes</button>
     <div id="Demo1" class="w3-hide w3-animate-zoom">
       <a href="/estudiantes" class="w3-button w3-block w3-left-align">Ver estudiante</a>
+      <% if current_user.rol.descripcion=='Administrador'%>
       <a href="/estudiantes/new" class="w3-button w3-block w3-left-align">Agregar Estudiante</a>
+      <%end%>
     </div>
 
     <% if current_user.rol.descripcion=='Administrador'%>
@@ -76,7 +78,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-black w3-left-align"><i class="fa fa-line-chart"></i> Alertas</button>
     <div id="Demo4" class="w3-hide w3-animate-zoom">
-      <a href="#" class="w3-button w3-block w3-left-align">Ver alertas</a>
+      <a href="/alertas" class="w3-button w3-block w3-left-align">Ver alertas</a>
     </div>
 
     <% if current_user.rol.descripcion=='Administrador'%>
