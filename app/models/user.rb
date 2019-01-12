@@ -29,8 +29,8 @@ end
 
 
 def edadminima
-   if fecha_nacimiento.present? && fecha_nacimiento >= 18.year.ago
-        errors.add(:fecha_nacimiento, "debe ser mayor de 18 años")
+   if fecha_nacimiento.present? && fecha_nacimiento >= 17.year.ago
+        errors.add(:fecha_nacimiento, "debe ser mayor de 17 años")
    end
 end
 
