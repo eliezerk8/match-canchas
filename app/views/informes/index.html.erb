@@ -1,4 +1,4 @@
-<h1>Informes</h1>
+<h1>Informes <%= current_user.rol.descripcion%></h1>
 
 <%= link_to 'Generar Informe', new_informe_path, :class => "btn btn-info" %>
 <Table class="table">
@@ -7,21 +7,28 @@
     <th>N° </th>
     <th> Nombre Estudiante </th>
     <th> Carrera </th>
+    <th> Nombre Profesional</th>
+    <th> Estado </th>
     <th> Opciones </th>
   </thead>
   </tr>
 
   <% @informes.each do |t| %>
- 
-  <% if (t.user.id==current_user.id && t.estado==true) || current_user.rol.descripcion=='Administrador' %>
+  
+  <% if (t.user.rol.descripcion==current_user.rol.descripcion && t.estado==true) || current_user.rol.descripcion=='Administrador' %>
   <tr>
   <td><%= t.id %></td>
-  <td><%= t.estudiante.nombreestudiante %></td>
+  <td><%= t.estudiante.nombreestudiante %> <%= t.estudiante.apellidopa %> <%= t.estudiante.apellidoma %></td>
   <td><%= t.estudiante.carrera.nombrecarrera %></td>
- 
+  <td><%= t.user.nombre %> <%= t.user.apellidopa %> <t.user.apellidoma%></td>
   <td>
-
-
+  <%if t.estado ==true %>
+ <p class= "text-success"> Activo</p> 
+ <%else%> 
+ <p class="text-danger"> Inactivo</p>
+<%end%>
+  </td>
+  <td>
   <%= link_to 'Mostrar', informe_url(t), class:"btn btn-outline-success  btn-sm" %>
 
 
@@ -29,7 +36,7 @@
 	<% unless t.estado.nil? %>
 	<% if t.estado == true %>
 			
-	  <%= link_to 'Cambiar estado', edit_informe_url(t), class: "btn btn-danger btn-sm",
+	  <%= link_to 'Eliminar', edit_informe_url(t), class: "btn btn-danger btn-sm",
                         method: :delete, data: {confirm: '¿Estas seguro?'} %>
     <% end %>
 	  <% end %>

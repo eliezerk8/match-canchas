@@ -30,14 +30,13 @@
     <td><%= t.rol.descripcion %></td>
     <%end%>
     <td><%= t.facultad.nombrefacultad %></td>
-    <td class="text-success">
-    <%if t.estado ==true %>
-    Activo 
-   <%else%> 
-    Inactivo
-  <%end%>
-
-    </td>
+    <td>
+  <%if t.estado ==true %>
+ <p class= "text-success"> Activo</p> 
+ <%else%> 
+ <p class="text-danger"> Inactivo</p>
+<%end%>
+  </td>
     <td>
 
     <%= link_to 'Mostrar',user_url(t), class:"btn btn-outline-success  btn-sm" %>

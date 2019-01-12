@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   layout"prueba"
   before_action :set_user, only: [:show,:delete,:edit,:update]
-
+  
+  def tutores
+    @users = User.all
+  end
   def index
     @users = User.all
   end
