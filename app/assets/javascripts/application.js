@@ -13,8 +13,10 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require popper
+//= require underscore
 //= require material/bootstrap-material-design
 //= require material/perfect-scrollbar.jquery.min
 //= require material/chartist.min
@@ -23,4 +25,9 @@
 //= require material/material-dashboard
 //= require material/demo
 //= require Datatable.js
+//= require dependent-fields
 //= require_tree .
+
+$ (document).ready(function () {
+    DependentFields.bind()
+});

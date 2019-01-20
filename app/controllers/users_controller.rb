@@ -2,15 +2,14 @@ class UsersController < ApplicationController
   layout"prueba"
   before_action :set_user, only: [:show,:delete,:edit,:update]
   
-  def tutores
-    @users = User.all
-  end
+
   def index
     @users = User.all
   end
 
   def new
     @user= User.new
+    
   end
 
   def show
@@ -28,7 +27,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to edit_user_path, success: "Se Actualizaron los datos"
+      redirect_to users_path, success: "Se Actualizaron los datos"
     else
       redirect_to edit_user_path, danger: "No se genero el cambio"
     end

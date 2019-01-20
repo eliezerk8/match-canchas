@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_and_belongs_to_many :estudiantes, optional:true
   belongs_to :facultad, optional:true
   belongs_to :rol, optional:true
- 
+  belongs_to :carrera, optional:true
   validates :estado, :inclusion => {:in=> [true,false]}
   validates :nombre, presence:  { message: 'Ingrese el primer nombre '} , length: {in: 3..40, message:'El nombre debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z\s]+\z/,
   message: "Se permiten solo letras en los nombres"}

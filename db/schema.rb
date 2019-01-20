@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_12_193649) do
+ActiveRecord::Schema.define(version: 2019_01_13_054751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,8 @@ ActiveRecord::Schema.define(version: 2019_01_12_193649) do
     t.date "fecha_nacimiento"
     t.boolean "estado", default: true
     t.string "rut"
+    t.bigint "carreras_id"
+    t.index ["carreras_id"], name: "index_users_on_carreras_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -138,6 +140,7 @@ ActiveRecord::Schema.define(version: 2019_01_12_193649) do
   add_foreign_key "informes", "users"
   add_foreign_key "supervisars", "estudiantes"
   add_foreign_key "supervisars", "users"
+  add_foreign_key "users", "carreras", column: "carreras_id"
   add_foreign_key "users", "facultads"
   add_foreign_key "users", "rols"
 end

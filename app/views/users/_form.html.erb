@@ -1,5 +1,5 @@
 
-  <%= form_for(@user) do |f| %>
+  <%= simple_form_for(@user) do |f| %>
       <% if @user.errors.any? %>
         <div class="alert alert-info">
           <%= pluralize(@user.errors.count, "Errores") %>
@@ -51,16 +51,24 @@
         </div>
       <br>
         <div class="row">
-        
+              <div class="forminputs"
+             <div class="col">
+             <label for="formGroupExampleInput">Rol </label>
+             <%= f.collection_radio_buttons :rol_id, Rol.all, :id, :descripcion ,{:include_blank => "Seleccionar Rol"},{class: "radio"}  %>
+          
+                              
+             
+                </div>
+                   
              <div class="col">
                        <label for="formGroupExampleInput">Facultad </label>
                          <%= f.collection_select :facultad_id, Facultad.all, :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-outline-info btn-sm"}  %>
              </div>
-
+              
       
              <div class="col">
-                       <label for="formGroupExampleInput">Rol </label>
-                         <%= f.collection_select :rol_id, Rol.all, :id, :descripcion, {:include_blank => "Seleccionar Rol"},{class: "btn btn-outline-info btn-sm "}  %>
+                       <label for="formGroupExampleInput">Carrera </label>
+                         <%= f.collection_select :carreras_id, Carrera.all, :id, :nombrecarrera,{:include_blank => "Seleccionar Carrera"},{class: "btn btn-outline-info btn-sm "}  %>
              </div>
          </div>
 
@@ -86,7 +94,7 @@
           <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirmar contraseña" %>
         </div>
       </div>
-
+     
 
        
 
@@ -95,3 +103,9 @@
       
     <% end %>
   </div>
+
+
+
+
+
+

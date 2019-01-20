@@ -1,10 +1,10 @@
-<h1>Profesionales</h1>
+<h1>Tutores</h1>
 <%flash.each do |name , msg| %>
   <div class="alert alert-<%= name %>">
     <%= msg %>
   </div>
 <% end %>
-<%= link_to 'Agregar Usuario', new_user_path, :class => "btn btn-info" %>
+<%= link_to 'Agregar Usuario', new_tutore_path, :class => "btn btn-info" %>
 
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,8 +24,7 @@
   </tr>
   </tr>
     <% @users.each do |t| %>
-      <% unless t.rol.descripcion.nil? %>
-      <% if t.rol.descripcion != "Tutor" %>
+    <% if t.rol.descripcion=='Tutor'%>
   <tr>
     <td><%= t.nombre %> <%= t.apellidopa %> <%=t.apellidoma%></td>
     <% unless t.rol.descripcion.nil? %>
@@ -41,19 +40,18 @@
   </td>
     <td>
 
-    <%= link_to 'Mostrar',user_url(t), class:"btn btn-outline-success  btn-sm" %>
-    <%= link_to 'Editar', edit_user_url(t), class:"btn btn-outline-warning  btn-sm" %>
+    <%= link_to 'Mostrar',tutore_url(t), class:"btn btn-outline-success  btn-sm" %>
+    <%= link_to 'Editar', edit_tutore_url(t), class:"btn btn-outline-warning  btn-sm" %>
     
     <% unless t.estado.nil? %>
     <% if t.estado == true %>
         
-      <%= link_to 'Cambiar estado', edit_user_url(t), class: "btn btn-danger btn-sm",
+      <%= link_to 'Cambiar estado', edit_tutore_url(t), class: "btn btn-danger btn-sm",
                           method: :delete, data: {confirm: '¿Estas seguro?'} %>
       <% end %>
       <% end %>
   </td>
   </tr>
-  <%end%>
   <%end%>
   <%end%>
   </table>

@@ -1,0 +1,14 @@
+      
+      <h1 class= "text-info"><u> Datos Usuario </u> </h1> 
+      
+      <p>Nombre : <%= @user.nombre %> <%= @user.apellidopa%> <%= @user.apellidoma%> </p>
+      <p>Rut: <%= @user.rut %></p>
+      <p>Fecha de Nacimiento: <%= @user.fecha_nacimiento %></p>
+      
+    
+      <p>Rol: <%= @user.rol.descripcion %></p>
+      
+      <p>Facultad: <%= @user.facultad.nombrefacultad %>
+      <p>Telefono: <%= @user.telefono %></p>
+
+      <%= link_to '<== Volver', tutores_path, :class => "btn btn-info btn-lg" %></h3> 

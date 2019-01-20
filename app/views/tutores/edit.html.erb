@@ -1,0 +1,90 @@
+<%= form_for(@user, :html => {:role => 'form'}) do |f| %>
+    <%flash.each do |name , msg| %>
+      <div class="alert alert-<%= name %>">
+        <%= msg %>
+      </div>
+    <% end %>
+  
+  <div class="form">
+    <h1 class="text-center"> Registro de Usuarios</h1>
+  
+    <div class="row">
+  
+    <div class="col">
+    <div class="field">
+      <%= f.label :primer_nombre %><br/>
+      <%= f.text_field :nombre, autofocus: true, class: "form-control", placeholder: "Primer nombre" %>
+    </div><br>
+  </div>
+  
+    <div class="col">
+    <div class="field">
+      <%= f.label :primer_apellido %><br/>
+      <%= f.text_field :apellidopa, autofocus: true, class: "form-control", placeholder: "Primer apellido" %>
+    </div>
+    </div>
+  </div>
+  
+  <div class="row">
+  
+      <div class="col">
+    <div class="field">
+      <%= f.label :segundo_apellido %><br/>
+      <%= f.text_field :apellidoma, autofocus: true, class: "form-control", placeholder: "Primer apellido" %>
+    </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col">
+    <div class="field">
+      <%= f.label :rut %><br/>
+      <%= f.text_field :rut, autofocus: true, class:"form-control", placeholder: "Rut" %>
+    </div><br>
+  </div>
+    <div class="col">
+    <div class="field">
+      <%= f.label :fecha_nacimiento %><br/>
+      <%= f.date_field :fecha_nacimiento, autofocus: true, class:"form-control" %>
+    </div>
+  </div>
+    <div class="col">
+    <div class="field">
+      <%= f.label :email %><br/>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
+    </div>
+  </div>
+  </div>
+  
+  <div class="row">
+    
+    <div class="col">
+  <div class="field">
+    <%= f.label :celular %><br/>
+    <%= f.text_field :telefono, autofocus: true, class: "form-control", placeholder:"Celular" %>
+  </div>
+  </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+  <div class="field">
+    <%= f.label :Tipo_de_usuario %>
+    <%= f.select('rol_id',Rol.all.collect {|c| [c.descripcion, c.id]}, class: "btn btn-info") %>
+    </button>
+  </div>
+  </div>
+  
+  <div class="col">
+  
+   <div class="field">
+      <%= f.label "Estado" %> <br />
+      <%= f.check_box :estado %> <br />
+  </div>
+  </div>
+  
+   </div>
+    <div class="actions">
+      <%= f.submit "Guardar Usuario" ,class:"btn btn-info"%>
+    </div>
+  <% end %>
+  </div>
