@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format| 
     if @user.save
-       if @user.rol.descripcion=="Tutor" || @user.rol.descripcion=="Tutor"
+       if @user.rol.descripcion=="Tutor" || @user.rol.descripcion=="Jefe de Carrera"
         format.html {render :edit, success: "Seleccione Carrera"}
         end
         if @user.rol.descripcion=="Administrador" || @user.rol.descripcion=="Sicologo" || @user.rol.descripcion=="Asistente Social" 

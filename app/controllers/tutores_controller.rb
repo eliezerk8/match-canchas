@@ -20,7 +20,7 @@ class TutoresController < ApplicationController
       
       @user.estado = false
       @user.save
-          redirect_to new_tutore_path, success: "Se ha desvinculado el usuario"
+          redirect_to tutores_path, success: "Se ha desvinculado el usuario"
     end
   
   
