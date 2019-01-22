@@ -26,9 +26,9 @@ class TutoresController < ApplicationController
   
     def update
       if @user.update(user_params)
-        redirect_to tutore_path, success: "Se Actualizaron los datos"
+        redirect_to user_path, success: "Se Actualizaron los datos"
       else
-        redirect_to edit_tutore_path, danger: "No se genero el cambio"
+        redirect_to edit_user_path, danger: "No se genero el cambio"
       end
     end
   
@@ -37,11 +37,9 @@ class TutoresController < ApplicationController
   
     def create
       @user = User.new(user_params)
-      
-      @user.rol= User.where("")
       respond_to do |format| 
       if @user.save
-        format.html {redirect_to tutore_path, success: "Se Registro Usuario"}
+        format.html {redirect_to user_path, success: "Se Registro Usuario"}
         else
         format.html {render :new_tutore_path}
         end

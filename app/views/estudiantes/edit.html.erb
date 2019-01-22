@@ -95,6 +95,9 @@
 
                       </div>
               </div>
+
+              
+
     
                 <div class="col">
 
@@ -105,6 +108,13 @@
                 </div>
             </div>
          </div>
+
+<br><br> <H5> Seleccione un Tutor</h5>
+
+<%= f.collection_select :user_id,User.includes(:rol,:carrera).where("rols.descripcion='Tutor'").references(:rols,:carreras), :id, :fullname,{include_blank: "Seleccionar Tutor"}, {class: "btn btn-outline-info "}  %>
+
+
+
       <div class="actions">
         <%= f.submit "Guardar Usuario" ,class:"btn btn-info"%>
       </div>

@@ -11,8 +11,12 @@ class Estudiante < ApplicationRecord
   message: "Se permiten solo letras en los apellidos"}
   validates :apellidoma, presence: { message: 'Ingrese el segundo apellido'}, length: {in: 3..20, message:'El apellido debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z\s]+\z/,
   message: "Se permiten solo letras en los apellidos"}
-  VALID_RUT_REGEX = /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\-(k|\d{1})\Z/i
-  validates :rut , presence: { message: 'Ingrese un rut'}, uniqueness: true, format: {with: VALID_RUT_REGEX}
+  include RunCl::ActAsRun
+  Run.valid? '11.1111.111-1'
+  Run.format('11.111.111-1')
+  validates :rut , presence: { message: 'Ingrese un rut'}, uniqueness: true
+  has_run_cl :rut
+ validate :unique_rut
   validates :fecha_nacimiento , presence: {message: 'Ingrese la fecha de nacimiento'}
   validates :telefono, presence: {message: 'Ingrese Telefono'}, length: {is: 9, message:'Largo debe ser 9'}
   validate :fecha_de_nacimiento_debe_ser_en_pasado
@@ -31,10 +35,15 @@ def edadminima
         errors.add(:fecha_nacimiento, "debe ser mayor de 17 años")
    end
 end
-
-
+def unique_rut
+  self.errors.add(:name, 'Rut ya existente') if User.where(rut: self.rut).exists?
 end
 
+def fullname
+  "#{nombreestudiante} #{apellidopa} #{apellidoma}" 
+
+end
+end
 
 
 

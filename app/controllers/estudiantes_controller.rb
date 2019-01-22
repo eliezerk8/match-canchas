@@ -28,7 +28,10 @@ class EstudiantesController < ApplicationController
           end
             end
             end
+
         def edit
+          @estudiante = Estudiante.find(params[:id])
+         
         end
 
 
@@ -56,7 +59,7 @@ class EstudiantesController < ApplicationController
 
     private
 def estudiante_params
-  params.require(:estudiante).permit(:nombreestudiante, :nem, :situacioneconomica,:colegio,:ranking, :carrera_id,:user_id,:fecha_nacimiento, :estado, :rut, :telefono, :email, :apellidopa, :apellidoma, :comuna, :direccion)
+  params.require(:estudiante).permit(:nombreestudiante, :nem, :situacioneconomica,:colegio,:ranking, :carrera_id,:user_id,:fecha_nacimiento, :estado, :rut, :telefono, :email, :apellidopa, :apellidoma, :comuna, :direccion, :users_id)
 end
 
 def set_estudiante

@@ -16,7 +16,7 @@
   <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
   <br><br><label class="text-dark"><u>Estudiante</u></label>
 
-  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info btn-sm"}  %>
+  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info btn-sm"}  %>
  <br><br>
  
  <font size=2>*El propósito del presente informe es dejar de manifiesto la sesión realizada con el estudiante, de este cinco preguntas respectivamente, donde deberá calificar cada una de ellas de la siguiente manera:
@@ -136,7 +136,7 @@
   <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
   <br><br><label class="text-dark"><u>Estudiante</u></label>
 
-  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+  <%= f.collection_select :estudiante_id, Estudiante.where(:user_id => current_user.id), :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
  <br><br>
   <div class="row">
     <div class="col-md-4">
@@ -243,7 +243,7 @@
   <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
   <br><br><label class="text-dark"><u>Estudiante</u></label>
 
-  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
  <br><br>
   <div class="row">
     <div class="col-md-4">
@@ -350,7 +350,7 @@
   <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
   <br><br><label class="text-dark"><u>Estudiante</u></label>
 
-  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:nombreestudiante, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
  <br><br>
 <br>
        <br>

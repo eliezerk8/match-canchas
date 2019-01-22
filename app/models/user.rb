@@ -16,7 +16,7 @@ class User < ApplicationRecord
   Run.format('11.111.111-1')
   validates :rut , presence: { message: 'Ingrese un rut'}, uniqueness: true
   has_run_cl :rut
- 
+ validate :unique_rut
 validates :fecha_nacimiento , presence: {message: 'Ingrese la fecha de nacimiento'}
 validates :telefono, presence: {message: 'Ingrese Telefono'}, length: {is: 9, message:'Largo debe ser 9'}
 validate :fecha_de_nacimiento_debe_ser_en_pasado
@@ -49,9 +49,15 @@ end
 
 
 
+def unique_rut
+  self.errors.add(:name, 'Rut ya existente') if Estudiante.where(rut: self.rut).exists?
+end
 
 
+def fullname
+  "#{nombre} #{apellidopa} #{apellidoma}" 
 
+end
   
 
 

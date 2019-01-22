@@ -53,6 +53,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
     <a href="/page" class="w3-bar-item w3-button w3-button w3-light-blue"><i class="fa fa-users fa-fw"></i>  Inicio</a>
+    <% if current_user.rol.descripcion=='Administrador'%>
+    <button onclick="myFunction('Demo7')" class="w3-button w3-block w3-black w3-left-align"><i class="fa fa-user"></i>Usuarios</button>
+    <div id="Demo7" class="w3-hide w3-animate-zoom">
+      <a href="/users/new" class="w3-button w3-block w3-left-align">Crear Usuario</a>
+
+     
+    </div>
+<%end%>
 
     <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-black w3-left-align"><i class="fa fa-user"></i> Estudiantes</button>
     <div id="Demo1" class="w3-hide w3-animate-zoom">
@@ -66,14 +74,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-black w3-left-align"><i class="fa fa-group"></i> Profesionales</button>
     <div id="Demo2" class="w3-hide w3-animate-zoom">
       <a href="/users" class="w3-button w3-block w3-left-align">Ver profesionales</a>
-      <a href="/users/new" class="w3-button w3-block w3-left-align">Agregar profesional</a>
+     
     </div>
     <%end%>
 
     <button onclick="myFunction('Demo6')" class="w3-button w3-block w3-black w3-left-align"><i class="fa fa-group"></i> Tutores</button>
     <div id="Demo6" class="w3-hide w3-animate-zoom">
       <a href="/tutores" class="w3-button w3-block w3-left-align">Ver Tutores</a>
-      <a href="/tutores/new" class="w3-button w3-block w3-left-align">Agregar Tutores</a>
+      
     </div>
    
  

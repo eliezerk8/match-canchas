@@ -5,6 +5,8 @@
     </div>
   <% end %>
 
+ 
+
 <div class="form">
   <h1 class="text-center"> Registro de Usuarios</h1>
 
@@ -73,6 +75,13 @@
  
 </div>
 </div>
+
+
+<% if @user.rol.descripcion=="Tutor" || @user.rol.descripcion=='Jefe de Carrera' %>
+
+<%= f.select('carrera_id',Carrera.all.collect {|c| [c.nombrecarrera, c.id]}, class: "btn btn-info") %>
+<%end%>
+
 
 <div class="col">
 

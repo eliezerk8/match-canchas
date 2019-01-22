@@ -1,5 +1,4 @@
-<h1>Informes <%= current_user.rol.descripcion%></h1>
-
+<h1>Informes <% if current_user.rol.descripcion!='Administrador'%><%= current_user.rol.descripcion%><%end%></h1>
 <%= link_to 'Generar Informe', new_informe_path, :class => "btn btn-info" %>
 <Table class="table">
   <tr>
@@ -25,7 +24,7 @@
   <%if t.estado ==true %>
  <p class= "text-success"> Activo</p> 
  <%else%> 
- <p class="text-danger"> Inactivo</p>
+ <p class="text-danger"> Eliminado</p>
 <%end%>
   </td>
   <td>
