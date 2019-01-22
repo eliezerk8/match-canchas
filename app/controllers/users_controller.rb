@@ -28,16 +28,20 @@ class UsersController < ApplicationController
   def update
     
      if @user.update(user_params)
-      if @user.rol.descripcion=="Tutor"
-        
-         redirect_to tutores_path,success:"Datos Guardados" 
-      end
-      if @user.rol.descripcion!="Tutor"  
-      redirect_to users_path, success: "Se Actualizaron los datos"
-      end
-    else
-      redirect_to edit_user_path, danger: "No se genero el cambio"
-    end
+          if @user.rol.descripcion=="Tutor"
+             redirect_to tutores_path,success:"Datos Guardados"
+          end
+
+          if @user.rol.descripcion!="Tutor"
+            redirect_to users_path, success: "Se Actualizaron los datos"
+          end
+     else
+          if @user.rol.descripcion=="Tutor"
+            redirect_to edit_user_path, danger: "No se genero el cambio"
+          else
+            redirect_to edit_tutore_path,  danger: "No se genero el cambio"
+          end
+     end
   end
 
   def edit
