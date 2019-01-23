@@ -108,10 +108,10 @@
                 </div>
             </div>
          </div>
-
+         <p>Carrera: <%= f.collection_select :carrera_id, Carrera.all, :id, :nombrecarrera, {:include_blank => "Seleccionar Carrera"},{class: "btn btn-outline-info btn-sm"}  %>
 <br><br> <H5> Seleccione un Tutor</h5>
 
-<%= f.collection_select :user_id,User.includes(:rol,:carrera).where("rols.descripcion='Tutor'").references(:rols,:carreras), :id, :fullname,{include_blank: "Seleccionar Tutor"}, {class: "btn btn-outline-info "}  %>
+<%= f.collection_select :user_id,User.includes(:rol).where(:estado => true ).where("rols.descripcion='Tutor'").references(:rols), :id, :fullname,{include_blank: "Seleccionar Tutor"}, {class: "btn btn-outline-info "}  %>
 
 
 

@@ -15,7 +15,7 @@ class EstudiantesController < ApplicationController
           #@user.destroy
           @estudiante.estado = false
           @estudiante.save
-              redirect_to estudiante_path, success: "Se ha desvinculado el usuario"
+              redirect_to estudiantes_path, success: "Se ha desvinculado el usuario"
         end
       
       

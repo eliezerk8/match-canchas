@@ -84,14 +84,15 @@
          <div class="col-md-4">
               <label for="formGroupExampleInput">Carrera </label>
               
-              <%= f.collection_select :carrera_id, Carrera.all, :id, :nombrecarrera, {:include_blank => "Seleccionar Carrera"},{class: "btn btn-outline-info btn-sm"}  %>
+              <%= f.collection_select :carrera_id, Carrera.where(:estado => true), :id, :nombrecarrera, {:include_blank => "Seleccionar Carrera"},{class: "btn btn-outline-info btn-sm"}  %>
               
          </div> 
- </div> 
-        
- <%= f.collection_select :user_id,User.includes(:rol,:carrera).where("rols.descripcion='Tutor'").references(:rols,:carreras), :id, :fullname,{include_blank: "Seleccionar Tutor"}, {class: "btn btn-outline-info "}  %>
-
  
+ <div class="col-md-4">
+ <label for="formGroupExampleInput">Tutor </label>
+ <%= f.collection_select :user_id,User.includes(:rol).where(:estado => true ).where("rols.descripcion='Tutor'").references(:rols), :id, :fullname,{include_blank: "Seleccionar Tutor"}, {class: "btn btn-outline-info btn-sm"}  %>
+ </div>
+ </div>
  
   
  

@@ -16,7 +16,7 @@
   <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
   <br><br><label class="text-dark"><u>Estudiante</u></label>
 
-  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info btn-sm"}  %>
+  <%= f.collection_select :estudiante_id, Estudiante.includes(:carrera).where(:estado => true).where("carreras.facultad_id =?", current_user.facultad_id).references(:carreras), :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info btn-sm"}  %>
  <br><br>
  
  <font size=2>*El propósito del presente informe es dejar de manifiesto la sesión realizada con el estudiante, de este cinco preguntas respectivamente, donde deberá calificar cada una de ellas de la siguiente manera:
@@ -136,8 +136,19 @@
   <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
   <br><br><label class="text-dark"><u>Estudiante</u></label>
 
-  <%= f.collection_select :estudiante_id, Estudiante.where(:user_id => current_user.id), :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+  <%= f.collection_select :estudiante_id, Estudiante.where(:user_id => current_user.id).where(:estado => true), :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
  <br><br>
+ <font size=2>*El propósito del presente informe es dejar de manifiesto la sesión realizada con el estudiante, de este cinco preguntas respectivamente, donde deberá calificar cada una de ellas de la siguiente manera:
+
+ 1.	Muy malo-
+ 2.	Malo-
+ 3.	Pésimo- 
+ 4.	Regular- 
+ 5.	Bueno -
+ 6.	Muy bueno -
+ 7.	Excelente-
+ 
+ </font>
   <div class="row">
     <div class="col-md-4">
     <p class="bg-info text-center">Habitos de Estudio </p> 
@@ -243,8 +254,19 @@
   <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
   <br><br><label class="text-dark"><u>Estudiante</u></label>
 
-  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+  <%= f.collection_select :estudiante_id, Estudiante.includes(:carrera).where(:estado => true).where("carreras.facultad_id =?", current_user.facultad_id).references(:carreras), :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info btn-sm"}  %>
  <br><br>
+ <font size=2>*El propósito del presente informe es dejar de manifiesto la sesión realizada con el estudiante, de este cinco preguntas respectivamente, donde deberá calificar cada una de ellas de la siguiente manera:
+
+ 1.	Muy malo-
+ 2.	Malo-
+ 3.	Pésimo- 
+ 4.	Regular- 
+ 5.	Bueno -
+ 6.	Muy bueno -
+ 7.	Excelente-
+ 
+ </font>
   <div class="row">
     <div class="col-md-4">
     <p class="bg-info text-center">Habitos de Estudio </p> 
@@ -345,12 +367,12 @@
 <%end%>
 
 <% if current_user.rol.descripcion == "Jefe de Carrera" %>
-<center><h1 class= text-info ><u> Informe Profesional Asistente Social </u></h1><br></center>
+<center><h1 class= text-info ><u> Informe Jefe de Carrera</u></h1><br></center>
 <%=form_for( @informes) do |f| %>
   <label class="text-dark"><u>Profesional :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
   <br><br><label class="text-dark"><u>Estudiante</u></label>
 
-  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
+  <%= f.collection_select :estudiante_id, Estudiante.where(:carrera_id => current_user.carrera_id), :id,:fullname, {:include_blank => "Seleccionar Estudiante"},{class: "btn btn-outline-info "}  %>
  <br><br>
 <br>
        <br>

@@ -36,11 +36,11 @@ class UsersController < ApplicationController
             redirect_to users_path, success: "Se Actualizaron los datos"
           end
      else
-          if @user.rol.descripcion=="Tutor"
+         
             redirect_to edit_user_path, danger: "No se genero el cambio"
-          else
-            redirect_to edit_tutore_path,  danger: "No se genero el cambio"
-          end
+          
+        
+
      end
   end
 
@@ -69,7 +69,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:nombre, :apellidopa, :apellidoma, :rut, :fecha_nacimiento, :facultad_id, :telefono, :email, :password, :password_confirmation, :rol_id, :estado, :carreras_id)
+    params.require(:user).permit(:nombre, :apellidopa, :apellidoma, :rut, :fecha_nacimiento, :facultad_id, :telefono, :email, :password, :password_confirmation, :rol_id, :estado, :carrera_id)
     
   end
 

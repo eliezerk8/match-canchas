@@ -71,17 +71,20 @@
   <div class="col">
 <div class="field">
   <%= f.label :Tipo_de_usuario %>
-  <%= f.select('rol_id',Rol.all.collect {|c| [c.descripcion, c.id]}, class: "btn btn-info") %>
+  <%= f.collection_select :rol_id, Rol.all, :id, :descripcion ,{:include_blank => "Seleccionar Rol"},{class: "btn btn-outline-info btn-sm"}  %>
  
 </div>
 </div>
 
 
 <% if @user.rol.descripcion=="Tutor" || @user.rol.descripcion=='Jefe de Carrera' %>
+<div class="col">
+<label for="formGroupExampleInput">Carrera: </label>
+<%= f.collection_select :carrera_id, Carrera.where(:facultad_id => @user.facultad_id).where(:estado =>true), :id, :nombrecarrera, {:include_blank => "Seleccionar Carrera"},{class: "btn btn-outline-info btn-sm"}  %>
+<%end%></div>
 
-<%= f.select('carrera_id',Carrera.all.collect {|c| [c.nombrecarrera, c.id]}, class: "btn btn-info") %>
-<%end%>
-
+<div class="col">
+</div>
 
 <div class="col">
 
