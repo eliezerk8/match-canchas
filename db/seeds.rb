@@ -25,7 +25,7 @@
                 apellidoma: 'Rogers',
                 rut: '18.740.172-0',
                 fecha_nacimiento: '12/05/1990',
-                telefono: '29325001',
+                telefono: '229325001',
                 email: 'admin@utem.cl',
                 password: '123456',
                 password_confirmation: '123456',
