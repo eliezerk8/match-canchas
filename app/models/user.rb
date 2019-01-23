@@ -21,6 +21,7 @@ validates :fecha_nacimiento , presence: {message: 'Ingrese la fecha de nacimient
 validates :telefono, presence: {message: 'Ingrese Telefono'}, length: {is: 9, message:'Largo debe ser 9'}
 validate :fecha_de_nacimiento_debe_ser_en_pasado
 validate :edadminima
+validate :solo_un_jefe
 
 
 def fecha_de_nacimiento_debe_ser_en_pasado
@@ -51,6 +52,13 @@ end
 
 def unique_rut
   self.errors.add(:name, 'Rut ya existente') if Estudiante.where(rut: self.rut).exists?
+end
+
+
+def solo_un_jefe
+  if User.find_by rol_id:2
+   self.errors.add(:name, 'Esa Carrera ya tiene Jefe de Carrera') if User.where(carrera: self.carrera).exists?
+  end
 end
 
 
