@@ -63,7 +63,8 @@ def fullname
 end
   
 
-
+validates :facultad_id, presence:true
+validates :rol_id, presence:true
 
 
 
