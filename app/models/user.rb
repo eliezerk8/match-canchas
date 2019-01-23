@@ -6,6 +6,7 @@ class User < ApplicationRecord
   belongs_to :facultad, optional:true
   belongs_to :rol, optional:true
   belongs_to :carrera, optional:true
+  validates :rol_id, presence: true
   validates :estado, :inclusion => {:in=> [true,false]}
   validates :nombre, presence:  { message: 'Ingrese el primer nombre '} , length: {in: 3..40, message:'El nombre debe ser de mínimo largo 3'}, format: {with: /\A[a-zA-Z\s]+\z/,
   message: "Se permiten solo letras en los nombres"}
@@ -17,6 +18,7 @@ class User < ApplicationRecord
   validates :rut , presence: { message: 'Ingrese un rut'}, uniqueness: true
   has_run_cl :rut
  validate :unique_rut
+ validates :facultad_id, presence:true
 validates :fecha_nacimiento , presence: {message: 'Ingrese la fecha de nacimiento'}
 validates :telefono, presence: {message: 'Ingrese Telefono'}, length: {is: 9, message:'Largo debe ser 9'}
 validate :fecha_de_nacimiento_debe_ser_en_pasado
