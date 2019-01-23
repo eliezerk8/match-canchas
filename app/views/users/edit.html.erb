@@ -77,6 +77,19 @@
 </div>
 
 
+
+
+
+<% if @user.rol.descripcion=="Sicologo" || @user.rol.descripcion=='Asistente Social' %>
+
+
+<%= f.collection_select :carrera_id, Facultad.where(:estado => true), :id, :nombrefacultad, {:include_blank => "Seleccionar Facultad"},{class: "btn btn-outline-info btn-sm"}  %>
+
+
+
+<%end%>
+
+
 <% if @user.rol.descripcion=="Tutor" || @user.rol.descripcion=='Jefe de Carrera' %>
 <div class="col">
 <label for="formGroupExampleInput">Carrera: </label>
